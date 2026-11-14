@@ -14,3 +14,5 @@ Dev B · baseline 2b016a2 · branch feat/dev-b-frontend.
 - Ruling: install the planned Playwright dependency at B2 for required responsive verification; use CLI because MCP browser calls are unavailable under environment approval policy. No production stack change.
 - B3: frontend complete. RED missing OrdersBoard/useOrderStream; GREEN 19/19 + build. Playwright admin 1/1 (fixture API). C3 awaits live backend.
 - Execution correction: B2 staging was delayed and included B3 production files in 5906e6d. B3 verification/tests committed separately; no history rewrite. Wait for every commit command before editing the next task.
+- B4: complete frontend (base 8fc5ccd). RED chat/orb/draft/useChat missing; GREEN 28/28, build pass, Playwright 5/5 fixtures. Includes price drift, expiry, duplicate confirm, broken streams, context reset, degraded menu/cart. Backend 81648a3 available on Dev A branch; main unchanged, awaiting integration clearance.
+- B5: in progress. Prioritize live P0 verification and error/empty/loading states before P1.

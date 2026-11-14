@@ -1,0 +1,7 @@
+import type { ChatState } from '../state/chatReducer';
+import { formatDate } from '../../lib/format';
+function safeSource(url: string | null): string | undefined { if (!url) return; try { const parsed = new URL(url); return ['https:', 'http:'].includes(parsed.protocol) ? parsed.href : undefined; } catch { return; } }
+export function MessageList({ state }: { state: ChatState }) {
+  const lastAssistant = [...state.messages].reverse().find(m => m.role === 'assistant');
+  return <><div className="messages">{state.messages.map(message => <article className={`message ${message.role}`} key={message.id}><small className="message-author">{message.role === 'user' ? 'Bạn' : 'Biblio'}</small><p>{message.text}</p>{message.sources.length > 0 && <details className="message-sources"><summary>Nguồn tham khảo · {message.sources.length}</summary><ul>{message.sources.map(source => <li key={source.source_id}>{safeSource(source.url) ? <a href={safeSource(source.url)} target="_blank" rel="noreferrer">{source.title}</a> : source.title}<br /><small>{formatDate(source.retrieved_at)} · {source.verification_status === 'owner_verified' ? 'Quán đã xác nhận' : 'Nguồn tham khảo, chờ quán xác nhận'}</small></li>)}</ul></details>}</article>)}{state.streamingText && <article className="message assistant streaming"><small className="message-author">Biblio</small><p>{state.streamingText}</p></article>}</div><div className="sr-only" aria-live="polite" aria-atomic="true">{lastAssistant?.text}</div></>;
+}

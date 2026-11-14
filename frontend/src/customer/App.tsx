@@ -9,6 +9,7 @@ import { useCart } from './state/useCart';
 import { Skeleton } from '../ui/Skeleton';
 import { Toast } from '../ui/Toast';
 import { OrderTracking } from './screens/OrderTracking';
+import { ChatPanel } from './chat/ChatPanel';
 type Tab = 'discover' | 'menu' | 'chat' | 'cart';
 export function App({ api = defaultApi }: { api?: ApiClient }) {
   const [tab, setTab] = useState<Tab>('discover'), [cafe, setCafe] = useState<CafeProfile | null>(null), [error, setError] = useState(''), [retry, setRetry] = useState(0), [notice, setNotice] = useState('');
@@ -24,6 +25,6 @@ export function App({ api = defaultApi }: { api?: ApiClient }) {
     {import.meta.env.VITE_API_MODE === 'mock' && <p className="mode-notice" role="status">Chế độ dữ liệu mẫu · chưa kết nối quán</p>}
     <div className="customer-layout"><main id="main-content" className="customer-content">{notice && <Toast message={notice} />}
     {orderCode ? <OrderTracking key={orderCode} code={orderCode} api={api} /> : <><div hidden={tab !== 'discover'}><Discover cafe={cafe} onMenu={() => changeTab('menu')} onChat={() => changeTab('chat')} /></div><div hidden={tab !== 'menu'}><Menu api={api} onAdd={line => { if (cart.lines.length >= 10 && !cart.lines.some(l => l.item_id === line.item_id && l.variant_id === line.variant_id && l.note === line.note)) setNotice('Giỏ tối đa 10 dòng. Hãy điều chỉnh giỏ trước khi thêm.'); else { cart.add(line); setNotice(`Đã thêm ${line.name} vào giỏ`); } }} /></div><div hidden={tab !== 'cart'}><Cart cart={cart} api={api} onMenu={() => changeTab('menu')} onDone={o => openOrder(o.code)} /></div></>}
-    </main><aside className={`chat-sidebar ${tab === 'chat' ? 'is-open' : ''}`} aria-label="Trợ lý Biblio"><h2>Hỏi Biblio</h2><p>Trợ lý đang được kết nối. Bạn vẫn có thể đặt món từ Menu.</p><button className="mobile-chat-close" onClick={() => changeTab('menu')}>Đóng trợ lý</button></aside></div>
+    </main><aside className={`chat-sidebar ${tab === 'chat' ? 'is-open' : ''}`} aria-label="Trợ lý Biblio"><ChatPanel api={api} onMenu={() => changeTab('menu')} onClose={() => changeTab('menu')} onOpenOrder={code => { openOrder(code); setTab('menu'); }} /></aside></div>
     <nav className="bottom-nav" aria-label="Điều hướng chính">{([['discover', 'Khám phá'], ['menu', 'Menu'], ['chat', 'Trợ lý'], ['cart', `Giỏ${cart.count ? ` · ${cart.count}` : ''}`]] as const).map(([value, label]) => <button key={value} aria-current={tab === value && !orderCode ? 'page' : undefined} onClick={() => changeTab(value)}>{label}</button>)}</nav></>;
 }

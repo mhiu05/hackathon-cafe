@@ -9,6 +9,12 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:37 (UTC+7) — Dev B · B4 streaming assistant
+- Chat reducer/hook, true SSE-driven orb (64px + 20px tools), messages/sources, composer, draft REST confirmation/discard, price refresh/expiry and order card → tracking. Abort/new conversation prevents stale emissions; a truncated stream reports interruption.
+- RED missing chat/orb/draft/hook modules → `pnpm.cmd test --run`: 13 files / 28 passed. `pnpm.cmd exec playwright test`: 5 passed with fixture API, including recommend→draft→REST confirm once→tracking and model unavailable while Menu/cart remain usable. `pnpm.cmd build` passed.
+- Fetched origin: backend A4 present at `81648a3` on Dev A branch; main remains baseline. Preparing isolated backend snapshot for live tests, not altering Dev A files or merging main. Asked for serialized integration clearance while continuing frontend work.
+- B4 frontend ready; C4 live acceptance pending the snapshot test and eventual combined main verification.
+
 ### 2026-11-14 13:33 (UTC+7) — Dev B · B3 staff loop
 - Customer SSE tracking with 5s fallback and stale-GET protection; admin PIN UI/session token, authenticated stream with 3s fallback, status columns/allowed actions, reason dialog, 409 conflict refetch and announcements.
 - B3 RED: missing board/hook modules; GREEN `pnpm.cmd test --run` → 9 files / 19 passed; `pnpm.cmd build` passed. Hook test clients stabilized to match production dependency identity.

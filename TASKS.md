@@ -44,7 +44,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A4 | Repository queries, 7 tools, instructions, SSE streaming endpoint + ScriptedModel tests | P0 | Dev A | [ ] |
-| B4 | Chat panel: reducer, AgentOrb mapping, tool chips, draft slip → REST confirm, order card, banner + tests | P0 | Dev B | [~] |
+| B4 | Chat panel: reducer, AgentOrb mapping, tool chips, draft slip → REST confirm, order card, banner + tests | P0 | Dev B | [x] |
 | C4 | Checkpoint: recommend → draft → confirm → admin → status (P0 complete) | P0 | both | [ ] |
 
 ## Phase 5 — Hardening, polish, rehearsal (4:00–5:00)
@@ -52,7 +52,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A5 | Guards (409/429), error mapping, cancellation, retries, live smoke (`-m live`), `reset_demo.py` | P0 | Dev A | [ ] |
-| B5a | Loading/empty/error/degraded states | P0 | Dev B | [ ] |
+| B5a | Loading/empty/error/degraded states | P0 | Dev B | [~] |
 | B5b | Admin Menu availability screen | P1 | Dev B | [ ] |
 | A6a | `/api/admin/insights` | P1 | Dev A | [ ] |
 | B5c | Admin Tổng quan screen | P1 | Dev B | [ ] |
