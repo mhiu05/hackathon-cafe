@@ -17,6 +17,14 @@ def pytest_configure(config: pytest.Config) -> None:
     config.addinivalue_line("markers", "live: calls real external APIs (OpenAI/Voyage); run with -m live")
 
 
+def pytest_collection_modifyitems(config: pytest.Config, items: list[pytest.Item]) -> None:
+    # Paid tests are opt-in even when credentials exist in the owner's .env.
+    if "live" not in config.getoption("markexpr"):
+        live = [item for item in items if item.get_closest_marker("live")]
+        items[:] = [item for item in items if not item.get_closest_marker("live")]
+        config.hook.pytest_deselected(items=live)
+
+
 @pytest.fixture()
 def db(tmp_path: Path):
     """Fresh migrated database in a temp dir."""

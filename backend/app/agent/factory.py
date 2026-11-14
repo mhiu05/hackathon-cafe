@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from agents import Agent, Model, ModelSettings, RunConfig, SessionSettings
 from agents.models.openai_provider import OpenAIProvider
+from agents import ModelRetrySettings, retry_policies
 from openai.types.shared import Reasoning
 
 from app.agent.context import AgentContext
@@ -13,7 +14,10 @@ from app.settings import Settings
 def build_agent(settings: Settings, *, model: Model | str | None = None) -> Agent[AgentContext]:
     selected = model or settings.openai_model
     return Agent(name="Biblio Concierge", instructions=INSTRUCTIONS, model=selected, tools=ALL_TOOLS,
-        model_settings=ModelSettings(reasoning=Reasoning(effort="low"), verbosity="low") if isinstance(selected, str) else ModelSettings())
+        model_settings=ModelSettings(reasoning=Reasoning(effort="low"), verbosity="low", timeout=30,
+            retry=ModelRetrySettings(max_retries=2, policy=retry_policies.any(retry_policies.provider_suggested(),
+                retry_policies.retry_after(), retry_policies.network_error(), retry_policies.http_status([429, 500, 502, 503, 504]))))
+        if isinstance(selected, str) else ModelSettings())
 
 
 def build_run_config(settings: Settings, conversation_id: str, run_id: str) -> RunConfig:

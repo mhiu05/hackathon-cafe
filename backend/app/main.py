@@ -8,6 +8,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api import public, orders, admin, agent
 from app.admin.auth import LoginRateLimiter
 from app.agent.factory import build_agent
+from app.api.agent import ConversationGuard
+from agents import set_tracing_export_api_key
 from app.db.connection import connect
 from app.db.migrate import apply_migrations
 from app.errors import install_error_handlers
@@ -26,6 +28,9 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         app.state.bus = EventBus()
         app.state.login_limiter = LoginRateLimiter()
         app.state.agent = build_agent(s)
+        app.state.conversation_guard = ConversationGuard()
+        if s.enable_agent_tracing and s.openai_api_key:
+            set_tracing_export_api_key(s.openai_api_key)
         with closing(connect(s.database_path)) as conn:
             apply_migrations(conn)
             app.state.index = KnowledgeIndex.load(conn)

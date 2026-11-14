@@ -53,8 +53,8 @@ async def test_model_error_emits_model_unavailable(settings, conn, tmp_path):
 async def test_prepare_order_sold_out_rejected(settings, conn, tmp_path):
     conn.execute("UPDATE menu_items SET availability='sold_out' WHERE id='menu_019'")
     args = {"lines": [{"item_id": "menu_019", "variant_id": None, "quantity": 1, "note": None}]}
-    deps = deps_for(settings, conn, [[function_call("prepare_order", args, call_id="sold")], [assistant_message("M?n ?? h?t.")]])
-    ev = await run(deps, "L?y tr? xo?i Yakult", tmp_path)
+    deps = deps_for(settings, conn, [[function_call("prepare_order", args, call_id="sold")], [assistant_message("Món đã hết.")]])
+    ev = await run(deps, "Lấy trà xoài Yakult", tmp_path)
     assert next(d for n, d in ev if n == "tool_finished")["ok"] is False
     assert not [d for n, d in ev if n == "order_draft"]
     assert conn.execute("SELECT COUNT(*) FROM orders").fetchone()[0] == 0
@@ -71,9 +71,9 @@ async def test_get_order_status_scoped_to_conversation(settings, conn, tmp_path)
         data = json.loads(outputs[-1]["output"])
         assert [o["code"] for o in data["orders"]] == ["BB-0001"]
         assert data["orders"][0]["total_vnd"] == 45000
-        return [assistant_message("??n BB-0001 ?ang ch? qu?n x?c nh?n.")]
+        return [assistant_message("Đơn BB-0001 đang chờ quán xác nhận.")]
     deps = deps_for(settings, conn, [[function_call("get_order_status", {}, call_id="status")], ModelStep.respond(check)])
-    ev = await run(deps, "??n m?nh sao r?i?", tmp_path)
+    ev = await run(deps, "Đơn mình sao rồi?", tmp_path)
     assert ev[-1][1]["reason"] == "completed"
 
 
@@ -82,9 +82,9 @@ async def test_knowledge_sources_and_tool_calls_logged(settings, conn, tmp_path)
               function_call("search_cafe_knowledge", {"query": "gui xe", "category": "faq"}, call_id="kb")],
              [function_call("recommend_drinks", {"preferences": ["tra"], "max_price_vnd": 50000}, call_id="rec"),
               function_call("get_coworking_info", {"topic": "rooms", "min_capacity": 20}, call_id="room")],
-             [assistant_message("Vui l?ng h?i nh?n vi?n m?t kh?u Wi-Fi.")]]
+             [assistant_message("Vui lòng hỏi nhân viên mật khẩu Wi-Fi.")]]
     deps = deps_for(settings, conn, steps)
-    ev = await run(deps, "Wi-Fi, g?i xe, tr? d??i 50k v? ph?ng 20 ng??i?", tmp_path)
+    ev = await run(deps, "Wi-Fi, gửi xe, trà dưới 50k và phòng 20 người?", tmp_path)
     assert ev[-1][1]["reason"] == "completed"
     sources = next(d["sources"] for n, d in ev if n == "message_completed")
     assert sources and len({s["source_id"] for s in sources}) == len(sources)
@@ -95,13 +95,13 @@ async def test_knowledge_sources_and_tool_calls_logged(settings, conn, tmp_path)
 
 async def test_agent_session_retains_text_across_turns(settings, conn, tmp_path):
     session = SQLiteSession("memory", tmp_path / "memory.db")
-    deps = deps_for(settings, conn, [[assistant_message("Xin ch?o Minh.")]])
-    await collect(run_chat_stream(deps, CONV, "M?nh l? Minh", session=session))
+    deps = deps_for(settings, conn, [[assistant_message("Xin chào Minh.")]])
+    await collect(run_chat_stream(deps, CONV, "Mình là Minh", session=session))
     def check(call):
-        assert any(x.get("role") == "user" and x.get("content") == "M?nh l? Minh" for x in call.input)
-        return [assistant_message("Minh nh?.")]
+        assert any(x.get("role") == "user" and x.get("content") == "Mình là Minh" for x in call.input)
+        return [assistant_message("Minh nhé.")]
     deps = deps_for(settings, conn, [ModelStep.respond(check)])
-    ev = await collect(run_chat_stream(deps, CONV, "T?n m?nh?", session=session))
+    ev = await collect(run_chat_stream(deps, CONV, "Tên mình?", session=session))
     assert ev[-1][1]["reason"] == "completed"
     session.close()
 
@@ -113,8 +113,8 @@ def test_full_agent_draft_rest_admin_status_loop(client, conn, settings):
     client.app.state.agent = build_agent(settings, model=ScriptedModel([
         [function_call("search_menu", {"query": "tra chanh gung"}, call_id="menu")],
         [function_call("prepare_order", {"lines": [{"item_id": "menu_024", "quantity": 1}]}, call_id="draft")],
-        [assistant_message("B?n ki?m tra v? b?m X?c nh?n ??t m?n nh?.")]]))
-    response = client.post("/api/agent/chat/stream", headers=h, json={"message": "L?y m?t tr? chanh g?ng m?t ong"})
+        [assistant_message("Bạn kiểm tra và bấm Xác nhận đặt món nhé.")]]))
+    response = client.post("/api/agent/chat/stream", headers=h, json={"message": "Lấy một trà chanh gừng mật ong"})
     assert response.status_code == 200
     ev = parse_sse([response.text])
     d = next(data["draft"] for n, data in ev if n == "order_draft")
@@ -130,9 +130,9 @@ def test_full_agent_draft_rest_admin_status_loop(client, conn, settings):
         outputs = [x for x in call.input if x.get("type") == "function_call_output"]
         order = json.loads(outputs[-1]["output"])["orders"][0]
         assert order["code"] == "BB-0001" and order["status"] == "confirmed" and order["total_vnd"] == 45000
-        return [assistant_message("??n BB-0001 ?? ???c qu?n nh?n.")]
+        return [assistant_message("Đơn BB-0001 đã được quán nhận.")]
     client.app.state.agent = build_agent(settings, model=ScriptedModel([
         [function_call("get_order_status", {}, call_id="status")], ModelStep.respond(check)]))
-    ev = parse_sse([client.post("/api/agent/chat/stream", headers=h, json={"message": "??n m?nh sao r?i?"}).text])
+    ev = parse_sse([client.post("/api/agent/chat/stream", headers=h, json={"message": "Đơn mình sao rồi?"}).text])
     assert ev[-1][1]["reason"] == "completed"
     assert conn.execute("SELECT COUNT(*) FROM orders").fetchone()[0] == 1

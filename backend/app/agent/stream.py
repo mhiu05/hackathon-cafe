@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from uuid import uuid4
 
 import openai
-from agents import Agent, ItemHelpers, Runner, Session, SQLiteSession
+from agents import Agent, ItemHelpers, Runner, Session, SQLiteSession, RunErrorHandlerResult
 
 from app.agent.context import AgentContext
 from app.agent.factory import build_run_config
@@ -72,6 +72,13 @@ async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *
     usage = {"input_tokens": 0, "output_tokens": 0, "requests": 0}
     calls: dict[str, tuple[str, float, str]] = {}
     composing = False
+    max_turns_hit = False
+
+    def friendly_max_turns(data) -> RunErrorHandlerResult:
+        nonlocal max_turns_hit
+        max_turns_hit = True
+        return RunErrorHandlerResult(final_output="Mình chưa xử lý xong, bạn hỏi ngắn hơn giúp mình nhé.")
+
     with closing(connect(deps.settings.database_path)) as conn:
         conn.execute("INSERT INTO agent_runs(id,conversation_id,status,model,user_message_chars,started_at) VALUES (?,?,'running',?,?,?)",
             (run_id, conversation_id, deps.settings.openai_model, len(message), utc_now()))
@@ -79,7 +86,8 @@ async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *
             yield format_sse("run_started", {"run_id": run_id})
             yield format_sse("agent_state", {"state": "thinking"})
             result = Runner.run_streamed(deps.agent, message, context=context, session=session,
-                run_config=build_run_config(deps.settings, conversation_id, run_id), max_turns=8)
+                run_config=build_run_config(deps.settings, conversation_id, run_id), max_turns=8,
+                error_handlers={"max_turns": friendly_max_turns})
             async for ev in result.stream_events():
                 if ev.type == "raw_response_event" and ev.data.type == "response.output_text.delta":
                     if not composing:
@@ -110,7 +118,11 @@ async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *
                     elif ev.name == "message_output_created":
                         yield format_sse("message_completed", {"text": ItemHelpers.text_message_output(ev.item), "sources": list(context.sources.values())})
                         composing = False
-            status = "completed"
+            status = "error" if max_turns_hit else "completed"
+            if max_turns_hit:
+                error_code = "MAX_TURNS"
+                yield format_sse("agent_state", {"state": "error"})
+                yield format_sse("error", {"code": error_code, "message": "Mình chưa xử lý xong, bạn hỏi ngắn hơn giúp mình nhé.", "retryable": True})
         except (asyncio.CancelledError, GeneratorExit):
             status = "cancelled"
             if result:
@@ -120,9 +132,14 @@ async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *
             status = "error"
             unavailable = isinstance(exc, (openai.APIConnectionError, openai.AuthenticationError, openai.RateLimitError)) or (isinstance(exc, openai.APIStatusError) and exc.status_code >= 500)
             error_code = "MODEL_UNAVAILABLE" if unavailable else "INTERNAL"
+            message_text = MODEL_UNAVAILABLE if unavailable else "Trợ lý gặp lỗi, vui lòng thử lại."
+            if isinstance(exc, openai.BadRequestError) and ("tool" in str(exc).lower() or "function" in str(exc).lower()) and "output" in str(exc).lower():
+                await session.clear_session()
+                error_code = "SESSION_RESET"
+                message_text = "Lịch sử trò chuyện bị lỗi và đã được làm mới. Bạn gửi lại câu hỏi nhé."
             logging.getLogger(__name__).warning("Agent run failed: %s", type(exc).__name__)
             yield format_sse("agent_state", {"state": "error"})
-            yield format_sse("error", {"code": error_code, "message": MODEL_UNAVAILABLE if unavailable else "Trợ lý gặp lỗi, vui lòng thử lại.", "retryable": True})
+            yield format_sse("error", {"code": error_code, "message": message_text, "retryable": True})
         finally:
             if status == "running":
                 status = "cancelled"
