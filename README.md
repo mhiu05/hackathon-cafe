@@ -1,3 +1,6 @@
+Link demo người dùng: https://kangaroo-donator-exclaim.ngrok-free.dev/
+Link demo admin: https://kangaroo-donator-exclaim.ngrok-free.dev/admin.html
+
 # Biblio AI Café Companion
 
 AI-native web app for **one café — Biblio Café Sách, 79 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội** (local hackathon build).
