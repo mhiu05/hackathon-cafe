@@ -9,6 +9,15 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 12:40 ? Dev A execution ledger
+- Plan: `docs/superpowers/plans/2026-11-14-dev-a-backend-agent.md`; branch `feat/dev-a-backend-agent`, baseline `2b016a2` verified in origin/main; branch pushed.
+- Preparation: uv sync succeeded; offline ingest 56 cache vectors, 0 Voyage tokens; verifier rerun with PYTHONIOENCODING=utf-8 succeeded (console cp1252 failed first); pytest: 9 passed in 0.90s.
+- Preparation commands regenerated three tracked knowledge reports; retained locally and excluded from Dev A commits (outside ownership).
+- Ruling: use this Dev A ledger instead of SDD helper workspace ? helper creates .gitignore, prohibited by user; approved task sequence unchanged.
+- Pre-flight A1?A2: ApiError/deps/time/DTO shared signatures consistent. A2?A3: state/service/EventBus interfaces consistent. A1+A2?A4: repository/drafts/status/retrieval consumed consistently. A4?A5?A6: stream/session/observability interfaces consistent.
+- C1?C5 integration pending Dev B readiness; no main merge without confirmation.
+- Task A1: complete ? RED ModuleNotFoundError app.main; GREEN `uv run --no-sync pytest -q -p no:cacheprovider`: 16 passed in 0.53s; HTTP uvicorn smoke /api/cafe 200, phone verified. UV_CACHE_DIR uses TEMP because default cache is protected. C1 backend ready; Dev B confirmation pending.
+
 ### 2026-11-14 — prep session (Claude Code, Superpowers 7.0.2: brainstorming → writing-plans)
 - Installed the project-scoped Superpowers plugin (`superpowers@anthropic-plugin-directory` 7.0.2); skills were read from the installed files because the plugin loads only in new sessions.
 - Created root `pyproject.toml` (Python 3.12.13, uv) and `uv.lock`; package `backend/app`.

@@ -19,7 +19,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
-| A1 | App factory, 0003 migration, errors, deps, public catalog API + contract tests | P0 | Dev A | [ ] |
+| A1 | App factory, 0003 migration, errors, deps, public catalog API + contract tests | P0 | Dev A | [x] |
 | B1 | Vite multi-page scaffold, tokens/fonts, typed ApiClient (live+mock), SSE parser, cart/format libs + tests | P0 | Dev B | [ ] |
 | C1 | Checkpoint: customer UI reads live `/api/cafe` + `/api/menu` | P0 | both | [ ] |
 
