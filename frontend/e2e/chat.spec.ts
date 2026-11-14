@@ -45,3 +45,21 @@ test('mobile assistant keeps focus inside the sheet and Escape restores navigati
   await page.keyboard.press('Shift+Tab'); expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
   await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(trigger).toBeFocused();
 });
+test('desktop assistant preserves the menu and mobile-to-desktop resize restores content', async ({ page }) => {
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.setViewportSize({ width: 1280, height: 900 }); await page.goto('/');
+  await page.getByRole('button', { name: 'Xem menu', exact: true }).click();
+  await page.getByRole('button', { name: 'Trợ lý', exact: true }).click();
+  await expect(page.getByRole('searchbox', { name: 'Tìm món' })).toBeVisible();
+  await expect(page.getByLabel('Nhắn Biblio')).toBeFocused();
+  await page.setViewportSize({ width: 390, height: 844 }); await page.getByRole('button', { name: 'Trợ lý', exact: true }).click();
+  await expect(page.getByRole('dialog', { name: 'Trợ lý Biblio' })).toBeVisible();
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await expect(page.getByRole('searchbox', { name: 'Tìm món' })).toBeVisible();
+});
+test('closing the masthead assistant returns to Discover with focus on its trigger', async ({ page }) => {
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
+  const trigger = page.getByRole('button', { name: 'Hỏi Biblio', exact: true }); await trigger.click();
+  await page.keyboard.press('Escape'); await expect(trigger).toBeVisible(); await expect(trigger).toBeFocused();
+});

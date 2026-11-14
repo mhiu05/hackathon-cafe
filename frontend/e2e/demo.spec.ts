@@ -7,6 +7,7 @@ test('live catalog → checkout → admin accepts → customer sees status', asy
   const staff = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   try {
     await customer.goto('/'); await customer.getByRole('button', { name: 'Xem menu', exact: true }).click();
+    await expect(customer.getByText('51 món', { exact: true })).toBeVisible();
     await customer.getByRole('button', { name: /Bạc xỉu/ }).click(); await customer.getByRole('button', { name: 'Thêm vào giỏ' }).click();
     await customer.getByRole('button', { name: 'Giỏ · 1', exact: true }).click(); await customer.getByRole('button', { name: 'Xem tổng', exact: true }).click();
     await customer.getByRole('button', { name: 'Đặt món', exact: true }).click();
@@ -23,4 +24,18 @@ test('live catalog → checkout → admin accepts → customer sees status', asy
     await customer.screenshot({ path: 'test-results/live-order-390.png', fullPage: true });
     await staff.screenshot({ path: 'test-results/live-admin-1280.png', fullPage: true });
   } finally { await customer.close(); await staff.close(); }
+});
+test('live admin saves menu availability and reads server insights', async ({ page }) => {
+  test.skip(!process.env.E2E_ADMIN_PIN, 'Requires a real configured backend; no fixtures.');
+  await page.goto('/admin.html'); await page.getByLabel('Mã PIN').fill(process.env.E2E_ADMIN_PIN!);
+  await page.getByRole('button', { name: 'Đăng nhập', exact: true }).click();
+  await page.getByRole('navigation', { name: 'Điều hướng quầy' }).getByRole('button', { name: 'Menu', exact: true }).click();
+  const item = page.getByRole('group', { name: 'Trà xoài Yakult', exact: true });
+  await item.getByRole('button', { name: 'Hết', exact: true }).click();
+  await expect(item.getByRole('button', { name: 'Hết', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await item.getByRole('button', { name: 'Chưa xác nhận', exact: true }).click();
+  await expect(item.getByRole('button', { name: 'Chưa xác nhận', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await page.getByRole('button', { name: 'Tổng quan', exact: true }).click();
+  await expect(page.getByRole('table', { name: 'Đơn theo trạng thái' })).toBeVisible();
+  await expect(page.getByRole('table', { name: 'Hoạt động trợ lý' })).toBeVisible();
 });

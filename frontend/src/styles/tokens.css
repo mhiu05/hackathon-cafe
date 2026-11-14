@@ -8,4 +8,5 @@
   --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px; --space-xxl: 48px;
   --control-height: 44px; --button-padding: 12px 20px; --input-padding: 12px 14px; --chip-padding: 6px 12px;
   --paper-shadow: 0 1px 0 var(--cream-line), 0 8px 24px rgb(16 48 47 / .08); --scrim: rgb(16 48 47 / .35);
+  --control-border: var(--muted-ink);
 }

@@ -26,3 +26,8 @@ it('announces stale-tab conflicts and refetches the board', async () => {
   expect(await screen.findByText('Đơn đã được cập nhật ở nơi khác')).toBeInTheDocument();
   expect(refetch).toHaveBeenCalledOnce();
 });
+it('shows server counts and a clear notice when the server result limit omits active orders', () => {
+  render(<OrdersBoard orders={orders} counts={{ ...fixture.counts, pending: 2 }} onTransition={vi.fn()} />);
+  expect(screen.getByText(/Chưa hiển thị đủ đơn đang xử lý/)).toBeInTheDocument();
+  expect(within(screen.getByRole('region', { name: 'Mới' })).getByRole('heading', { name: 'Mới 2' })).toBeInTheDocument();
+});

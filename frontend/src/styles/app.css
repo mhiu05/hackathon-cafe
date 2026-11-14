@@ -12,7 +12,8 @@
 .masthead-wordmark { font: 600 var(--text-display)/1.05 var(--font-display); letter-spacing: -.01em; }
 .masthead-wordmark span { display: block; font: 400 var(--text-heading)/1.55 var(--font-body); margin-top: var(--space-sm); }
 .masthead-rule { width: 64px; height: 2px; margin-block: var(--space-lg); background: var(--caramel); }
-.masthead a { color: var(--cream-page); } .masthead .button-primary { background: var(--cream-page); border-color: var(--cream-page); color: var(--teal-deep); }
+.masthead a { color: var(--cream-page); display: inline-flex; align-items: center; min-height: var(--control-height); } .masthead .button-primary { background: var(--cream-page); border-color: var(--cream-page); color: var(--teal-deep); }
+.content-section > a { display: inline-flex; align-items: center; min-height: var(--control-height); }
 .open-status { display: flex; align-items: center; gap: var(--space-sm); } .dot { width: 8px; height: 8px; display: inline-block; border-radius: var(--radius-pill); background: var(--warning); } .dot.success { background: var(--success); }
 .highlights { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-md); margin-block: var(--space-lg); }
 .index-card { background: var(--cream-card); border-radius: var(--radius-md); padding: var(--space-md); display: flex; flex-direction: column; justify-content: space-between; gap: var(--space-md); }

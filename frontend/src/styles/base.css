@@ -11,7 +11,7 @@ button { cursor: pointer; } button:disabled { cursor: not-allowed; opacity: .55;
 button, input, select { min-height: var(--control-height); }
 button { border: 1px solid var(--cream-line); border-radius: var(--radius-pill); padding: var(--button-padding); color: var(--ink-teal); background: var(--cream-card); }
 button:hover:not(:disabled) { background: var(--teal-mist); }
-input, textarea, select { width: 100%; padding: var(--input-padding); border: 1px solid var(--cream-line); border-radius: var(--radius-md); color: var(--ink-teal); background: var(--cream-page); caret-color: var(--teal); }
+input, textarea, select { width: 100%; padding: var(--input-padding); border: 1px solid var(--control-border); border-radius: var(--radius-md); color: var(--ink-teal); background: var(--cream-page); caret-color: var(--teal); }
 input::placeholder, textarea::placeholder { color: var(--muted-ink); opacity: 1; }
 label { display: block; margin-block: var(--space-md) var(--space-xs); }
 :focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }

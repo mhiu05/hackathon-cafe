@@ -58,7 +58,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | B5c | Admin Tổng quan screen | P1 | Dev B | [x] |
 | A6b | Draft-confirm note into agent memory; `/api/agent/history` | P1 | Dev A | [ ] |
 | B5d | GSAP motion + reduced motion | P1 | Dev B | [x] |
-| B5e | Impeccable critique/audit/polish pass | P1 | Dev B | [~] |
+| B5e | Impeccable critique/audit/polish pass | P1 | Dev B | [x] |
 | B5f | Playwright demo smoke | P1 | Dev B | [x] |
 | C5 | Reset + rehearsal ×2 (`docs/demo-runbook.md`) | P0 | both | [ ] |
 

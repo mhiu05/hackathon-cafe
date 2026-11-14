@@ -20,3 +20,15 @@ Dev B · baseline 2b016a2 · branch feat/dev-b-frontend.
 - Ruling: §7 and §9 define /api/admin/insights and AdminInsights, but §10 ApiClient omits a method. Use api/insights.ts as a typed adapter over the same request/auth/error infrastructure; preserve §10 interface verbatim and report the omission. Risk: a later contract revision may move this method into ApiClient; adapter is isolated for that migration.
 - B5 implementation verified: 33/33 unit tests, production build pass, fixture Playwright 6/6 (2 explicit-live specs skipped by default). Backend 9e0a3b1 snapshot regression 87 passed / 6 deselected. Motion preserves truth-driven orbs. Independent final review/detector remains; C5 reset rehearsals will run after review fixes.
 - Ruling: catalogue failure is the readiness signal for App's fallback, as the plan's App.test specifies; frozen ApiClient has no health method. Live E2E checks /api/health explicitly. Risk: a future partial catalogue outage may warrant a separate health-aware error surface.
+- Final review: independent A code/design + isolated B detector/audit completed for 2b016a2..84d0310. Initial A27/40, B16/20; 0 Critical, detector0 findings. Findings and disposition in QA_REVIEW.md.
+- Final: fixed old active orders hidden by newest50 — useAdminStream/OrdersBoard regressions RED→GREEN. Client loads active statuses separately at contract limit200, uses server counts and warns if incomplete.
+- Final: fixed desktop chat blank content and masthead dismissal focus — two Playwright regressions RED→GREEN; mobile focus trap remains green.
+- Final: fixed fast PRICE_CHANGED double-click accepting new price — cart/draft RED each produced2POST before fix,1 after. Full suite37/37 and8 fixture E2E pass;3 live specs deliberately opt-in.
+- Final: fixed accessible input boundary and standalone call/direction hit areas with existing palette tokens; inspected new variant/admin/chat captures.
+- Final: Ruling: PRICE_CHANGED now requires explicit “Tôi đã xem giá mới” acknowledgement before the existing confirm action — closes a demonstrated double-click race without timers or API changes — costs one extra interaction only after a server price change.
+- Final: Ruling: endpoint max200 per status is retained, with server counts/coverage notice; unlimited active queues need Dev A pagination — avoids silent truncation without inventing a contract — beyond-capacity handling still needs backend coordination.
+- Final: Ruling: regraded lost keyboard focus and 44px standalone-link mismatch as material accessibility fixes; decorative lines keep cream-line while controls use existing muted-ink — preserves the approved palette — control boundaries are visibly stronger.
+- Final: minor (deferred): sticky menu categories for long browsing.
+- Final: minor (deferred): condense long Discover source labels while retaining attribution/date.
+- Final: minor (deferred):10 React lint advisories, exit0; no material effect identified by reviewer.
+- B5: frontend tasks complete; final C5 reset rehearsals on snapshot9e0a3b1 follow this commit. Main integration remains pending user/Dev A clearance.

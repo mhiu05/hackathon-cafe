@@ -30,7 +30,7 @@ export const liveClient: ApiClient = {
   admin: {
     login: pin => request('/api/admin/login', { method: 'POST', body: json({ pin }) }),
     logout: () => request('/api/admin/logout', { ...auth(), method: 'POST' }),
-    listOrders: status => request(`/api/admin/orders${status ? `?status=${enc(status)}` : ''}`, auth()),
+    listOrders: status => request(`/api/admin/orders?limit=200${status ? `&status=${enc(status)}` : ''}`, auth()),
     updateStatus: (id, req) => request(`/api/admin/orders/${id}/status`, { ...auth(), method: 'PATCH', body: json(req) }),
     updateMenuItem: (id, req) => request(`/api/admin/menu/${enc(id)}`, { ...auth(), method: 'PATCH', body: json(req) }),
     stream: async (emit, signal) => {

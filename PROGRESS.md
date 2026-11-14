@@ -11,6 +11,12 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 14:12 (UTC+7) — Dev B · independent review fixes
+- Independent code/design A + detector/audit B completed. Detector0 findings; initial A27/40 / B16/20. QA_REVIEW.md preserves scope and dispositions, no claim of rescored certification.
+- RED→GREEN fixes: old active orders outside latest50; counts server/coverage notice; desktop chat keeps content; mobile masthead dismissal restores focus; fast PRICE_CHANGED double-click now requires explicit price-review acknowledgement for cart/draft. Input control border5,21:1, phone/direction targets44px via existing tokens.
+- Final frontend gate: `pnpm.cmd test --run`37 passed; build passed; Playwright8 fixture passed/3 live gated by default. Lint exit0 with10 React advisory warnings retained/documented. Frozen types compared verbatim against §9, match; protected files/contracts/backend unchanged.
+- Remaining minor polish: sticky categories, shorter source labels. Preparing two reset/live rehearsals on9e0a3b1; no main merge.
+
 ### 2026-11-14 13:57 (UTC+7) — Dev B · B5 hardening/P1
 - Error/retry, empty/loading/degraded states; accessible mobile chat dialog with focus trap/Escape/inert background; live order cards; admin Menu availability and Tổng quan; GSAP via useGSAP/matchMedia with static reduced-motion state; removed scaffold assets and replaced favicon.
 - `pnpm.cmd test --run` → 18 files / 33 passed; `pnpm.cmd build` passed. `pnpm.cmd exec playwright test` → 6 fixture tests passed / 2 live tests deliberately skipped by default. Explicit live cart smoke passed (64ms customer update); explicit live AI test passed on snapshot81648a3 (BB-0003, three real turns).
