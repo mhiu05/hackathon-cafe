@@ -9,6 +9,13 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:33 (UTC+7) — Dev B · B3 staff loop
+- Customer SSE tracking with 5s fallback and stale-GET protection; admin PIN UI/session token, authenticated stream with 3s fallback, status columns/allowed actions, reason dialog, 409 conflict refetch and announcements.
+- B3 RED: missing board/hook modules; GREEN `pnpm.cmd test --run` → 9 files / 19 passed; `pnpm.cmd build` passed. Hook test clients stabilized to match production dependency identity.
+- `pnpm.cmd exec playwright test e2e/admin.spec.ts` → 1 passed (fixture API): incorrect PIN, login token, actual bearer request headers, pending→confirmed board move at 1280px. Playwright now starts its Vite server automatically after a previous dev process ended.
+- Commit-boundary correction: delayed B2 Git staging included B3 production files in `5906e6d`; B3 tests are recorded in the following commit. History kept intact, no force push/rewrite. From now on wait for commit commands to finish before editing next-task files.
+- C3 live latency still unverified: no backend runtime on current main; no main merge attempted without Dev A confirmation.
+
 ### 2026-11-14 13:20 (UTC+7) — Dev B · B2 customer ordering
 - Discover with API facts/source dates, Menu token/diacritic search, category/price filters, stock labels, required variants, quantities/notes; persistent cart and server-quote confirmation. Retry key retained, double submission guarded; PRICE_CHANGED asks again with fresh quote.
 - `pnpm.cmd test --run` → 7 files / 15 passed; `pnpm.cmd build` passed after explicitly typing the JSON test fixture as OrderQuote.

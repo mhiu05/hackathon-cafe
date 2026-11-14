@@ -36,7 +36,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A3 | Admin PIN login/tokens/rate limit, admin orders API, transitions, admin SSE, menu PATCH + tests | P0 | Dev A | [ ] |
-| B3 | Order tracking (SSE + polling), admin app (login, board, transitions, reason, conflict toast) + tests | P0 | Dev B | [~] |
+| B3 | Order tracking (SSE + polling), admin app (login, board, transitions, reason, conflict toast) + tests | P0 | Dev B | [x] |
 | C3 | Checkpoint: admin confirms; customer page updates ≤2 s | P0 | both | [ ] |
 
 ## Phase 4 — Agent (3:00–4:00)
@@ -44,7 +44,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A4 | Repository queries, 7 tools, instructions, SSE streaming endpoint + ScriptedModel tests | P0 | Dev A | [ ] |
-| B4 | Chat panel: reducer, AgentOrb mapping, tool chips, draft slip → REST confirm, order card, banner + tests | P0 | Dev B | [ ] |
+| B4 | Chat panel: reducer, AgentOrb mapping, tool chips, draft slip → REST confirm, order card, banner + tests | P0 | Dev B | [~] |
 | C4 | Checkpoint: recommend → draft → confirm → admin → status (P0 complete) | P0 | both | [ ] |
 
 ## Phase 5 — Hardening, polish, rehearsal (4:00–5:00)

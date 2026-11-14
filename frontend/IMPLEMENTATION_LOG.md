@@ -12,4 +12,5 @@ Dev B · baseline 2b016a2 · branch feat/dev-b-frontend.
 - Ruling: pinned the already-resolved scaffold versions (Vite 8.3.8/plugin 6.3.0/oxlint 1.93.0) rather than downloading older semver minimums; pnpm install had overwritten package edits made while it ran, so package edits now occur only after installs finish.
 - B2: frontend complete (base e1e482e). RED missing Menu/ConfirmSheet → GREEN 15/15 tests and production build. Playwright responsive 2/2 (390/1280), screenshots inspected. C1/C2 live pending. Future prepared tests retained as .pending until their task starts; not included in prior task commits.
 - Ruling: install the planned Playwright dependency at B2 for required responsive verification; use CLI because MCP browser calls are unavailable under environment approval policy. No production stack change.
-- B3: RED observed for missing OrdersBoard/useOrderStream; implement after B2 commit.
+- B3: frontend complete. RED missing OrdersBoard/useOrderStream; GREEN 19/19 + build. Playwright admin 1/1 (fixture API). C3 awaits live backend.
+- Execution correction: B2 staging was delayed and included B3 production files in 5906e6d. B3 verification/tests committed separately; no history rewrite. Wait for every commit command before editing the next task.
