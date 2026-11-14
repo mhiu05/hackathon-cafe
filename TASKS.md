@@ -20,47 +20,47 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A1 | App factory, 0003 migration, errors, deps, public catalog API + contract tests | P0 | Dev A | [x] |
-| B1 | Vite multi-page scaffold, tokens/fonts, typed ApiClient (live+mock), SSE parser, cart/format libs + tests | P0 | Dev B | [ ] |
-| C1 | Checkpoint: customer UI reads live `/api/cafe` + `/api/menu` | P0 | both | [ ] |
+| B1 | Vite multi-page scaffold, tokens/fonts, typed ApiClient (live+mock), SSE parser, cart/format libs + tests | P0 | Dev B | [x] |
+| C1 | Checkpoint: customer UI reads live `/api/cafe` + `/api/menu` | P0 | both | [x] |
 
 ## Phase 2 — Orders (1:00–2:00)
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A2 | Quote, idempotent orders, drafts confirm/discard, event bus, order SSE, order APIs + tests | P0 | Dev A | [x] |
-| B2 | Customer shell, Discover, Menu (search/filter/variants), Cart + confirm sheet + tests | P0 | Dev B | [ ] |
-| C2 | Checkpoint: UI checkout creates `BB-0001`; retry returns same order | P0 | both | [ ] |
+| B2 | Customer shell, Discover, Menu (search/filter/variants), Cart + confirm sheet + tests | P0 | Dev B | [x] |
+| C2 | Checkpoint: UI checkout creates `BB-0001`; retry returns same order | P0 | both | [x] |
 
 ## Phase 3 — Staff loop (2:00–3:00)
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A3 | Admin PIN login/tokens/rate limit, admin orders API, transitions, admin SSE, menu PATCH + tests | P0 | Dev A | [x] |
-| B3 | Order tracking (SSE + polling), admin app (login, board, transitions, reason, conflict toast) + tests | P0 | Dev B | [ ] |
-| C3 | Checkpoint: admin confirms; customer page updates ≤2 s | P0 | both | [ ] |
+| B3 | Order tracking (SSE + polling), admin app (login, board, transitions, reason, conflict toast) + tests | P0 | Dev B | [x] |
+| C3 | Checkpoint: admin confirms; customer page updates ≤2 s | P0 | both | [x] |
 
 ## Phase 4 — Agent (3:00–4:00)
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A4 | Repository queries, 7 tools, instructions, SSE streaming endpoint + ScriptedModel tests | P0 | Dev A | [x] |
-| B4 | Chat panel: reducer, AgentOrb mapping, tool chips, draft slip → REST confirm, order card, banner + tests | P0 | Dev B | [ ] |
-| C4 | Checkpoint: recommend → draft → confirm → admin → status (P0 complete) | P0 | both | [ ] |
+| B4 | Chat panel: reducer, AgentOrb mapping, tool chips, draft slip → REST confirm, order card, banner + tests | P0 | Dev B | [x] |
+| C4 | Checkpoint: recommend → draft → confirm → admin → status (P0 complete) | P0 | both | [x] |
 
 ## Phase 5 — Hardening, polish, rehearsal (4:00–5:00)
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A5 | Guards (409/429), error mapping, cancellation, retries, live smoke (`-m live`), `reset_demo.py` | P0 | Dev A | [x] |
-| B5a | Loading/empty/error/degraded states | P0 | Dev B | [ ] |
-| B5b | Admin Menu availability screen | P1 | Dev B | [ ] |
+| B5a | Loading/empty/error/degraded states | P0 | Dev B | [x] |
+| B5b | Admin Menu availability screen | P1 | Dev B | [x] |
 | A6a | `/api/admin/insights` | P1 | Dev A | [x] |
-| B5c | Admin Tổng quan screen | P1 | Dev B | [ ] |
+| B5c | Admin Tổng quan screen | P1 | Dev B | [x] |
 | A6b | Draft-confirm note into agent memory; `/api/agent/history` | P1 | Dev A | [x] |
-| B5d | GSAP motion + reduced motion | P1 | Dev B | [ ] |
-| B5e | Impeccable critique/audit/polish pass | P1 | Dev B | [ ] |
-| B5f | Playwright demo smoke | P1 | Dev B | [ ] |
-| C5 | Reset + rehearsal ×2 (`docs/demo-runbook.md`) | P0 | both | [ ] |
+| B5d | GSAP motion + reduced motion | P1 | Dev B | [x] |
+| B5e | Impeccable critique/audit/polish pass | P1 | Dev B | [x] |
+| B5f | Playwright demo smoke | P1 | Dev B | [x] |
+| C5 | Reset + rehearsal ×2 (`docs/demo-runbook.md`) | P0 | both | [x] |
 
 ## Backlog (P2 — do not start before P0 + P1 are green)
 

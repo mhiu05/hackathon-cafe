@@ -1,0 +1,21 @@
+import { test, expect } from '@playwright/test';
+import cafe from '../../contracts/fixtures/cafe.json' with { type: 'json' };
+import menu from '../../contracts/fixtures/menu.json' with { type: 'json' };
+for (const width of [390, 1280]) test(`customer menu and variant sheet at ${width}px (fixture API)`, async ({ page }) => {
+  await page.route('**/api/cafe', route => route.fulfill({ json: cafe }));
+  await page.route('**/api/menu', route => route.fulfill({ json: menu }));
+  await page.setViewportSize({ width, height: 844 }); await page.goto('/');
+  await expect(page.getByRole('button', { name: 'Xem menu', exact: true })).toBeVisible();
+  await expect(page.getByRole('navigation', { name: 'Điều hướng chính' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await page.screenshot({ path: `test-results/discover-${width}.png`, fullPage: true });
+  await page.getByRole('button', { name: 'Xem menu', exact: true }).click();
+  await page.getByRole('searchbox', { name: 'Tìm món' }).fill('ca phe');
+  await page.getByRole('button', { name: /Cà phê nâu \/ đen/ }).click();
+  await expect(page.getByRole('button', { name: 'Thêm vào giỏ' })).toBeDisabled();
+  await page.getByRole('radio', { name: /Đen/ }).check();
+  await page.screenshot({ path: `test-results/variant-${width}.png`, fullPage: true });
+  await page.getByRole('button', { name: 'Thêm vào giỏ' }).click();
+  await expect(page.getByRole('button', { name: 'Giỏ · 1', exact: true })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+});

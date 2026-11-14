@@ -1,0 +1,65 @@
+import { readFileSync } from 'node:fs';
+import { test, expect } from '@playwright/test';
+import cafe from '../../contracts/fixtures/cafe.json' with { type: 'json' };
+import menu from '../../contracts/fixtures/menu.json' with { type: 'json' };
+import draftOrder from '../../contracts/fixtures/order_from_draft.json' with { type: 'json' };
+const transcript = readFileSync(new URL('../../contracts/fixtures/agent_stream.sse', import.meta.url), 'utf8');
+test('streams recommendations, confirms a draft through REST and opens tracking (fixture API)', async ({ page }) => {
+  const turns = transcript.split(/(?=event: run_started)/).filter(t => t.startsWith('event: run_started')); let turn = 0; let confirmations = 0;
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.route('**/api/agent/chat/stream', r => { expect(r.request().headers()['x-conversation-id']).toMatch(/^[a-f0-9]{32}$/); return r.fulfill({ contentType: 'text/event-stream', body: turns[turn++] }); });
+  await page.route('**/api/orders/drafts/*/confirm', r => { confirmations++; expect(r.request().postDataJSON()).toEqual({ expected_total_vnd: 45000 }); return r.fulfill({ status: 201, json: draftOrder }); });
+  await page.route('**/api/orders/BB-0002', r => r.fulfill({ json: draftOrder }));
+  await page.route('**/api/orders/BB-0002/stream', r => r.fulfill({ contentType: 'text/event-stream', body: `event: order_status\ndata: ${JSON.stringify({ order: draftOrder })}\n\n` }));
+  await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
+  await page.getByRole('button', { name: 'Trợ lý', exact: true }).click();
+  await page.getByLabel('Nhắn Biblio').fill('Gợi ý một món dưới 50k'); await page.getByRole('button', { name: 'Gửi', exact: true }).click();
+  await expect(page.locator('.message.assistant').first()).toContainText('chưa có thông tin độ ngọt đã xác minh');
+  await page.getByLabel('Nhắn Biblio').fill('Lấy trà chanh gừng mật ong'); await page.getByRole('button', { name: 'Gửi', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Đơn nháp của bạn' })).toBeVisible();
+  await expect(page.getByText('Chưa đặt món · Đơn nháp giữ 30 phút')).toBeVisible();
+  await page.screenshot({ path: 'test-results/chat-draft-390.png', fullPage: true });
+  await page.getByRole('button', { name: 'Xác nhận đặt món', exact: true }).dblclick();
+  await expect(page.getByRole('heading', { name: 'BB-0002', exact: true })).toBeVisible(); expect(confirmations).toBe(1);
+  await page.getByRole('link', { name: 'Theo dõi đơn', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Đơn BB-0002' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+test('model unavailable leaves Menu and cart usable', async ({ page }) => {
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.route('**/api/agent/chat/stream', r => r.fulfill({ contentType: 'text/event-stream', body: 'event: error\ndata: {"code":"MODEL_UNAVAILABLE","message":"Trợ lý tạm thời không khả dụng","retryable":true}\n\nevent: done\ndata: {"reason":"error","usage":{"input_tokens":0,"output_tokens":0,"requests":0}}\n\n' }));
+  await page.setViewportSize({ width: 1280, height: 900 }); await page.emulateMedia({ reducedMotion: 'reduce' }); await page.goto('/');
+  await page.getByLabel('Nhắn Biblio').fill('Xin chào'); await page.getByRole('button', { name: 'Gửi', exact: true }).click();
+  await expect(page.getByRole('alert')).toContainText('Trợ lý tạm thời không khả dụng');
+  await page.getByRole('button', { name: 'Mở Menu', exact: true }).click();
+  await page.getByRole('button', { name: /Bạc xỉu/ }).click(); await page.getByRole('button', { name: 'Thêm vào giỏ' }).click();
+  await expect(page.getByRole('button', { name: 'Giỏ · 1', exact: true })).toBeVisible();
+  await page.screenshot({ path: 'test-results/chat-degraded-1280.png', fullPage: true });
+});
+test('mobile assistant keeps focus inside the sheet and Escape restores navigation', async ({ page }) => {
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
+  const trigger = page.getByRole('button', { name: 'Trợ lý', exact: true }); await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Trợ lý Biblio' }); await expect(dialog).toBeVisible();
+  const close = dialog.getByRole('button', { name: 'Đóng', exact: true }); await expect(close).toBeFocused();
+  await page.keyboard.press('Shift+Tab'); expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(trigger).toBeFocused();
+});
+test('desktop assistant preserves the menu and mobile-to-desktop resize restores content', async ({ page }) => {
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.setViewportSize({ width: 1280, height: 900 }); await page.goto('/');
+  await page.getByRole('button', { name: 'Xem menu', exact: true }).click();
+  await page.getByRole('button', { name: 'Trợ lý', exact: true }).click();
+  await expect(page.getByRole('searchbox', { name: 'Tìm món' })).toBeVisible();
+  await expect(page.getByLabel('Nhắn Biblio')).toBeFocused();
+  await page.setViewportSize({ width: 390, height: 844 }); await page.getByRole('button', { name: 'Trợ lý', exact: true }).click();
+  await expect(page.getByRole('dialog', { name: 'Trợ lý Biblio' })).toBeVisible();
+  await page.setViewportSize({ width: 1280, height: 900 });
+  await expect(page.getByRole('searchbox', { name: 'Tìm món' })).toBeVisible();
+});
+test('closing the masthead assistant returns to Discover with focus on its trigger', async ({ page }) => {
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
+  const trigger = page.getByRole('button', { name: 'Hỏi Biblio', exact: true }); await trigger.click();
+  await page.keyboard.press('Escape'); await expect(trigger).toBeVisible(); await expect(trigger).toBeFocused();
+});
