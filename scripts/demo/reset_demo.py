@@ -16,6 +16,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO_ROOT / "backend"))
 
 from app.db.connection import connect, transaction  # noqa: E402
+from app.db.migrate import apply_migrations  # noqa: E402
 from app.settings import load_settings  # noqa: E402
 
 
@@ -30,12 +31,14 @@ def reset_demo(db_path: Path, sessions_db: Path, backups_dir: Path) -> dict[str,
         conn.execute("PRAGMA wal_checkpoint(TRUNCATE)")
         with closing(connect(backup)) as dst:
             conn.backup(dst)
+        apply_migrations(conn)  # a DB from an older checkout may lack newer tables (e.g. staff_requests)
         with transaction(conn):
             conn.execute("UPDATE order_drafts SET order_id=NULL,status='discarded'")
-            for table in ("order_events", "order_items", "order_drafts", "orders", "agent_tool_calls", "agent_runs", "admin_sessions"):
+            for table in ("order_events", "order_items", "order_drafts", "orders", "staff_requests", "agent_tool_calls", "agent_runs",
+                          "admin_sessions"):
                 conn.execute(f"DELETE FROM {table}")
-            conn.execute("DELETE FROM sqlite_sequence WHERE name IN ('orders','order_items','order_events','agent_tool_calls')")
-            conn.execute("UPDATE menu_items SET availability='unknown',is_orderable=1")
+            conn.execute("DELETE FROM sqlite_sequence WHERE name IN ('orders','order_items','order_events','staff_requests','agent_tool_calls')")
+            conn.execute("UPDATE menu_items SET availability='available',is_orderable=1")
             for item in menu["items"]:
                 conn.execute("UPDATE menu_items SET availability_note=? WHERE id=?", (item["availability_note"], item["id"]))
         counts = {name: conn.execute(f"SELECT COUNT(*) FROM {name}").fetchone()[0]

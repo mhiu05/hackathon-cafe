@@ -14,6 +14,7 @@ from app.errors import ApiError
 from app.orders import service
 from app.orders.state import allowed_next
 from app.realtime.sse import format_sse, sse_response, with_heartbeat
+from app.staff import service as staff
 from app.timeutil import utc_now
 
 OrderStatus = Literal["pending", "confirmed", "preparing", "ready", "completed", "rejected", "cancelled"]
@@ -87,6 +88,25 @@ def update_menu(item_id: str, body: UpdateMenu, conn: sqlite3.Connection = Depen
             # The field names come exclusively from UpdateMenu's fixed schema.
             conn.execute(f"UPDATE menu_items SET {key}=?,updated_at=? WHERE id=?", (value, utc_now(), item_id))
         return get_menu_item(conn, item_id)
+
+
+class ResolveStaffRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    status: Literal["done"]
+
+
+@protected.get("/staff-requests")
+def staff_requests(status: Literal["open", "done"] | None = None, limit: Annotated[int, Query(ge=1, le=200)] = 50,
+                   conn: sqlite3.Connection = Depends(get_db)) -> dict:
+    return {"requests": staff.list_requests(conn, status=status, limit=limit)}
+
+
+@protected.patch("/staff-requests/{request_id}")
+def resolve_staff_request(request_id: int, body: ResolveStaffRequest, request: Request,
+                          conn: sqlite3.Connection = Depends(get_db)) -> dict:
+    resolved = staff.resolve_request(conn, request_id)
+    request.app.state.bus.publish("admin", "staff_request_updated", {"request": resolved})
+    return resolved
 
 
 @protected.get("/stream")

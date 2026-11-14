@@ -100,7 +100,7 @@ def check_data(rep: Report, data: dict) -> None:
         if sorted(set(raw_prices)) != norm_prices:
             lost.append(raw["id"])
     rep.check("no price information lost vs. bundle", not lost, ", ".join(lost))
-    rep.check("no item auto-marked available", all(i["availability"] == "unknown" for i in items))
+    rep.check("every item in stock by default (owner decision)", all(i["availability"] == "available" for i in items))
     rep.check("services: 3 coworking packages, 5 rooms",
               len(services["coworking_packages"]) == 3 and len(services["meeting_rooms"]) == 5)
     unverified = data["unverified_claims.json"]
@@ -180,8 +180,8 @@ SQL_CHECKS = {
                                                            "Matcha xoài nhiệt đới", "Matcha dừa non"]),
     "food_items": ("SELECT COUNT(*) FROM menu_items i JOIN menu_categories c ON c.id=i.category_id WHERE c.kind='food'",
                    lambda rows: rows[0][0] == 12),
-    "yakult_unknown": ("SELECT availability, availability_note IS NOT NULL FROM menu_items WHERE id='menu_019'",
-                       lambda rows: rows == [("unknown", 1)]),
+    "yakult_available": ("SELECT availability, availability_note IS NULL FROM menu_items WHERE id='menu_019'",
+                         lambda rows: rows == [("available", 1)]),
 }
 
 

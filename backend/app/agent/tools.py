@@ -10,11 +10,13 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from app.agent.context import AgentContext
 from app.catalog.dto import cafe_profile_dto, menu_response_dto, source_refs
+from app.catalog.planning import plan_visit as build_visit_plan
 from app.catalog.repository import coworking_info, recommend_items, search_menu_items
 from app.db.connection import connect
 from app.errors import ApiError
 from app.knowledge.retrieval import asearch_knowledge
 from app.orders.service import LineInput, create_draft, get_order, list_orders
+from app.staff.service import create_request
 
 Category = Literal["ca-phe", "sua-chua-cacao", "tra-lanh", "nuoc-ep", "matcha", "sinh-to", "mi-tom", "banh-bao", "an-vat"]
 KBCategory = Literal["branches", "coworking", "customer_insights", "events", "facilities", "faq", "food_beverage", "location", "opening_hours", "overview", "room_rental"]
@@ -119,4 +121,37 @@ async def get_order_status(ctx: RunContextWrapper[AgentContext], order_code: Ann
     return as_tool_json({"orders": [{k: o[k] for k in ("code", "status", "status_label", "total_vnd", "updated_at", "lines")} for o in orders]})
 
 
-ALL_TOOLS = [get_cafe_info, search_cafe_knowledge, search_menu, recommend_drinks, get_coworking_info, prepare_order, get_order_status]
+VisitNeed = Literal["private_room", "projector", "fixed_seat", "power_outlet"]
+
+
+@function_tool(timeout=5, failure_error_function=tool_failure, timeout_error_function=tool_failure)
+async def plan_visit(ctx: RunContextWrapper[AgentContext], hours: Annotated[float, Field(ge=0.5, le=16)],
+                     people: Annotated[int, Field(ge=1, le=200)] = 1, budget_per_person_vnd: Budget = None,
+                     start_time: Annotated[str | None, Field(pattern=r"^([01]\d|2[0-3]):[0-5]\d$")] = None,
+                     needs: Annotated[list[VisitNeed], Field(max_length=4)] = []) -> str:
+    """Plan a study/work session: compare common area + drinks, co-working day pass and rooms by real price per person,
+    and check the time window against opening hours. start_time is local HH:MM (omit = now). Not a booking."""
+    with closing(connect(ctx.context.db_path)) as conn:
+        plan = build_visit_plan(conn, hours=hours, people=people, budget_per_person_vnd=budget_per_person_vnd,
+            start_time=start_time, needs=list(dict.fromkeys(needs)), now=datetime.now(timezone.utc))
+    return as_tool_json(plan)
+
+
+StaffKind = Literal["wifi", "clean_table", "water", "find_book", "payment", "temperature", "other"]
+
+
+@function_tool(timeout=5, failure_error_function=tool_failure, timeout_error_function=tool_failure)
+async def request_staff(ctx: RunContextWrapper[AgentContext], kind: StaffKind,
+                        table_label: Annotated[str | None, Field(max_length=20)] = None,
+                        note: Annotated[str | None, Field(max_length=200)] = None) -> str:
+    """Notify counter staff that a guest inside the café needs help (Wi-Fi, clean table, water, finding a book, payment,
+    temperature, other). Call ONLY after the guest agrees to call staff. Creates a request on the staff board."""
+    with closing(connect(ctx.context.db_path)) as conn:
+        request = create_request(conn, conversation_id=ctx.context.conversation_id, kind=kind, table_label=table_label, note=note)
+    if ctx.context.bus is not None:
+        ctx.context.bus.publish("admin", "staff_request_created", {"request": request})
+    return as_tool_json({"request": request, "instruction": "Đã báo nhân viên; không hứa thời gian tới cụ thể."})
+
+
+ALL_TOOLS = [get_cafe_info, search_cafe_knowledge, search_menu, recommend_drinks, get_coworking_info, prepare_order, get_order_status,
+             plan_visit, request_staff]

@@ -118,7 +118,7 @@ def test_built_database_has_indexed_knowledge_and_catalog():
     conn = connect(REPO_ROOT / "data" / "cafe.db", read_only=True)
     try:
         assert conn.execute("SELECT COUNT(*) FROM menu_items").fetchone()[0] == 51
-        assert conn.execute("SELECT COUNT(*) FROM menu_items WHERE availability='available'").fetchone()[0] == 0
+        assert conn.execute("SELECT COUNT(*) FROM menu_items WHERE availability='available'").fetchone()[0] == 51  # owner decision: in stock by default
         n_chunks = conn.execute("SELECT COUNT(*) FROM kb_chunks").fetchone()[0]
         assert n_chunks > 0
         assert conn.execute("SELECT COUNT(*) FROM kb_embeddings WHERE dimension=512 AND length(vector)=2048").fetchone()[0] == n_chunks

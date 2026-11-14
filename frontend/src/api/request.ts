@@ -6,6 +6,8 @@ export async function apiResponse(path: string, init: RequestInit & { idempotenc
   if (options.body) headers.set('Content-Type', 'application/json');
   if (idempotencyKey) headers.set('Idempotency-Key', idempotencyKey);
   if (adminToken) headers.set('Authorization', `Bearer ${adminToken}`);
+  // Same-origin calls, so no CORS preflight; lets API/SSE calls through ngrok's free-plan browser warning page.
+  headers.set('ngrok-skip-browser-warning', '1');
   let response: Response;
   try { response = await fetch(path, { ...options, headers }); }
   catch (error) {

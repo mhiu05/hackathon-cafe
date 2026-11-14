@@ -5,6 +5,7 @@ from pathlib import Path
 
 from app.knowledge.embeddings import VoyageEmbedder
 from app.knowledge.retrieval import KnowledgeIndex
+from app.realtime.bus import EventBus
 
 
 @dataclass
@@ -15,3 +16,4 @@ class AgentContext:
     index: KnowledgeIndex
     embedder: VoyageEmbedder | None
     sources: dict[str, dict] = field(default_factory=dict)
+    bus: EventBus | None = None  # admin topic for staff requests; None in unit tests without the app

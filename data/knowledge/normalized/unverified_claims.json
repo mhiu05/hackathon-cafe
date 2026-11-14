@@ -1,11 +1,5 @@
 [
   {
-    "id": "availability",
-    "claim": "Tình trạng còn/hết của toàn bộ 51 món (availability=unknown).",
-    "source_id": "src-user-bundle",
-    "status": "pending_owner_confirmation"
-  },
-  {
     "id": "price_current",
     "claim": "Giá trên ảnh menu/bảng dịch vụ có còn hiện hành.",
     "source_id": "src-user-bundle",

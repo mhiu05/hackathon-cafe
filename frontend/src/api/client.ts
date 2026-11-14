@@ -1,4 +1,4 @@
-import type { CafeProfile, MenuResponse, ServicesResponse, CartLineInput, OrderQuote, CreateOrderRequest, Order, OrderStreamEvent, AgentStreamEvent, AdminLoginResponse, OrderStatus, AdminOrderListResponse, UpdateOrderStatusRequest, UpdateMenuItemRequest, MenuItem, AdminStreamEvent } from './types';
+import type { CafeProfile, MenuResponse, ServicesResponse, CartLineInput, OrderQuote, CreateOrderRequest, Order, OrderStreamEvent, AgentStreamEvent, AdminLoginResponse, OrderStatus, AdminOrderListResponse, UpdateOrderStatusRequest, UpdateMenuItemRequest, MenuItem, AdminStreamEvent, StaffRequest, StaffRequestListResponse, StaffStreamEvent } from './types';
 
 export interface ApiClient {
   getCafe(): Promise<CafeProfile>;
@@ -19,6 +19,9 @@ export interface ApiClient {
     updateStatus(orderId: number, req: UpdateOrderStatusRequest): Promise<Order>;
     updateMenuItem(itemId: string, req: UpdateMenuItemRequest): Promise<MenuItem>;
     stream(onEvent: (e: AdminStreamEvent) => void, signal: AbortSignal): Promise<void>;
+    listStaffRequests(status?: 'open' | 'done'): Promise<StaffRequestListResponse>;
+    resolveStaffRequest(id: number): Promise<StaffRequest>;
+    streamStaffRequests(onEvent: (e: StaffStreamEvent) => void, signal: AbortSignal): Promise<void>;
   };
 }
 export class ApiError extends Error {

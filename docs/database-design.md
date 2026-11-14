@@ -34,8 +34,9 @@ availability_note, is_orderable 0|1, price_verified 0|1, description, note, need
 `menu_item_variants(id PK '<item>:<slug>', item_id FK CASCADE, label, price_vnd>0, sort_order, UNIQUE(item_id,label))` — 4 rows.
 `coworking_packages` (3), `meeting_rooms` (5), `service_facts` (22).
 
-**Availability (decided by the owner of the project, 2026-11-14).** Staff-managed in Admin → Menu. Seed = `unknown` for every
-item. Ordering: `sold_out` or `is_orderable=0` → `422 ITEM_UNAVAILABLE`; `unknown` → allowed, quote carries
+**Availability (decided by the owner of the project, 2026-11-14; revised same day).** Staff-managed in Admin → Menu. Seed =
+`available` for every item (in stock by default; migration `0004_default_in_stock` flips older `unknown` seeds once, and
+`reset_demo.py` restores `available`). The customer UI shows a badge only for exceptions (`sold_out`, `unknown`, not orderable). Ordering: `sold_out` or `is_orderable=0` → `422 ITEM_UNAVAILABLE`; `unknown` → allowed, quote carries
 `AVAILABILITY_UNCONFIRMED` (staff accepting the order *is* the stock check); `available` → allowed.
 `ingest.py` UPSERTs items but never overwrites `availability`, `availability_note`, `is_orderable` of existing rows.
 

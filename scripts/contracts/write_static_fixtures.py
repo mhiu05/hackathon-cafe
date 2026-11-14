@@ -11,7 +11,6 @@ import sys
 out = pathlib.Path(sys.argv[1])
 
 quote_ui = json.loads((out / "quote.json").read_text(encoding="utf-8"))
-W_AV = "Quán chưa xác nhận còn món; nhân viên sẽ kiểm tra khi nhận đơn."
 W_PR = "Giá theo menu chụp ngày 14/11/2026, chờ quán xác nhận."
 
 
@@ -28,10 +27,9 @@ order_ui = {
 }
 draft_quote = {
     "lines": [{"line_no": 1, "item_id": "menu_024", "variant_id": None, "item_name": "Trà chanh gừng mật ong", "variant_label": None,
-               "unit_price_vnd": 45000, "quantity": 1, "line_total_vnd": 45000, "availability": "unknown", "note": None}],
+               "unit_price_vnd": 45000, "quantity": 1, "line_total_vnd": 45000, "availability": "available", "note": None}],
     "subtotal_vnd": 45000, "total_vnd": 45000, "item_count": 1, "currency": "VND",
-    "warnings": [{"code": "AVAILABILITY_UNCONFIRMED", "message": W_AV, "item_ids": ["menu_024"]},
-                 {"code": "PRICE_UNVERIFIED", "message": W_PR, "item_ids": ["menu_024"]}],
+    "warnings": [{"code": "PRICE_UNVERIFIED", "message": W_PR, "item_ids": ["menu_024"]}],
     "quoted_at": "2026-11-14T09:05:00.000Z",
 }
 draft = {"draft_id": "3c9e51a07d2b4f6e8a1c9d0b2e4f6a8c", "status": "open", "quote": draft_quote, "customer_name": None,

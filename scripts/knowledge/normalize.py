@@ -107,9 +107,9 @@ def build_menu(bundle_menu: dict) -> dict:
             ]
             base_price = None
         needs_review = list(raw.get("needs_review") or [])
+        # Owner decision (2026-11-14): every item is in stock by default; staff mark sold-out items in Admin → Menu.
+        # The handwritten X next to 'Trà xoài Yakult' stays an unverified claim (yakult_cross), not a stock warning.
         availability_note = None
-        if raw.get("handwritten_cross_on_menu"):
-            availability_note = "Ảnh menu có dấu X viết tay cạnh tên món; chưa xác định là hết hàng — cần nhân viên xác nhận."
         prices = [v["price_vnd"] for v in variants] or [base_price]
         items.append({
             "id": raw["id"],
@@ -120,7 +120,7 @@ def build_menu(bundle_menu: dict) -> dict:
             "price_min_vnd": min(prices),
             "price_max_vnd": max(prices),
             "variants": variants,
-            "availability": raw.get("availability", "unknown"),
+            "availability": "available",
             "availability_note": availability_note,
             "is_orderable": True,
             "price_verified": bool(raw.get("verified_current_price", False)),
@@ -480,7 +480,6 @@ def build_social(tiktok: list[dict], curated: dict, gmaps: dict | None) -> dict:
 
 
 UNVERIFIED = [
-    ("availability", "Tình trạng còn/hết của toàn bộ 51 món (availability=unknown).", "src-user-bundle"),
     ("price_current", "Giá trên ảnh menu/bảng dịch vụ có còn hiện hành.", "src-user-bundle"),
     ("hot_cold", "Lựa chọn nóng/lạnh, đường, đá cho từng món.", "src-photo-drink-menu"),
     ("ingredients", "Thành phần, độ ngọt, caffeine, dị ứng của từng món.", "src-user-bundle"),

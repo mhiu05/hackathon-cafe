@@ -61,7 +61,7 @@ async def chat(body: ChatRequest, request: Request, conversation_id: str = Depen
     if not guard.allow_message(conversation_id):
         guard.release(conversation_id)
         raise ApiError(429, "RATE_LIMITED", "Bạn gửi quá nhiều tin nhắn, vui lòng đợi một phút.")
-    deps = AgentDeps(state.settings, state.agent, state.index, state.embedder)
+    deps = AgentDeps(state.settings, state.agent, state.index, state.embedder, state.bus)
     released = False
 
     async def release_once() -> None:

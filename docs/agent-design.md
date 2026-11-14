@@ -35,7 +35,7 @@ conversation's `SQLiteSession` ("Đơn BB-0002 đã được tạo từ đơn nh
 |---|---|
 | `context.py` | `@dataclass AgentContext(conversation_id: str, run_id: str, db_path: Path, index: KnowledgeIndex, embedder: VoyageEmbedder \| None, sources: dict[str, dict])` |
 | `instructions.py` | `INSTRUCTIONS: str` (§5, verbatim) |
-| `tools.py` | 7 `@function_tool`s (§4), `as_tool_json(payload) -> str`, `tool_failure(ctx, error) -> str`, `ALL_TOOLS` list |
+| `tools.py` | 9 `@function_tool`s (§4), `as_tool_json(payload) -> str`, `tool_failure(ctx, error) -> str`, `ALL_TOOLS` list |
 | `factory.py` | `build_agent(settings) -> Agent[AgentContext]`, `build_run_config(settings, conversation_id, run_id) -> RunConfig` |
 | `stream.py` | `run_chat_stream(app_state, conversation_id, message) -> AsyncIterator[str]` (SSE strings): SDK event mapping (§6), `TOOL_LABELS`, `summarize_tool_output()`, `agent_runs`/`agent_tool_calls` logging, error mapping |
 
@@ -58,6 +58,12 @@ Arguments are validated by the SDK (Pydantic + strict JSON schema).
 | `get_coworking_info` | P0 | `topic: Literal["all","coworking","rooms"]="all"`, `min_capacity: int\|None (1–300)`, `need_tables: bool=False` | `packages`, `rooms` (filter `capacity_tables ≥ n` if `need_tables` else `capacity_max ≥ n`; sort by price), `amenities`, `extras`, `booking_policy`, `price_basis` | SQL; **no booking**; none | 5 s |
 | `prepare_order` | P0 | `lines: list[OrderLineArg] (1–10)`, `customer_name: str\|None ≤40`, `table_label: str\|None ≤20`, `note: str\|None ≤200`; `OrderLineArg = {item_id: ^menu_\d{3}$, variant_id: ^menu_\d{3}:[a-z0-9-]+$ \| None, quantity: 1–10, note: str\|None ≤120}` | `draft: OrderDraft` (api-contracts §9), `instruction:"Khách cần bấm 'Xác nhận đặt món' trên thẻ để gửi đơn."` | `orders.service.create_draft(conversation_id from context)` → one `order_drafts` row; **never** writes `orders`; errors → `ITEM_NOT_FOUND`, `ITEM_UNAVAILABLE`, `VARIANT_REQUIRED`, `INVALID_VARIANT`, `CART_TOO_LARGE` | 8 s |
 | `get_order_status` | P0 | `order_code: str\|None ^BB-\d{4,}$ = None` | `orders[{code, status, status_label, total_vnd, updated_at, lines}]` (code given → that order; none → latest 3 of this conversation) | SQL; unknown code → `ORDER_NOT_FOUND`; none | 5 s |
+
+| `plan_visit` | P1 (added 2026-11-14) | `hours: float (0.5–16)`, `people: int (1–200)=1`, `budget_per_person_vnd: int\|None`, `start_time: "HH:MM"\|None` (None = now, Asia/Ho_Chi_Minh), `needs: list[Literal["private_room","projector","fixed_seat","power_outlet"]] (≤4)` | `timing{start,end,open,close,fits_opening_hours,warning?,max_hours_from_start?}`, `options[{kind common_area\|coworking_day\|meeting_room, label, per_person_vnd, total_vnd, cost_basis, needs_met/unmet/unverified, within_budget}]` sorted by (unmet, unverified, price/person), `price_basis`, `booking_policy` | `app/catalog/planning.py`, SQL only; rooms listed only for ≥5 people or room/projector needs; no booking | 5 s |
+| `request_staff` | P1 (added 2026-11-14) | `kind: Literal["wifi","clean_table","water","find_book","payment","temperature","other"]`, `table_label: str\|None ≤20`, `note: str\|None ≤200` | `request{id, code YC-NNNN, kind, kind_label, table_label, note, status, …}` | `app/staff/service.py` → `staff_requests` row + admin bus `staff_request_created`; max 3 open per conversation (`STAFF_REQUEST_LIMIT`); called only after the guest agrees | 5 s |
+
+Situational help (instructions §10–12): for on-site problems (Wi-Fi/4G weak, temperature, noise, table…) the agent searches the KB
+for real evidence, gives 1–3 safe tips, then offers `request_staff`; it never invents places outside the café.
 
 Not built (decisions): `get_events`/`register_for_event` (event info is answered from the KB document `doc-events-overview`,
 which says no verified upcoming events), `suggest_activities` (covered by `search_cafe_knowledge`), `get_menu_item`

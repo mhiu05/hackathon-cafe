@@ -295,8 +295,7 @@
    "answer_path": "sql_menu",
    "expected_tool": "search_menu",
    "expected_facts": [
-    "tình trạng chưa xác nhận",
-    "ảnh menu có dấu X viết tay"
+    "còn hàng (mặc định)"
    ],
    "expected_sources": [
     "src-photo-drink-menu"
@@ -304,8 +303,8 @@
    "expected_doc_ids": [
     "doc-faq-unverified-info"
    ],
-   "sql_check": "yakult_unknown",
-   "acceptance": "Không nói 'còn' hay 'hết' khi availability=unknown."
+   "sql_check": "yakult_available",
+   "acceptance": "Món mặc định còn hàng (owner decision 2026-11-14); chỉ nói 'hết' khi availability=sold_out."
   },
   {
    "id": "q16",

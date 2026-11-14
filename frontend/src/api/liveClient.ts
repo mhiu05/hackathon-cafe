@@ -1,5 +1,5 @@
 import type { ApiClient } from './client';
-import type { AgentStreamEvent, OrderStreamEvent, AdminStreamEvent, Order } from './types';
+import type { AgentStreamEvent, OrderStreamEvent, AdminStreamEvent, Order, StaffStreamEvent } from './types';
 import { apiResponse, request } from './request';
 import { getConversationId } from './conversation';
 import { readSse } from './sse';
@@ -35,6 +35,11 @@ export const liveClient: ApiClient = {
     updateMenuItem: (id, req) => request(`/api/admin/menu/${enc(id)}`, { ...auth(), method: 'PATCH', body: json(req) }),
     stream: async (emit, signal) => {
       await readSse(await apiResponse('/api/admin/stream', { ...auth(), signal }), (event, data) => { if (event === 'order_created' || event === 'order_updated') emit({ event, data } as AdminStreamEvent); });
+    },
+    listStaffRequests: status => request(`/api/admin/staff-requests?limit=100${status ? `&status=${enc(status)}` : ''}`, auth()),
+    resolveStaffRequest: id => request(`/api/admin/staff-requests/${id}`, { ...auth(), method: 'PATCH', body: json({ status: 'done' }) }),
+    streamStaffRequests: async (emit, signal) => {
+      await readSse(await apiResponse('/api/admin/stream', { ...auth(), signal }), (event, data) => { if (event === 'staff_request_created' || event === 'staff_request_updated') emit({ event, data } as StaffStreamEvent); });
     },
   },
 };

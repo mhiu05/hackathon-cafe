@@ -42,5 +42,8 @@ export const mockClient: ApiClient = {
     updateStatus: async (id, req) => { const found = adminOrders.orders.find(o => o.id === id); if (!found) throw new ApiError(404, 'NOT_FOUND', 'Không tìm thấy đơn.'); return { ...copy(found as Order), status: req.to_status }; },
     updateMenuItem: async (id, req) => { const found = (menu as MenuResponse).items.find(i => i.id === id); if (!found) throw new ApiError(404, 'ITEM_NOT_FOUND', 'Không tìm thấy món.'); return { ...copy(found), ...req }; },
     stream: async (_emit, signal) => untilAbort(signal),
+    listStaffRequests: async () => ({ requests: [] }),
+    resolveStaffRequest: async () => { throw new ApiError(404, 'STAFF_REQUEST_NOT_FOUND', 'Không tìm thấy yêu cầu.'); },
+    streamStaffRequests: async (_emit, signal) => untilAbort(signal),
   },
 };

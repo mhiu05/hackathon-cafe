@@ -93,3 +93,11 @@ export type AgentStreamEvent =
 
 export type OrderStreamEvent = { event: "order_status"; data: { order: Order } };
 export type AdminStreamEvent = { event: "order_created"; data: { order: Order } } | { event: "order_updated"; data: { order: Order } };
+
+export type StaffRequestKind = "wifi" | "clean_table" | "water" | "find_book" | "payment" | "temperature" | "other";
+export interface StaffRequest {
+  id: number; code: string; kind: StaffRequestKind; kind_label: string; table_label: string | null; note: string | null;
+  status: "open" | "done"; status_label: string; created_at: string; resolved_at: string | null;
+}
+export interface StaffRequestListResponse { requests: StaffRequest[] }
+export type StaffStreamEvent = { event: "staff_request_created" | "staff_request_updated"; data: { request: StaffRequest } };

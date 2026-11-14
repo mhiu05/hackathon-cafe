@@ -9,7 +9,7 @@
       "unit_price_vnd": 35000,
       "quantity": 2,
       "line_total_vnd": 70000,
-      "availability": "unknown",
+      "availability": "available",
       "note": null
     },
     {
@@ -21,7 +21,7 @@
       "unit_price_vnd": 45000,
       "quantity": 1,
       "line_total_vnd": 45000,
-      "availability": "unknown",
+      "availability": "available",
       "note": "ít đá"
     }
   ],
@@ -30,14 +30,6 @@
   "item_count": 3,
   "currency": "VND",
   "warnings": [
-    {
-      "code": "AVAILABILITY_UNCONFIRMED",
-      "message": "Quán chưa xác nhận còn món; nhân viên sẽ kiểm tra khi nhận đơn.",
-      "item_ids": [
-        "menu_001",
-        "menu_030"
-      ]
-    },
     {
       "code": "PRICE_UNVERIFIED",
       "message": "Giá theo menu chụp ngày 14/11/2026, chờ quán xác nhận.",

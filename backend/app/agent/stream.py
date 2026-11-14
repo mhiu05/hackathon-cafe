@@ -17,12 +17,15 @@ from app.agent.factory import build_run_config
 from app.db.connection import connect
 from app.knowledge.embeddings import VoyageEmbedder
 from app.knowledge.retrieval import KnowledgeIndex
+from app.realtime.bus import EventBus
 from app.realtime.sse import format_sse
 from app.settings import Settings
 from app.timeutil import utc_now
 
 TOOL_LABELS = {"get_cafe_info": "Xem thông tin quán", "search_cafe_knowledge": "Tra cứu tri thức về quán", "search_menu": "Tra menu",
-    "recommend_drinks": "Đang tìm món hợp ý bạn", "get_coworking_info": "Xem co-working & phòng", "prepare_order": "Chuẩn bị đơn nháp", "get_order_status": "Kiểm tra đơn"}
+    "recommend_drinks": "Đang tìm món hợp ý bạn", "get_coworking_info": "Xem co-working & phòng", "prepare_order": "Chuẩn bị đơn nháp", "get_order_status": "Kiểm tra đơn",
+    "plan_visit": "Lên kế hoạch buổi ngồi", "request_staff": "Gọi nhân viên"}
+WRITE_TOOLS = {"prepare_order", "request_staff"}
 MODEL_UNAVAILABLE = "Trợ lý tạm thời không khả dụng — bạn vẫn có thể đặt món từ Menu."
 
 
@@ -32,6 +35,7 @@ class AgentDeps:
     agent: Agent
     index: KnowledgeIndex
     embedder: VoyageEmbedder | None
+    bus: EventBus | None = None
 
 
 def summarize_tool_output(tool: str, data: dict) -> str:
@@ -49,6 +53,10 @@ def summarize_tool_output(tool: str, data: dict) -> str:
         return "Đơn nháp " + f"{data['draft']['quote']['total_vnd']:,}đ".replace(",", ".")
     if tool == "get_order_status":
         return data["orders"][0]["status_label"] if data["orders"] else "Chưa có đơn hàng"
+    if tool == "plan_visit":
+        return f"{len(data['options'])} phương án"
+    if tool == "request_staff":
+        return f"Đã báo nhân viên ({data['request']['code']})"
     return "Đã xem thông tin quán"
 
 
@@ -76,7 +84,7 @@ def _logged_arguments(raw: str) -> str:
 
 async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *, session: Session | None = None) -> AsyncIterator[str]:
     run_id = uuid4().hex
-    context = AgentContext(conversation_id, run_id, deps.settings.database_path, deps.index, deps.embedder)
+    context = AgentContext(conversation_id, run_id, deps.settings.database_path, deps.index, deps.embedder, bus=deps.bus)
     own_session = session is None
     session = session or SQLiteSession("chat-" + conversation_id, deps.settings.agent_sessions_db_path)
     result = None
@@ -111,7 +119,7 @@ async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *
                         raw = ev.item.raw_item
                         calls[raw.call_id] = (raw.name, time.monotonic(), raw.arguments)
                         yield format_sse("tool_started", {"call_id": raw.call_id, "tool": raw.name, "label": TOOL_LABELS[raw.name]})
-                        yield format_sse("agent_state", {"state": "working" if raw.name == "prepare_order" else "searching"})
+                        yield format_sse("agent_state", {"state": "working" if raw.name in WRITE_TOOLS else "searching"})
                     elif ev.name == "tool_output":
                         cid = ev.item.call_id
                         tool, started, args = calls[cid]
