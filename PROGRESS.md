@@ -9,6 +9,11 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:10 ? Dev A A3
+- Task A3: complete ? RED 10 admin tests fail on missing routes; GREEN `uv run --no-sync pytest -q -p no:cacheprovider`: 55 passed in 3.18s.
+- PIN uses constant-time UTF-8 comparison; DB stores sha256 tokens with 12h expiry; all protected routes reject absent token; failed-login limit, expired token, logout revocation, menu sold_out, STATUS_CONFLICT and INVALID_TRANSITION verified.
+- Real HTTP uvicorn test: customer receives initial pending snapshot, admin changes to confirmed, customer receives order_status and admin receives order_updated; headers verified. C3 backend ready, UI integration pending Dev B.
+
 ### 2026-11-14 13:00 ? Dev A A2
 - Task A2: complete ? RED app.orders missing; GREEN full suite 44 passed in 1.46s. Extra checks: concurrent same-key requests create exactly one order; event-write failure rolls back order+items; price snapshots/replay survive changed catalog; PRICE_CHANGED quote persists; bus bounded queue and heartbeat verified.
 - Ruling: plan TestClient.stream test replaced with direct async response iterator test ? ASGI TestClient buffers an infinite SSE response, so it cannot return its first line; snapshot and wire event still asserted, real HTTP smoke scheduled.

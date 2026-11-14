@@ -36,3 +36,16 @@ def require_conversation_id(x_conversation_id: str | None = Header(None)) -> str
     if value is None:
         raise ApiError(400, "BAD_REQUEST", "Thiếu X-Conversation-Id.")
     return value
+
+
+def require_admin(request: Request, authorization: str | None = Header(None)) -> str:
+    from app.admin.auth import verify
+    if not authorization or not authorization.startswith("Bearer ") or not authorization[7:]:
+        raise ApiError(401, "ADMIN_AUTH_REQUIRED", "Vui lòng đăng nhập quản trị.")
+    token = authorization[7:]
+    conn = connect(get_settings(request).database_path)
+    try:
+        verify(conn, token)
+    finally:
+        conn.close()
+    return token

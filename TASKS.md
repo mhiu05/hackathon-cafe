@@ -35,7 +35,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
-| A3 | Admin PIN login/tokens/rate limit, admin orders API, transitions, admin SSE, menu PATCH + tests | P0 | Dev A | [ ] |
+| A3 | Admin PIN login/tokens/rate limit, admin orders API, transitions, admin SSE, menu PATCH + tests | P0 | Dev A | [x] |
 | B3 | Order tracking (SSE + polling), admin app (login, board, transitions, reason, conflict toast) + tests | P0 | Dev B | [ ] |
 | C3 | Checkpoint: admin confirms; customer page updates ≤2 s | P0 | both | [ ] |
 

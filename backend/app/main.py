@@ -5,7 +5,8 @@ from contextlib import asynccontextmanager, closing
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import public, orders
+from app.api import public, orders, admin
+from app.admin.auth import LoginRateLimiter
 from app.db.connection import connect
 from app.db.migrate import apply_migrations
 from app.errors import install_error_handlers
@@ -22,6 +23,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     async def lifespan(app: FastAPI):
         app.state.settings = s
         app.state.bus = EventBus()
+        app.state.login_limiter = LoginRateLimiter()
         with closing(connect(s.database_path)) as conn:
             apply_migrations(conn)
             app.state.index = KnowledgeIndex.load(conn)
@@ -36,6 +38,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         expose_headers=["Idempotent-Replay"])
     app.include_router(public.router)
     app.include_router(orders.router)
+    app.include_router(admin.router)
     return app
 
 
