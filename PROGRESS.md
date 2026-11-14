@@ -11,6 +11,13 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 14:02 - Dev A serialized integration, stage 1
+- Owner reports Dev B B1-B5 pushed at `84d0310`; remote SHA verified. This answers the pending readiness coordination request; begin Dev A's first merge only.
+- Dev A feature HEAD `ff78ab3` is pushed and reviewed; full suite previously 91 passed / 6 live deselected. Local main and origin/main both remain `2b016a2` before this integration.
+- Dev B progress reports frontend unit/build/fixture checks and C1-C4 live smoke against backend snapshots. Those results are not yet combined-main acceptance. C1-C5 rows stay pending until serialized integration and integrated checks.
+- Sequence: Dev A merge backend into main, run backend suite and push; then Dev B pulls that main, merges frontend, runs required checks and pushes; finally Dev A fetches/merges final origin/main into feature branch and verifies.
+- Expected preparation-generated knowledge report modifications remain preserved locally and outside commits. No frontend/schema/contract/.gitignore changes by Dev A; no extra paid tests.
+
 ### 2026-11-14 13:54 - Dev A final verification and review
 - Final review: independent read-only whole-branch review (`2b016a2..9e0a3b1`), 0 Critical, 2 Important, 0 Minor. Reviewer resumed after an account usage-limit interruption; no extra model smoke tests or external calls were run.
 - Final: fixed prior-response cleanup releasing a subsequent run's conversation guard - `test_old_response_cleanup_cannot_release_the_next_run` RED (third request incorrectly accepted) -> GREEN; async per-request release-once shared by generator/background, including never-started response cleanup.
