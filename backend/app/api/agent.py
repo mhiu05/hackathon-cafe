@@ -12,6 +12,7 @@ from app.deps import require_conversation_id
 from app.errors import ApiError
 from app.realtime.sse import sse_response, with_heartbeat
 from starlette.background import BackgroundTask
+from agents import SQLiteSession
 
 router = APIRouter(prefix="/api/agent")
 
@@ -74,3 +75,27 @@ async def chat(body: ChatRequest, request: Request, conversation_id: str = Depen
     response = sse_response(with_heartbeat(guarded()))
     response.background = BackgroundTask(guard.release, conversation_id)
     return response
+
+
+@router.get("/history")
+async def history(request: Request, conversation_id: str = Depends(require_conversation_id)) -> dict:
+    session = SQLiteSession("chat-" + conversation_id, request.app.state.settings.agent_sessions_db_path)
+    try:
+        items = await session.get_items()
+    finally:
+        session.close()
+    messages = []
+    for item in items:
+        role = item.get("role")
+        if role not in ("user", "assistant"):
+            continue
+        content = item.get("content")
+        if isinstance(content, str):
+            text = content
+        elif isinstance(content, list):
+            text = "\n".join(p["text"] for p in content if p.get("type") in ("input_text", "output_text", "text") and isinstance(p.get("text"), str))
+        else:
+            continue
+        if text:
+            messages.append({"role": role, "text": text})
+    return {"messages": messages}

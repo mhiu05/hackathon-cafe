@@ -9,6 +9,12 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:45 - Dev A A6
+- Task A6a/A6b: complete - RED insights/history 404 and absent memory note; GREEN full suite: 87 passed, 6 deselected in 7.38s.
+- AdminInsights returns status totals, completed-only revenue, top-five item quantities and agent/tool/token metrics; admin auth enforced.
+- Draft confirmation appends one assistant note only after a new commit; idempotent replay does not duplicate it. Optional memory errors cannot invalidate an already committed checkout. History returns text-only user/assistant messages scoped to the requested conversation.
+- P1 backend endpoints complete. Final branch review and backend rehearsal next; full frontend integration C1-C5 pending Dev B readiness.
+
 ### 2026-11-14 13:39 - Dev A A5
 - Task A5: complete - RED missing guard/reset modules; GREEN `uv run --no-sync pytest -q -p no:cacheprovider`: 84 passed, 6 deselected in 8.15s. All paid tests excluded by default.
 - Guards return pre-stream 409/429; corrupt tool sessions clear with SESSION_RESET; max-turns handler gives friendly output plus MAX_TURNS; consumer/in-flight cancellation persists cancelled; SDK transient retry and tool timeout verified offline.

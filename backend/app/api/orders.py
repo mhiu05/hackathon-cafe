@@ -1,10 +1,12 @@
 from __future__ import annotations
 
 import sqlite3
+import logging
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, Header, Query, Request, Response
 from pydantic import BaseModel, ConfigDict, Field
+from agents import SQLiteSession
 
 from app.deps import get_db, optional_conversation_id
 from app.errors import ApiError
@@ -84,6 +86,18 @@ async def confirm(draft_id: str, body: ConfirmRequest, request: Request, respons
     order, replayed = service.confirm_draft(conn, draft_id=draft_id, expected_total_vnd=body.expected_total_vnd)
     publish_order(request, order, replayed)
     order_response(response, replayed)
+    if not replayed:
+        row = conn.execute("SELECT conversation_id FROM order_drafts WHERE id=?", (draft_id,)).fetchone()
+        session = None
+        try:
+            session = SQLiteSession("chat-" + row["conversation_id"], request.app.state.settings.agent_sessions_db_path)
+            await session.add_items([{"role": "assistant", "content": f"Đơn {order['code']} đã được tạo từ đơn nháp ({order['total_vnd']}) và đang chờ quán xác nhận."}])
+        except Exception as exc:
+            # The order is committed. Optional memory must not turn success into a failed checkout.
+            logging.getLogger(__name__).warning("Order memory note failed: %s", type(exc).__name__)
+        finally:
+            if session is not None:
+                session.close()
     return order
 
 

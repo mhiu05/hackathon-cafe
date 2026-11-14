@@ -98,4 +98,17 @@ async def stream(request: Request) -> Response:
     return sse_response(with_heartbeat(events()))
 
 
+@protected.get("/insights")
+def insights(conn: sqlite3.Connection = Depends(get_db)) -> dict:
+    counts = service.order_counts(conn)
+    revenue = conn.execute("SELECT COALESCE(SUM(total_vnd),0) FROM orders WHERE status='completed'").fetchone()[0]
+    top = [dict(r) for r in conn.execute("SELECT oi.item_id,m.name,SUM(oi.quantity) AS quantity FROM order_items oi "
+        "JOIN menu_items m ON m.id=oi.item_id GROUP BY oi.item_id,m.name ORDER BY quantity DESC,oi.item_id LIMIT 5")]
+    runs = conn.execute("SELECT COUNT(*) AS runs,COALESCE(SUM(input_tokens),0) AS input_tokens,COALESCE(SUM(output_tokens),0) AS output_tokens FROM agent_runs").fetchone()
+    tools = {r["tool"]: r["n"] for r in conn.execute("SELECT tool,COUNT(*) AS n FROM agent_tool_calls GROUP BY tool")}
+    errors = conn.execute("SELECT COUNT(*) FROM agent_tool_calls WHERE ok=0").fetchone()[0]
+    return {"orders_by_status": counts, "orders_total": sum(counts.values()), "revenue_completed_vnd": revenue,
+        "top_items": top, "agent": {**dict(runs), "tool_calls": tools, "tool_errors": errors}}
+
+
 router.include_router(protected)

@@ -54,9 +54,9 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | A5 | Guards (409/429), error mapping, cancellation, retries, live smoke (`-m live`), `reset_demo.py` | P0 | Dev A | [x] |
 | B5a | Loading/empty/error/degraded states | P0 | Dev B | [ ] |
 | B5b | Admin Menu availability screen | P1 | Dev B | [ ] |
-| A6a | `/api/admin/insights` | P1 | Dev A | [ ] |
+| A6a | `/api/admin/insights` | P1 | Dev A | [x] |
 | B5c | Admin Tổng quan screen | P1 | Dev B | [ ] |
-| A6b | Draft-confirm note into agent memory; `/api/agent/history` | P1 | Dev A | [ ] |
+| A6b | Draft-confirm note into agent memory; `/api/agent/history` | P1 | Dev A | [x] |
 | B5d | GSAP motion + reduced motion | P1 | Dev B | [ ] |
 | B5e | Impeccable critique/audit/polish pass | P1 | Dev B | [ ] |
 | B5f | Playwright demo smoke | P1 | Dev B | [ ] |
