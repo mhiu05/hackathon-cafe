@@ -1,3 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import '../styles/base.css';
-createRoot(document.getElementById('root')!).render(<main><h1>BIBLIO</h1><p>Café Sách</p></main>);
+import '../styles/app.css';
+import { App } from './App';
+createRoot(document.getElementById('root')!).render(<App />);

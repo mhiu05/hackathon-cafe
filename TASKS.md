@@ -28,7 +28,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A2 | Quote, idempotent orders, drafts confirm/discard, event bus, order SSE, order APIs + tests | P0 | Dev A | [ ] |
-| B2 | Customer shell, Discover, Menu (search/filter/variants), Cart + confirm sheet + tests | P0 | Dev B | [~] |
+| B2 | Customer shell, Discover, Menu (search/filter/variants), Cart + confirm sheet + tests | P0 | Dev B | [x] |
 | C2 | Checkpoint: UI checkout creates `BB-0001`; retry returns same order | P0 | both | [ ] |
 
 ## Phase 3 — Staff loop (2:00–3:00)
@@ -36,7 +36,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A3 | Admin PIN login/tokens/rate limit, admin orders API, transitions, admin SSE, menu PATCH + tests | P0 | Dev A | [ ] |
-| B3 | Order tracking (SSE + polling), admin app (login, board, transitions, reason, conflict toast) + tests | P0 | Dev B | [ ] |
+| B3 | Order tracking (SSE + polling), admin app (login, board, transitions, reason, conflict toast) + tests | P0 | Dev B | [~] |
 | C3 | Checkpoint: admin confirms; customer page updates ≤2 s | P0 | both | [ ] |
 
 ## Phase 4 — Agent (3:00–4:00)

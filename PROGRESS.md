@@ -9,6 +9,13 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:20 (UTC+7) — Dev B · B2 customer ordering
+- Discover with API facts/source dates, Menu token/diacritic search, category/price filters, stock labels, required variants, quantities/notes; persistent cart and server-quote confirmation. Retry key retained, double submission guarded; PRICE_CHANGED asks again with fresh quote.
+- `pnpm.cmd test --run` → 7 files / 15 passed; `pnpm.cmd build` passed after explicitly typing the JSON test fixture as OrderQuote.
+- Playwright CLI: `pnpm.cmd exec playwright test e2e/responsive.spec.ts` → 2 passed, 390px and 1280px; menu, variant selection, add-to-cart and no horizontal overflow verified. Inspected Discover and variant-sheet screenshots. API responses intercepted from frozen fixtures, not live integration proof.
+- Added planned @playwright/test 1.65.0 earlier for B2 responsive verification (CLI Chromium installed). Playwright MCP calls rejected by environment approval policy, CLI works.
+- C1/C2 still pending Dev A live endpoints and serialized integration clearance. Feature branch ready for frontend review; main untouched.
+
 ### 2026-11-14 13:08 (UTC+7) — Dev B · B1 foundation
 - Branch `feat/dev-b-frontend` from baseline `2b016a2`; fetched/pulled latest main, verified ancestry and pushed upstream. No pre-existing uncommitted changes.
 - B1: React multi-page entries, design tokens/self-hosted fonts, frozen TS types/client, live/mock clients, incremental SSE parser, conversation id, cart, VND/UTC+7 formatting.
