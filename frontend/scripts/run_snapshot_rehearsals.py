@@ -5,6 +5,7 @@ import argparse
 import os
 import shutil
 import socket
+import sqlite3
 import subprocess
 import sys
 import time
@@ -16,6 +17,7 @@ parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--snapshot', type=Path, required=True)
 parser.add_argument('--runs', type=int, choices=[1, 2], default=2)
 parser.add_argument('--agent', action='store_true', help='Up to three real agent turns per rehearsal; no automatic retries.')
+parser.add_argument('--verify-only', action='store_true', help='Validate the existing completed run logs without model calls or reset.')
 args = parser.parse_args()
 repo = Path(__file__).resolve().parents[2]
 snapshot = args.snapshot.resolve()
@@ -71,6 +73,22 @@ def keep_images(label: str) -> None:
     for image in (repo / 'frontend/test-results').glob('*.png'):
         shutil.copy2(image, target / image.name)
 
+def verify_agent_completion(label: str) -> None:
+    with sqlite3.connect(snapshot / 'live-cafe.db') as conn:
+        runs = conn.execute('SELECT status,error_code FROM agent_runs').fetchall()
+        tools = {tool for tool, ok in conn.execute('SELECT tool,ok FROM agent_tool_calls') if ok}
+        if len(runs) != 3 or any(status != 'completed' or error for status, error in runs):
+            raise RuntimeError(f'Agent runs did not complete cleanly: {runs}')
+        required = {'prepare_order', 'get_order_status'}
+        if not required <= tools or not tools.intersection({'recommend_drinks', 'search_menu'}):
+            raise RuntimeError(f'Required real order/menu tools missing; observed {sorted(tools)}')
+        print(f'{label}: 3 completed agent runs; verified tools {sorted(tools)}', flush=True)
+
+if args.verify_only:
+    verify_agent_completion('Existing rehearsal')
+    server_log.close()
+    raise SystemExit(0)
+
 try:
     # Initialize migrations once; reset only while this owned server is stopped.
     start()
@@ -84,6 +102,7 @@ try:
         if args.agent:
             run([python, str(repo / 'frontend/scripts/run_live_smoke.py'), '--agent'])
             keep_images(f'run-{rehearsal}-agent')
+            verify_agent_completion(f'Rehearsal {rehearsal}')
         stop()
         print(f'Rehearsal {rehearsal}/{args.runs}: passed', flush=True)
 finally:

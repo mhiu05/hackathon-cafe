@@ -4,12 +4,18 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Current status
 
-**Dev B:** B1–B4 frontend implemented; B5 states, availability, insights, GSAP/reduced motion and Playwright implemented. Independent final review underway. Live C1–C4 verified against Dev A snapshot 81648a3; backend 9e0a3b1 regression 87 passed / 6 live deselected. Shared main/checkpoint rows remain pending serialized integration; owner confirmed Dev A has not merged main.
+**Dev B:** B1–B5 frontend complete, independent review fixes verified. Unit37 passed/build passed; fixture E2E8 passed/3 opt-in live skipped by default. Live C1–C4 and two clean reset/core-demo run-sets verified on isolated Dev A snapshots; backend9e0a3b1 regression87 passed/6 live deselected. Shared main/checkpoint rows remain pending serialized integration; owner confirmed Dev A has not handed off main. Full report: frontend/DELIVERY_REPORT.md.
 
 **Phase:** pre-implementation complete; implementation not started. **Ready state:** see `docs/IMPLEMENTATION_HANDOFF.md` §A.
 **Next:** both devs read `docs/IMPLEMENTATION_HANDOFF.md`, then start A1 / B1 (`docs/superpowers/plans/`).
 
 ## Log
+
+### 2026-11-14 14:25 (UTC+7) — Dev B · final live handoff
+- Two clean reset/core-demo run-sets on snapshot9e0a3b1: each2 real orders,3 completed agent runs, no error_code. Actual tools logged: cafe info, RAG knowledge, SQL menu, prepare_order, get_order_status. Earlier A4 live run exercised recommend_drinks too.
+- Fixed live-test completion gate: wait final message and done-driven enabled composer before closing; initial prematurely-cancelled runs excluded. Removed an overly-specific recommend_drinks-only assertion after real SQL search_menu grounding was verified. Existing clean run validated offline, second clean run executed after reset.
+- Final `run_live_smoke.py`2 passed: same-code HTTP200 Idempotent-Replay; staff confirmation→customer1098ms; menu availability and insights live. Wrapper Windows stdout forced UTF-8 while retaining secret redaction. No additional model calls for this smoke.
+- Main remains unmerged; protected files/backend/contracts untouched. Delivery report, exact Dev A notes and review dispositions committed with final test/report changes. Optional minor polish only; waiting for serialized integration handoff.
 
 ### 2026-11-14 14:12 (UTC+7) — Dev B · independent review fixes
 - Independent code/design A + detector/audit B completed. Detector0 findings; initial A27/40 / B16/20. QA_REVIEW.md preserves scope and dispositions, no claim of rescored certification.

@@ -15,6 +15,8 @@ pnpm.cmd dev
 
 Customer: http://localhost:5173/ | Staff: http://localhost:5173/admin.html. The Vite proxy sends /api to localhost:8000. Start Dev A's single-worker backend from the repo root.
 
+Before the serialized main integration, this frontend branch deliberately contains no Dev A runtime. Run a separate committed backend snapshot using the helper below, or use the combined checkout once Dev A hands off main. On this workspace the verified snapshot is frontend/node_modules/.cache/dev-a-9e0a3b1.
+
 Live is the default. For fixture-only development set VITE_API_MODE=mock in the process environment or a local frontend/.env. Mock mode is visibly labelled and excluded from production's live import graph. Never put keys or ADMIN_PIN in VITE_* variables.
 
 ## Verify
@@ -44,3 +46,5 @@ For parallel backend validation, export a committed Dev A backend/ snapshot into
 All requests go through src/api; types.ts is copied verbatim from docs/api-contracts.md section 9. Prices and allowed admin transitions are server-authoritative. Order confirmation requires a customer click; retries retain their key; price drift asks again. Chat context is scoped by the persisted 32-hex conversation id.
 
 See [INTEGRATION_NOTES.md](INTEGRATION_NOTES.md) for live results and the admin SSE field mismatch. [IMPLEMENTATION_LOG.md](IMPLEMENTATION_LOG.md) records task gates and execution rulings. Main integration waits for Dev A's handoff.
+
+The completed task/test/checkpoint report is [DELIVERY_REPORT.md](DELIVERY_REPORT.md). For isolated reset rehearsals, run scripts/run_snapshot_rehearsals.py --snapshot PATH --runs 2 --agent from the repo root. It uses Dev A's reset script with backups and bounds each rehearsal to three real agent turns; --verify-only validates existing run logs without model calls.

@@ -32,3 +32,7 @@ Dev B · baseline 2b016a2 · branch feat/dev-b-frontend.
 - Final: minor (deferred): condense long Discover source labels while retaining attribution/date.
 - Final: minor (deferred):10 React lint advisories, exit0; no material effect identified by reviewer.
 - B5: frontend tasks complete; final C5 reset rehearsals on snapshot9e0a3b1 follow this commit. Main integration remains pending user/Dev A clearance.
+- C5 final: two clean reset/core-demo run-sets on9e0a3b1 verified, each2 orders/3 completed agent runs/no error_code. Real RAG/SQL/draft/status tools recorded; no fake responses. Initial premature browser-close runs cancelled the last stream and are not counted; test now awaits completed message + done-driven composer state.
+- C5 guard correction: requiring recommend_drinks alone rejected a valid SQL recommendation through search_menu. Verified the first clean run-set without new API calls using --verify-only, then ran the second reset/rehearsal. Both logs passed the same corrected contract-aware guard. Risk/cost: dedicated recommend_drinks live coverage remains the earlier A4 run; SQL-grounded menu output is mandatory in either path.
+- Final non-model live smoke:2 passed, same-code HTTP200 Idempotent-Replay verified, customer latency1098ms, availability/insights live. Windows stdout UTF-8 correction avoids losing test output during credential redaction.
+- Finishing choice: keep feat/dev-b-frontend/workspace as-is and pushed, per owner's existing no-main-integration instruction. No repeat permission menu; serialized main acceptance remains external.

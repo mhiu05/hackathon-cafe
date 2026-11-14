@@ -7,7 +7,7 @@ test('live agent recommendation → draft → REST confirm → admin → real or
   try {
     await customer.goto('/'); await customer.getByRole('button', { name: 'Trợ lý', exact: true }).click();
     const send = async (text: string) => { await customer.getByLabel('Nhắn Biblio').fill(text); await customer.getByRole('button', { name: 'Gửi', exact: true }).click(); };
-    await send('Quán ở đâu? Gợi ý 2 đồ uống không quá 50.000đ từ menu, chưa đặt món.');
+    await send('Quán có chỗ yên tĩnh ngồi học không? Wi-Fi thế nào? Gợi ý 2 đồ uống không quá 50.000đ từ menu, chưa đặt món.');
     await expect(customer.locator('.message.assistant').first()).toBeVisible({ timeout: 60000 });
     await expect(customer.getByLabel('Nhắn Biblio')).toBeEnabled({ timeout: 60000 });
     await expect(customer.getByRole('list', { name: 'Hoạt động công cụ' })).toContainText(/gợi ý|món|quán/i);
@@ -24,7 +24,9 @@ test('live agent recommendation → draft → REST confirm → admin → real or
     await customer.getByRole('link', { name: 'Theo dõi đơn', exact: true }).click();
     await expect(customer.locator('#main-content h2').first()).toContainText('Sẵn sàng', { timeout: 2000 });
     await customer.getByRole('button', { name: 'Trợ lý', exact: true }).click(); await send(`Đơn ${code} của mình xong chưa? Hãy tra trạng thái thực tế.`);
-    await expect(customer.locator('.message.assistant').last()).toContainText(/sẵn sàng/i, { timeout: 60000 });
+    await expect(customer.locator('.message.assistant:not(.streaming)')).toHaveCount(3, { timeout: 60000 });
+    await expect(customer.locator('.message.assistant:not(.streaming)').last()).toContainText(/sẵn sàng/i, { timeout: 60000 });
+    await expect(customer.getByLabel('Nhắn Biblio')).toBeEnabled({ timeout: 60000 });
     await customer.screenshot({ path: 'test-results/live-agent-390.png', fullPage: true });
     console.log(`LIVE AGENT ${code}: recommendation, server draft, REST confirmation, staff ready, tool-backed status verified; 3 model turns`);
   } finally { await customer.close(); await staff.close(); }

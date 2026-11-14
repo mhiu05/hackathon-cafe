@@ -1,0 +1,27 @@
+# Bàn giao Dev B — 14/11/2026
+
+Frontend đã hoàn tất B1–B5 và sẵn sàng tích hợp tuần tự. **Chưa merge main** theo xác nhận của chủ dự án: Dev A vẫn làm trên nhánh backend. Mọi kết quả live dưới đây dùng snapshot backend riêng, không thay thế nghiệm thu combined-main.
+
+1. **Task hoàn thành:** B1 scaffold/token/API/SSE/cart; B2 Discover/Menu/biến thể/checkout; B3 theo dõi đơn + PIN/quầy; B4 chat streaming/orb/tool/đơn nháp; B5 error/loading/empty/degraded, availability, Tổng quan, GSAP/reduced motion, accessibility, review và E2E. Các hàng task Dev B đã cập nhật; hàng checkpoint chung giữ nguyên để hai dev nghiệm thu khi tích hợp main.
+
+2. **Trang/components:** customer `App`, `Discover`, `Menu`, `ItemSheet`, `Cart`, `ConfirmSheet`, `OrderTracking`; chat `ChatPanel`, `MessageList`, `Composer`, `ToolChips`, `DraftSlip`, `OrderCard`; admin `Login`, `OrdersBoard`, `ReasonDialog`, `MenuAvailability`, `Insights`; UI `AgentOrb`, `Sheet`, `OrderSlip`, `Button`, `Chip`, `Badge`, `Toast`, `Skeleton`; các hook/state và typed live/mock API trong `src/`. Entry customer `/`, entry staff `/admin.html`, không thêm router/UI framework.
+
+3. **Kiểm thử thực thi:** `pnpm.cmd test --run` → **37 passed / 18 files**; `pnpm.cmd build` → pass; `pnpm.cmd exec playwright test` → **8 fixture passed / 3 live specs skipped mặc định**. Live explicit `run_live_smoke.py` → **2 passed**, gồm checkout/replay và admin availability/insights. Backend snapshot `9e0a3b1`: **87 passed / 6 live deselected**; baseline setup root trước đó9 passed. Lint exit0 với **10 React advisory**, không tuyên bố sạch warning. Frozen TS types khớp §9 từng byte; protected diff rỗng.
+
+4. **Commit code:** `e1e482e` B1; `5906e6d` B2 và phần production B3; `8fc5ccd` kiểm chứng B3; `cef8c13` B4; `84d0310` B5; `c627dfb` sửa review. Commit cuối chứa C5/report được ghi trong phản hồi bàn giao và `git log -1`. Không rewrite lịch sử; việc B3 đi cùng B2 do staging trễ đã ghi trong ledger.
+
+5. **Git:** nhánh `feat/dev-b-frontend`, upstream `origin/feat/dev-b-frontend`; đã push các task. Giữ workspace hiện tại; không force-push, không commit/merge main, không bỏ thay đổi của người khác.
+
+6. **Checkpoint live:** C1 profile/menu51 món; C2 tạo đơn thật và replay trả HTTP200 + `Idempotent-Replay: true` cùng mã; C3 admin xác nhận → khách cập nhật trong **1098ms** ở smoke cuối (smoke nền trước đó64ms); C4 tri thức/menu SQL → nháp45.000đ → REST confirm → quầy ready → agent tra đúng trạng thái. C5 core demo tự động đã diễn tập sau backup/reset **hai lần**, mỗi lần2 đơn và3 agent runs `completed`, không error_code; log tool xác nhận `search_cafe_knowledge`, `search_menu`, `prepare_order`, `get_order_status` (cùng `get_cafe_info`). Đây là core workflow tự động, chưa phải buổi rehearsal chung/full runbook trên main với Dev A.
+
+7. **Live/mock:** live là mặc định và dùng cho toàn bộ smoke/rehearsal thật. Fixtures chỉ dùng unit/E2E xác định và mock opt-in có nhãn. Snapshot A4 `81648a3` đã chạy C1–C4; snapshot A5/A6 `9e0a3b1` chạy regression/rehearsals cuối. DB/session/backup nằm riêng dưới ignored `frontend/node_modules/.cache/`; `.env` gốc chỉ đọc trong bộ nhớ, không in key/PIN. Các server kiểm thử được dừng sau khi chạy.
+
+8. **Blocker/giới hạn bàn giao:** cần Dev A push/confirm main và bàn giao lượt merge rồi mới chạy quy trình tích hợp chung. Admin SSE hiện thiếu `allowed_next`; frontend refetch quyền thao tác từ API admin, không tự suy đoán. ApiClient §10 thiếu method insights dù §7/§9 có endpoint/type; adapter tách trong API layer giữ interface nguyên văn. Quá200 đơn cùng trạng thái cần backend phân trang; UI dùng counts server và cảnh báo danh sách chưa đủ. Giá/tình trạng món vẫn chưa được staff xác nhận và được gắn nhãn trung thực.
+
+9. **P0 readiness:** **READY_FOR_SERIALIZED_INTEGRATION**, đã chạy được luồng thật với backend snapshot và không phụ thuộc câu trả lời giả. Chưa tuyên bố combined-main/demo production đã nghiệm thu. Ghi chú chính xác cho Dev A ở [INTEGRATION_NOTES.md](INTEGRATION_NOTES.md); chưa có kênh trực tiếp để gửi tin cho Dev A ngoài branch/tài liệu bàn giao.
+
+10. **Còn tùy chọn:** category bar sticky; rút gọn nhãn nguồn dài vẫn giữ attribution/ngày; xử lý10 lint advisory; restore lịch sử/draft sau reload là P1 riêng. Không mở rộng P2. Review độc lập và dispositions ở [QA_REVIEW.md](QA_REVIEW.md).
+
+Các điều chỉnh kiểm chứng đáng chú ý: test live ban đầu đóng trang trong lúc delta cuối còn streaming nên run bị ghi cancelled; đã sửa để chờ message hoàn tất và composer được bật, rồi kiểm chứng DB. Gate tool ban đầu quá chặt ở tên `recommend_drinks`; sau đối chiếu contract, chấp nhận gợi ý grounded bằng `recommend_drinks` hoặc `search_menu`, luôn bắt buộc `prepare_order`/`get_order_status`. Hai run-set sạch được xác minh trong DB hiện tại và backup trước reset; không tính các lượt cancelled là nghiệm thu cuối. Wrapper Windows đã sửa stdout UTF-8 để in đầy đủ kết quả sau redaction.
+
+Các ruling đầy đủ và chi phí đánh đổi được lưu theo thứ tự ở [IMPLEMENTATION_LOG.md](IMPLEMENTATION_LOG.md): ledger trong phạm vi frontend thay scratch tạo .gitignore; giữ checkout/nhánh được yêu cầu; pin phiên bản scaffold đã resolve; cài Playwright ở B2; adapter insights; catalogue làm readiness signal; thêm acknowledgement khi giá đổi; giữ cap200/cảnh báo thay đổi contract; sửa focus/hit target bằng palette có sẵn. Không sửa kiến trúc, frozen contracts, DESIGN.md, `.gitignore`, `.agents/`, `.claude/` hay source backend.

@@ -25,3 +25,11 @@ Frontend live mode, separate SQLite backup of the ingested catalogue. Main has n
 ## P1 insights client omission
 
 Contract §7 defines GET /api/admin/insights, §9 defines AdminInsights, and Dev A 9e0a3b1 implements it, but §10 ApiClient lists no insights method. Dev B preserves §10 verbatim and isolates the P1 adapter in src/api/insights.ts over the same request/auth/error layer. Mock mode reports live-required rather than inventing analytics.
+
+## Final A5/A6 snapshot verification
+
+- Backend 9e0a3b1: 87 default regression tests passed, 6 paid-live tests deselected.
+- Two clean reset/rehearsal run-sets: each has 2 real orders, 3 completed agent runs and no error_code. Real tools include search_cafe_knowledge, search_menu, prepare_order and get_order_status; the earlier A4 run also exercised recommend_drinks. All SQL prices/draft totals came from backend.
+- Final non-model smoke: 2 passed; HTTP200 idempotent replay returns the same order; customer sees staff confirmation in1098ms; admin availability saves and insights render live.
+- Client loads each active status separately with limit200 so newer terminal orders do not hide older pending orders. Server counts and an incomplete-list notice expose the remaining endpoint capacity limit. Unlimited pagination needs a coordinated contract change.
+- Await Dev A's main push/turn handoff. Dev B has not merged or pushed main, and has not changed backend source.

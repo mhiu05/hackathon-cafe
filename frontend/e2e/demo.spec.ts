@@ -10,9 +10,13 @@ test('live catalog → checkout → admin accepts → customer sees status', asy
     await expect(customer.getByText('51 món', { exact: true })).toBeVisible();
     await customer.getByRole('button', { name: /Bạc xỉu/ }).click(); await customer.getByRole('button', { name: 'Thêm vào giỏ' }).click();
     await customer.getByRole('button', { name: 'Giỏ · 1', exact: true }).click(); await customer.getByRole('button', { name: 'Xem tổng', exact: true }).click();
+    const posted = customer.waitForRequest(r => r.method() === 'POST' && new URL(r.url()).pathname === '/api/orders');
     await customer.getByRole('button', { name: 'Đặt món', exact: true }).click();
+    const checkoutRequest = await posted;
     const orderHeading = customer.getByRole('heading', { name: /^Đơn BB-/ }); await expect(orderHeading).toBeVisible();
     const code = (await orderHeading.textContent())!.replace('Đơn ', '');
+    const replay = await request.post('/api/orders', { headers: { 'Idempotency-Key': checkoutRequest.headers()['idempotency-key'], 'X-Conversation-Id': checkoutRequest.headers()['x-conversation-id'] }, data: checkoutRequest.postDataJSON() });
+    expect(replay.status()).toBe(200); expect(replay.headers()['idempotent-replay']).toBe('true'); expect((await replay.json()).code).toBe(code);
     await expect(customer.getByRole('heading', { name: 'Chờ quán xác nhận', exact: true })).toBeVisible();
     await staff.goto('/admin.html'); await staff.getByLabel('Mã PIN').fill(process.env.E2E_ADMIN_PIN!);
     await staff.getByRole('button', { name: 'Đăng nhập', exact: true }).click();
