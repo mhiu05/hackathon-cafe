@@ -43,7 +43,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
-| A4 | Repository queries, 7 tools, instructions, SSE streaming endpoint + ScriptedModel tests | P0 | Dev A | [ ] |
+| A4 | Repository queries, 7 tools, instructions, SSE streaming endpoint + ScriptedModel tests | P0 | Dev A | [x] |
 | B4 | Chat panel: reducer, AgentOrb mapping, tool chips, draft slip → REST confirm, order card, banner + tests | P0 | Dev B | [ ] |
 | C4 | Checkpoint: recommend → draft → confirm → admin → status (P0 complete) | P0 | both | [ ] |
 

@@ -9,6 +9,13 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:25 ? Dev A A4
+- Task A4: complete ? RED agent modules/repository functions missing; GREEN full suite: 68 passed in 6.56s.
+- Seven approved async tools; verbatim instructions; SQL menu/recommendations, existing Voyage/FTS retrieval only, SQLiteSession per conversation, SDK events mapped to contract SSE and persisted run/tool metrics.
+- Deterministic tests cover all seven tools, sold_out/unknown errors, sources, conversation-scoped status, multi-turn memory, and full API loop: search ? draft (0 orders) ? REST confirm twice (1 order) ? admin confirmed ? status tool reads real total/status.
+- A4 live run 1: gpt-6-luna called get_cafe_info; text reports 07:00?22:30; completed, usage input=4359/output=42, requests=2; temporary DB, tracing disabled. A5 smoke budget remains ?6 runs (planned 5).
+- C4 backend ready; integrated UI loop remains pending Dev B implementation/readiness.
+
 ### 2026-11-14 13:10 ? Dev A A3
 - Task A3: complete ? RED 10 admin tests fail on missing routes; GREEN `uv run --no-sync pytest -q -p no:cacheprovider`: 55 passed in 3.18s.
 - PIN uses constant-time UTF-8 comparison; DB stores sha256 tokens with 12h expiry; all protected routes reject absent token; failed-login limit, expired token, logout revocation, menu sold_out, STATUS_CONFLICT and INVALID_TRANSITION verified.
