@@ -9,6 +9,12 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:00 ? Dev A A2
+- Task A2: complete ? RED app.orders missing; GREEN full suite 44 passed in 1.46s. Extra checks: concurrent same-key requests create exactly one order; event-write failure rolls back order+items; price snapshots/replay survive changed catalog; PRICE_CHANGED quote persists; bus bounded queue and heartbeat verified.
+- Ruling: plan TestClient.stream test replaced with direct async response iterator test ? ASGI TestClient buffers an infinite SSE response, so it cannot return its first line; snapshot and wire event still asserted, real HTTP smoke scheduled.
+- C1 clarification from owner: Dev B only pushed an empty baseline branch, no implementation; integration postponed. Verified main/origin/main still 2b016a2, no merge or main push occurred. Temporarily stashed A2 tests restored in full.
+- C2 backend ready; customer UI integration pending Dev B.
+
 ### 2026-11-14 12:40 ? Dev A execution ledger
 - Plan: `docs/superpowers/plans/2026-11-14-dev-a-backend-agent.md`; branch `feat/dev-a-backend-agent`, baseline `2b016a2` verified in origin/main; branch pushed.
 - Preparation: uv sync succeeded; offline ingest 56 cache vectors, 0 Voyage tokens; verifier rerun with PYTHONIOENCODING=utf-8 succeeded (console cp1252 failed first); pytest: 9 passed in 0.90s.

@@ -27,7 +27,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
-| A2 | Quote, idempotent orders, drafts confirm/discard, event bus, order SSE, order APIs + tests | P0 | Dev A | [ ] |
+| A2 | Quote, idempotent orders, drafts confirm/discard, event bus, order SSE, order APIs + tests | P0 | Dev A | [x] |
 | B2 | Customer shell, Discover, Menu (search/filter/variants), Cart + confirm sheet + tests | P0 | Dev B | [ ] |
 | C2 | Checkpoint: UI checkout creates `BB-0001`; retry returns same order | P0 | both | [ ] |
 
