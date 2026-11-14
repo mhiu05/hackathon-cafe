@@ -9,6 +9,15 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Log
 
+### 2026-11-14 13:08 (UTC+7) — Dev B · B1 foundation
+- Branch `feat/dev-b-frontend` from baseline `2b016a2`; fetched/pulled latest main, verified ancestry and pushed upstream. No pre-existing uncommitted changes.
+- B1: React multi-page entries, design tokens/self-hosted fonts, frozen TS types/client, live/mock clients, incremental SSE parser, conversation id, cart, VND/UTC+7 formatting.
+- TDD: initial five suites failed for missing implementation; `pnpm.cmd test --run` → 5 files / 11 tests passed; `pnpm.cmd build` → passed.
+- Resolved/pinned: React/DOM 19.3.1; Vite 8.3.8; TypeScript 7.0.2; plugin-react 6.3.0; GSAP 3.15.1; @gsap/react 2.1.2; thinking-orbs 0.3.2; both fonts 5.3.0; Vitest 5.1.0; jsdom 31.0.0; Testing Library React 16.3.3 / jest-dom 7.0.1 / user-event 14.6.10. Scaffold oxlint 1.93.0, React type packages 19.3.0, Node types 24.19.2.
+- Node 24.13.0 / pnpm 11.0.8; use `pnpm.cmd` because PowerShell execution policy blocks pnpm.ps1. Caches require sandbox escalation. `uv sync`, offline ingestion (0 paid calls) and `uv run pytest -q` → 9 passed. Restored only the generated ingestion stats file to retain ownership boundaries.
+- C1 live remains pending: API endpoints absent at baseline. Live is the default; fixture mode is opt-in, never claimed as integrated proof. Waiting for Dev A confirmation before any main merge.
+- Ruling: execution ledger in `frontend/IMPLEMENTATION_LOG.md`; do not run skill scratch scripts that create a .gitignore outside assigned files. Root .gitignore, .agents, .claude, .env and frozen contracts unchanged.
+
 ### 2026-11-14 — prep session (Claude Code, Superpowers 7.0.2: brainstorming → writing-plans)
 - Installed the project-scoped Superpowers plugin (`superpowers@anthropic-plugin-directory` 7.0.2); skills were read from the installed files because the plugin loads only in new sessions.
 - Created root `pyproject.toml` (Python 3.12.13, uv) and `uv.lock`; package `backend/app`.

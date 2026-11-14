@@ -1,0 +1,22 @@
+@import '@fontsource/be-vietnam-pro/400.css';
+@import '@fontsource/be-vietnam-pro/500.css';
+@import '@fontsource/be-vietnam-pro/600.css';
+@import '@fontsource/fraunces/600.css';
+@import './tokens.css';
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--cream-page); color: var(--ink-teal); font: 400 var(--text-body)/1.55 var(--font-body); }
+button, input, textarea, select { font: inherit; }
+button, a, input, textarea, select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; } button:disabled { cursor: not-allowed; opacity: .55; }
+button, input, select { min-height: var(--control-height); }
+button { border: 1px solid var(--cream-line); border-radius: var(--radius-pill); padding: var(--button-padding); color: var(--ink-teal); background: var(--cream-card); }
+button:hover:not(:disabled) { background: var(--teal-mist); }
+input, textarea, select { width: 100%; padding: var(--input-padding); border: 1px solid var(--cream-line); border-radius: var(--radius-md); color: var(--ink-teal); background: var(--cream-page); caret-color: var(--teal); }
+input::placeholder, textarea::placeholder { color: var(--muted-ink); opacity: 1; }
+label { display: block; margin-block: var(--space-md) var(--space-xs); }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+a { color: var(--teal); text-underline-offset: .2em; }
+h1, h2, h3, p { margin: 0 0 var(--space-md); } h1 { font: 600 var(--text-display)/1.05 var(--font-display); } h2, h3 { font: 600 var(--text-heading)/1.2 var(--font-display); }
+::selection { color: var(--cream-page); background: var(--teal); }
+small { font-size: var(--text-caption); } .price { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }

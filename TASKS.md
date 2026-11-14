@@ -20,7 +20,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A1 | App factory, 0003 migration, errors, deps, public catalog API + contract tests | P0 | Dev A | [ ] |
-| B1 | Vite multi-page scaffold, tokens/fonts, typed ApiClient (live+mock), SSE parser, cart/format libs + tests | P0 | Dev B | [ ] |
+| B1 | Vite multi-page scaffold, tokens/fonts, typed ApiClient (live+mock), SSE parser, cart/format libs + tests | P0 | Dev B | [x] |
 | C1 | Checkpoint: customer UI reads live `/api/cafe` + `/api/menu` | P0 | both | [ ] |
 
 ## Phase 2 — Orders (1:00–2:00)
@@ -28,7 +28,7 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A2 | Quote, idempotent orders, drafts confirm/discard, event bus, order SSE, order APIs + tests | P0 | Dev A | [ ] |
-| B2 | Customer shell, Discover, Menu (search/filter/variants), Cart + confirm sheet + tests | P0 | Dev B | [ ] |
+| B2 | Customer shell, Discover, Menu (search/filter/variants), Cart + confirm sheet + tests | P0 | Dev B | [~] |
 | C2 | Checkpoint: UI checkout creates `BB-0001`; retry returns same order | P0 | both | [ ] |
 
 ## Phase 3 — Staff loop (2:00–3:00)

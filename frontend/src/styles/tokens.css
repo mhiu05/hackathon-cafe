@@ -1,0 +1,11 @@
+:root {
+  --ink-teal: #10302F; --teal-deep: #0E3B39; --teal: #1F5C57; --teal-mist: #DCE8E3;
+  --cream-page: #FBF6EC; --cream-card: #F3EAD8; --cream-line: #E4D4B5; --caramel: #B9823F;
+  --muted-ink: #5B6B66; --success: #2F6B4F; --warning: #8A5A12; --danger: #A63A2B;
+  --font-display: 'Fraunces', Georgia, serif; --font-body: 'Be Vietnam Pro', system-ui, sans-serif;
+  --text-display: clamp(2.25rem, 9vw, 3rem); --text-heading: 1.375rem; --text-body: 1rem; --text-caption: .8125rem;
+  --radius-sm: 6px; --radius-md: 12px; --radius-pill: 999px;
+  --space-xs: 4px; --space-sm: 8px; --space-md: 16px; --space-lg: 24px; --space-xl: 32px; --space-xxl: 48px;
+  --control-height: 44px; --button-padding: 12px 20px; --input-padding: 12px 14px; --chip-padding: 6px 12px;
+  --paper-shadow: 0 1px 0 var(--cream-line), 0 8px 24px rgb(16 48 47 / .08); --scrim: rgb(16 48 47 / .35);
+}
