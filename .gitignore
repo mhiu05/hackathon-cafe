@@ -2,3 +2,26 @@
 # .claude/
 
 .env
+.env.*
+!.env.example
+
+# Python / tooling
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Frontend
+node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+
+# Runtime data: rebuilt by `uv run python scripts/knowledge/ingest.py`; holds demo orders/chats
+data/*.db
+data/*.db-*
+data/backups/
+
+# Third-party raw collections (may contain copyrighted page content); normalized output is committed
+data/knowledge/raw/

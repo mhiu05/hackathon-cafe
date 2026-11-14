@@ -1,0 +1,20 @@
+{
+  "db_path": "data/cafe.db",
+  "built_at": "2026-11-14T04:46:33.089Z",
+  "migrations_applied_now": [],
+  "documents_total": 57,
+  "documents_indexed": 54,
+  "documents_skipped_not_ingestible": 3,
+  "chunks": 56,
+  "embeddings_from_cache": 56,
+  "embeddings_new": 0,
+  "voyage_tokens_used": 0,
+  "embedding_model": "voyage-4-lite",
+  "embedding_dimension": 512,
+  "menu_items": 51,
+  "menu_variants": 4,
+  "coworking_packages": 3,
+  "meeting_rooms": 5,
+  "service_facts": 22,
+  "sources": 21
+}

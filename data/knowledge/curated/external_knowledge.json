@@ -1,0 +1,148 @@
+{
+  "_comment": "Hand-curated from data/knowledge/raw/* on 2026-11-14 (web pages fetched by scripts/knowledge/collect.py web; 1000libraries via WebFetch). Every document cites one source. Branch decision rules: see docs/knowledge-sources.md. Never mark web data owner_verified.",
+  "curated_at": "2026-11-14T04:40:00.000Z",
+  "sources": [
+    {"id": "src-photo-drink-menu", "title": "Ảnh menu đồ uống chụp tại quán (ảnh 1, 4, 6)", "source_type": "user_photo", "url": null, "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T03:13:18.000Z", "published_at": null, "notes": "Photos taken in-store by the project owner; prices/availability not confirmed current by staff. Files: image(20261114-031251/031306/031318).png (not in repo).", "metadata": {"image_ids": [1, 4, 6]}},
+    {"id": "src-photo-food-menu", "title": "Ảnh menu đồ ăn chụp tại quán (ảnh 2, 3)", "source_type": "user_photo", "url": null, "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T03:13:01.000Z", "published_at": null, "notes": "In-store photos; prices not confirmed current.", "metadata": {"image_ids": [2, 3]}},
+    {"id": "src-photo-service-board", "title": "Ảnh bảng giá co-working và phòng hội thảo tại quán (ảnh 5)", "source_type": "user_photo", "url": null, "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T03:13:14.000Z", "published_at": null, "notes": "Board shows address 79 Ngụy Như Kon Tum and phone 0976 214 224. Prices include 10% VAT per the board.", "metadata": {"image_ids": [5]}},
+    {"id": "src-kb-curation", "title": "Tổng hợp đối chiếu nguồn (Biblio KB curation)", "source_type": "kb_curation", "url": null, "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T04:40:00.000Z", "published_at": null, "notes": "Synthesis documents; each lists `citations` (source ids) in metadata.", "metadata": {}},
+    {"id": "src-web-mia-2026", "title": "MIA.vn — 16 quán cà phê sách Hà Nội vibe xinh (20/08/2026)", "source_type": "web_article", "url": "https://mia.vn/cam-nang-du-lich/top-quan-ca-phe-sach-ha-noi-15088", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T04:05:00.000Z", "published_at": "2026-08-20", "notes": "Entry '1 Biblio' gives 79 Ngụy Như Kon Tum, Làng Sinh viên Hacinco and 07:00–22:30. Its phrase 'chuỗi cửa hàng cafe sách tại Hà Đông' is brand-level, not about this branch.", "metadata": {}},
+    {"id": "src-web-1000libraries-2026", "title": "1000 Libraries Magazine — 9 must-visit book cafés in Hanoi (15/06/2026)", "source_type": "web_article", "url": "https://magazine.1000libraries.com/9-must-visit-book-cafes-in-hanoi/", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T04:12:00.000Z", "published_at": "2026-06-15", "notes": "Section 'Biblio Book Cafe (in Thanh Xuân)', address 79 P. Ngụy Như Kon Tum, Làng sinh viên Hacinco. Read via WebFetch (direct fetch timed out); quotes limited.", "metadata": {}},
+    {"id": "src-web-book365", "title": "Book365 — Top 10 quán cafe cho bạn đọc yêu sách tại Hà Nội", "source_type": "web_article", "url": "https://book365.vn/tintuc-sukien/top-10-quan-cafe-sach-ha-noi.html", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T04:05:00.000Z", "published_at": null, "notes": "Entry '8. Biblio - Cafe sách Ngụy Như Kon Tum'. Publication date not shown; its Google rating (4,0/5) is older than the live listing.", "metadata": {}},
+    {"id": "src-web-tadiha-2022", "title": "Tadiha — Top 3 quán cà phê cho trẻ em ở Hà Nội (03/11/2022)", "source_type": "web_article", "url": "https://tadiha.com/top-3-quan-ca-phe-cho-tre-em-thoa-thich-vui-choi-o-ha-noi-d38420.htm", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T04:05:00.000Z", "published_at": "2022-11-03", "notes": "Section 'Biblio - Cafe Sách Ngụy Như Kon Tum'. 2022 data: hotline/hours differ from 2026 sources (see conflicts document).", "metadata": {}},
+    {"id": "src-web-toplist", "title": "Toplist.vn — Top 10 quán cafe sách đẹp nhất tại Hà Nội", "source_type": "web_article", "url": "https://toplist.vn/top-list/quan-cafe-sach-dep-nhat-danh-cho-mot-sach-o-ha-noi-26552.htm", "branch_id": "biblio-brand", "verification_status": "brand_general", "retrieved_at": "2026-11-14T04:05:00.000Z", "published_at": null, "notes": "Describes the Biblio chain; only the size claim names the Thanh Xuân branch.", "metadata": {}},
+    {"id": "src-web-traveloka", "title": "Traveloka — Gợi ý 15 quán cafe sách Hà Nội (mục 'Cafe sách Đông Tây')", "source_type": "web_article", "url": "https://www.traveloka.com/vi-vn/explore/culinary/15-quan-cafe-sach-ha-noi/161047", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "conflicting", "retrieved_at": "2026-11-14T04:05:00.000Z", "published_at": null, "notes": "Names the venue 'Cafe sách Đông Tây' at '99 Ngụy Như Kon Tum' (Làng sinh viên Hacinco) with a photo credited to 'Biblio - Cafe Sách Ngụy Như Kon Tum'. Name and street number conflict with other sources.", "metadata": {}},
+    {"id": "src-web-tatinta-4357", "title": "Tatinta — Biblio Book Coffee (70 Tam Khương)", "source_type": "web_article", "url": "https://tatinta.com/diem-den/biblio-book-coffee/4357", "branch_id": "biblio-70-tam-khuong", "verification_status": "rejected", "retrieved_at": "2026-11-14T04:08:00.000Z", "published_at": null, "notes": "Describes 70 Tam Khương, Đống Đa (other branch). Not used for 79 Ngụy Như Kon Tum facts.", "metadata": {}},
+    {"id": "src-web-thesmartlocal", "title": "TheSmartLocal — 8 Book Cafes In Hanoi (mục Biblio Book Coffee, 70 Tam Khương)", "source_type": "web_article", "url": "https://thesmartlocal.com/vietnam/book-cafes-hanoi/", "branch_id": "biblio-70-tam-khuong", "verification_status": "rejected", "retrieved_at": "2026-11-14T04:08:00.000Z", "published_at": null, "notes": "Address 70 Tam Khương Str., hours 7.30AM-10.30PM, phone 091 236 80 07 — other branch.", "metadata": {}},
+    {"id": "src-web-wanderlog", "title": "Wanderlog — Biblio Book Coffee (Ngõ 95 Chùa Bộc, permanently closed)", "source_type": "directory_listing", "url": "https://wanderlog.com/place/details/1254145/biblio-book-coffee", "branch_id": "biblio-chua-boc", "verification_status": "rejected", "retrieved_at": "2026-11-14T04:05:00.000Z", "published_at": null, "notes": "Listing for Ng. 95 P. Chùa Bộc shown as 'Permanently Closed' (4.3, 439 reviews) — other branch.", "metadata": {}},
+    {"id": "src-facebook-page", "title": "Facebook — Biblio - Cafe Sách Ngụy Như Kon Tum", "source_type": "facebook", "url": "https://www.facebook.com/Khonggianvanhoadongtay/", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "verified_branch", "retrieved_at": "2026-11-14T04:08:00.000Z", "published_at": null, "notes": "Page identity cross-checked by Book365 and Tadiha (both name this page for the branch). Content NOT retrieved: Facebook requires login (HTTP 400). Mirror findglocal.com returned 403/ECONNRESET.", "metadata": {"content_retrieved": false}},
+    {"id": "src-web-restaurantguru", "title": "Restaurant Guru — Biblio Book Cafe 79 Nguy Nhu Kon Tum", "source_type": "directory_listing", "url": "https://restaurantguru.com/Biblio-Book-Cafe-79-Nguy-Nhu-Kon-Tum-Hanoi", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "unverified_branch", "retrieved_at": "2026-11-14T04:08:00.000Z", "published_at": null, "notes": "Not retrieved (HTTP 503 twice). Listed in user bundle. No content used.", "metadata": {"content_retrieved": false}},
+    {"id": "src-web-topcv", "title": "TopCV — Cà phê sách BIBLIO (company profile)", "source_type": "directory_listing", "url": "https://www.topcv.vn/cong-ty/ca-phe-sach-biblio/56405.html", "branch_id": "biblio-brand", "verification_status": "unverified_branch", "retrieved_at": "2026-11-14T04:08:00.000Z", "published_at": null, "notes": "Not retrieved (connection errors). No content used.", "metadata": {"content_retrieved": false}},
+    {"id": "src-web-maptons", "title": "Maptons — Biblio Book Cafe - 79 Ngụy Như Kon Tum", "source_type": "directory_listing", "url": "https://ai.maptons.com/p/15192907699", "branch_id": "biblio-79-nguy-nhu-kon-tum", "verification_status": "unverified_branch", "retrieved_at": "2026-11-14T04:08:00.000Z", "published_at": null, "notes": "Not retrieved (HTTP 403). No content used.", "metadata": {"content_retrieved": false}}
+  ],
+  "documents": [
+    {
+      "id": "doc-web-mia-2026-overview",
+      "title": "MIA.vn (08/2026): Biblio 79 Ngụy Như Kon Tum — không gian đọc sách, học tập, làm việc",
+      "category": "overview",
+      "content_kind": "fact",
+      "source_id": "src-web-mia-2026",
+      "content": "Theo bài MIA.vn đăng ngày 20/08/2026, Biblio có địa chỉ 79 Ngụy Như Kon Tum, Làng Sinh viên Hacinco, phường Thanh Xuân, Hà Nội, giờ mở cửa 07:00 – 22:30. Bài mô tả Biblio là chuỗi cafe sách được thiết kế kết hợp không gian giao lưu, tổ chức sự kiện văn hóa. Các đầu sách khá đa dạng, được chia theo nhiều nội dung để người đọc dễ tìm thể loại. Không gian khá rộng rãi, tựa như một thư viện thu nhỏ với nhiều bàn ghế bố trí cho nhu cầu đọc; phù hợp để thay đổi môi trường làm việc, học tập. Lưu ý: đây là bài giới thiệu của bên thứ ba, không phải thông báo của quán.",
+      "metadata": {"quote": "Địa chỉ: 79 Ngụy Như Kon Tum, Làng Sinh viên Hacinco, phường Thanh Xuân, Hà Nội — Giờ mở cửa: 07:00 – 22:30"}
+    },
+    {
+      "id": "doc-web-1000libraries-2026-space",
+      "title": "1000 Libraries (06/2026): Biblio Book Cafe Thanh Xuân — thư viện cho mượn, chỗ ngồi kiểu Tây và ngồi bệt, workshop",
+      "category": "facilities",
+      "content_kind": "fact",
+      "source_id": "src-web-1000libraries-2026",
+      "content": "Tạp chí 1000 Libraries (đăng 15/06/2026) giới thiệu 'Biblio Book Cafe (in Thanh Xuân)' tại 79 P. Ngụy Như Kon Tum, Làng sinh viên Hacinco, mở cửa thứ Hai đến Chủ nhật 7AM – 10:30PM. Bài mô tả đây là một trong những quán cà phê sách lớn nhất Hà Nội, thuộc một chuỗi cafe sách; có nhiều chỗ đọc, thư viện cho mượn sách, cà phê, mì tôm, văn phòng phẩm và đồ chơi ghép hình (puzzle). Quán có cả chỗ ngồi kiểu phương Tây và kiểu phương Đông (ngồi bệt), nhiều ốp gỗ tự nhiên. Sách đa dạng thể loại và chủ yếu bằng tiếng Việt. Vì không gian rộng, quán cũng được dùng làm nơi tổ chức workshop và cho thuê sự kiện riêng.",
+      "metadata": {"quote": "With as spacious as this place is, it is also used as a site for workshops and can be rented out for private events."}
+    },
+    {
+      "id": "doc-web-book365-overview",
+      "title": "Book365: Biblio - Cafe sách Ngụy Như Kon Tum — hơn 1000m², khu trẻ em, sự kiện giao lưu văn hóa",
+      "category": "facilities",
+      "content_kind": "fact",
+      "source_id": "src-web-book365",
+      "content": "Bài Book365 (không ghi ngày đăng) giới thiệu 'Biblio - Cafe sách Ngụy Như Kon Tum' tại 79 Ngụy Như Kon Tum, quận Thanh Xuân, giờ mở cửa 7:00 – 22:30, Facebook 'Biblio - Cafe Sách Ngụy Như Kon Tum', giá tham khảo 10.000 – 80.000 đồng. Theo bài, quán rộng hơn 1000m², chia thành nhiều khu vực, trong đó có khu dành riêng cho trẻ em. Sách đa dạng, phân chia theo thể loại, lĩnh vực để dễ tìm. Quán thường xuyên tổ chức các chương trình, sự kiện giao lưu văn hóa và chương trình dành cho người đọc sách. Điểm Google Maps 4,0/5 trong bài là số liệu cũ, không dùng thay cho số liệu hiện tại.",
+      "metadata": {"quote": "Với diện tích rộng hơn 1000m2, không gian Biblio Cafe Sách được chia thành nhiều khu vực khác nhau trong đó có cả khu dành riêng cho trẻ em."}
+    },
+    {
+      "id": "doc-web-tadiha-2022-kids",
+      "title": "Tadiha (11/2022): khu trẻ em, thẻ mượn sách tại Biblio Ngụy Như Kon Tum",
+      "category": "facilities",
+      "content_kind": "fact",
+      "source_id": "src-web-tadiha-2022",
+      "content": "Bài Tadiha ngày 03/11/2022 liệt kê 'Biblio - Cafe Sách Ngụy Như Kon Tum' trong top quán cà phê cho trẻ em: quán thiết kế giống thư viện với nhiều tủ sách đủ thể loại, chia thành nhiều khu, có khu dành riêng cho trẻ em trang trí màu sắc sặc sỡ; chi nhánh Thanh Xuân được mô tả là lớn nhất (hơn 1000m²). Bài cho biết khách có thể đăng ký làm thẻ mượn sách với giá ưu đãi; đồ uống gồm cà phê và các loại nước ép. Đây là thông tin năm 2022 — chính sách thẻ mượn sách và giá chưa được xác minh còn áp dụng.",
+      "metadata": {"quote": "Tạ quán cà phê Biblio, bạn còn có thể đăng kí làm thẻ mượn sách với giá vô cùng ưu đãi.", "stale": true}
+    },
+    {
+      "id": "doc-web-toplist-brand",
+      "title": "Toplist: Biblio Cafe Sách là chuỗi cafe sách; chi nhánh Thanh Xuân lớn nhất",
+      "category": "overview",
+      "content_kind": "fact",
+      "source_id": "src-web-toplist",
+      "content": "Toplist.vn mô tả Biblio Cafe Sách là một chuỗi cửa hàng cafe sách kết hợp với không gian giao lưu, tổ chức sự kiện văn hóa, có số lượng đầu sách rất lớn và thiết kế giống một thư viện với nhiều tủ sách. Bài cho biết quán có nhiều chi nhánh, trong đó chi nhánh tại quận Thanh Xuân là lớn nhất với diện tích hơn 1000m². Đây là mô tả cấp thương hiệu, không ghi ngày.",
+      "metadata": {"quote": "chi nhánh tại quận Thanh Xuân là lớn nhất với diện tích hơn 1000m2"}
+    }
+  ],
+  "rejected_documents": [
+    {"id": "doc-rejected-tatinta-70-tam-khuong", "title": "Tatinta: Biblio Book Coffee 70 Tam Khương", "category": "branches", "content_kind": "fact", "source_id": "src-web-tatinta-4357", "content": "Mô tả cơ sở 70 Tam Khương, Đống Đa: nhiều tầng, bàn ghế gỗ, cửa kính cao. Không áp dụng cho 79 Ngụy Như Kon Tum.", "metadata": {"reject_reason": "other_branch"}},
+    {"id": "doc-rejected-thesmartlocal-70-tam-khuong", "title": "TheSmartLocal: Biblio Book Coffee 70 Tam Khương", "category": "branches", "content_kind": "fact", "source_id": "src-web-thesmartlocal", "content": "Địa chỉ 70 Tam Khương, giờ 7.30AM-10.30PM, điện thoại 091 236 80 07, giá trung bình 30.000–60.000. Không áp dụng cho 79 Ngụy Như Kon Tum.", "metadata": {"reject_reason": "other_branch"}},
+    {"id": "doc-rejected-wanderlog-chua-boc", "title": "Wanderlog: Biblio Book Coffee Ngõ 95 Chùa Bộc (đã đóng cửa)", "category": "branches", "content_kind": "fact", "source_id": "src-web-wanderlog", "content": "Listing Ngõ 95 Chùa Bộc, Kim Liên ghi 'Permanently Closed', 4.3 sao/439 đánh giá. Không áp dụng cho 79 Ngụy Như Kon Tum.", "metadata": {"reject_reason": "other_branch_closed"}}
+  ],
+  "tiktok_decisions": {
+    "_rule": "accept only when the caption or the account self-identifies 79 Ngụy Như Kon Tum / Biblio Thanh Xuân; pending when it plausibly refers to the branch but does not name it; reject other businesses/topics.",
+    "accepted": {
+      "7646412336277982485": {"status": "verified_branch", "category": "overview", "note": "@bibliocafesach caption states address, hours 07:00-22:30 daily and phone 0976 214 224"},
+      "7677913635397668117": {"status": "verified_branch", "category": "coworking", "note": "@bibliocafesach: Biblio Working Space"},
+      "7600722539354148117": {"status": "verified_branch", "category": "room_rental", "note": "@bibliocafesach: meeting room promotion"},
+      "7136036236271127834": {"status": "unverified_branch", "category": "customer_insights", "note": "Creator compares branches and prefers Ngụy Như Kon Tum; does not name Biblio explicitly"}
+    },
+    "pending": {
+      "7598886343044795669": "Civilis study-abroad post about a library/cultural space at '79a Ngụy Như Kon Tum' (24/01/2026) — address suffix 'a' and organiser unclear",
+      "7651993605694917908": "Generic café clip from query 'biblio ngụy như kon tum'; venue not named",
+      "7180284619999218970": "2022 clip tagged Thanh Xuân; venue not named",
+      "7646396679586925844": "'toạ độ trốn nóng' Thanh Xuân; venue not named",
+      "7638851656779713810": "Check-in on Ngụy Như Kon Tum street mentioning cakes; venue not named"
+    },
+    "rejected": {
+      "7694492970359442696": "Gà Tố Tố, 75 Ngụy Như Kon Tum (other business)",
+      "7484539388790148360": "Street clip, no venue",
+      "7669358122464595220": "HK Beer, 104 Ngụy Như Kon Tum (other business)",
+      "7698370301293301044": "Real-estate listing",
+      "7539184607632117010": "Street billiards, 107 Ngụy Như Kon Tum (other business)",
+      "7575878758956092690": "Tiny Cafe, 348 Giải Phóng (other café)",
+      "7703484782331579668": "Nghiêng Cafe (other café)",
+      "7510582531021147399": "Catail The Library (other café)",
+      "7697856648274431252": "@bibliocafesach hashtag-only caption, no information",
+      "7706487377535110406": "@bibliocafesach hashtag-only caption, no information",
+      "7692718495527619846": "@bibliocafesach motivational caption, no café information"
+    }
+  },
+  "review_exclusions": {
+    "_rule": "Exclude reviews that carry no information about the café (space, drinks, books, study/work, events, service, access).",
+    "by_text_prefix": {
+      "Hôm 8/3 mình có đi off-fan": "Personal fan-meetup anecdote; only the event date is used (see events)."
+    }
+  },
+  "events": [
+    {
+      "id": "evt-2026-08-14-music-night",
+      "title": "Sự kiện âm nhạc buổi tối (theo review khách)",
+      "start_date": "2026-08-14",
+      "time_precision": "inferred_day",
+      "branch_id": "biblio-79-nguy-nhu-kon-tum",
+      "source_type": "google_maps_review",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Biblio%20Book%20Cafe%20-%2079%20Ng%E1%BB%A5y%20Nh%C6%B0%20Kon%20Tum&query_place_id=ChIJm-vqyzCtNTER4gfqWLR8DWM",
+      "event_status": "past",
+      "verification_status": "verified_branch",
+      "description": "Review 5★ đăng 15/08/2026 trên listing Google Maps của chi nhánh nhắc tới 'sự kiện âm nhạc như tối qua' và quy mô phù hợp sự kiện 100 người. Ngày 14/08/2026 được suy ra từ ngày đăng review; tên chương trình không rõ."
+    },
+    {
+      "id": "evt-2026-03-08-fan-meetup",
+      "title": "Buổi off-fan (fan meetup) do khách tổ chức (theo review khách)",
+      "start_date": "2026-03-08",
+      "time_precision": "inferred_year",
+      "branch_id": "biblio-79-nguy-nhu-kon-tum",
+      "source_type": "google_maps_review",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Biblio%20Book%20Cafe%20-%2079%20Ng%E1%BB%A5y%20Nh%C6%B0%20Kon%20Tum&query_place_id=ChIJm-vqyzCtNTER4gfqWLR8DWM",
+      "event_status": "past",
+      "verification_status": "verified_branch",
+      "description": "Review đăng 07/05/2026 kể về buổi off-fan 'hôm 8/3'; năm 2026 được suy ra từ ngày đăng. Sự kiện do nhóm khách tự tổ chức, không phải chương trình của quán."
+    },
+    {
+      "id": "evt-2026-01-24-civilis-library",
+      "title": "Civilis — mở thư viện/không gian văn hóa cho học sinh, sinh viên tại '79a Ngụy Như Kon Tum'",
+      "start_date": "2026-01-24",
+      "time_precision": "post_date",
+      "branch_id": "biblio-79-nguy-nhu-kon-tum",
+      "source_type": "tiktok",
+      "source_url": "https://www.tiktok.com/@phuongcivilis/video/7598886343044795669",
+      "event_status": "past",
+      "verification_status": "unverified_branch",
+      "description": "Video TikTok đăng 24/01/2026 của tài khoản liên quan Civilis (du học Hàn Quốc) mời học sinh, sinh viên tham quan 'không gian văn hoá tại 79a Nguỵ Như Kon Tum'. Chưa xác minh được đây là Biblio hay đơn vị khác cùng khu."
+    }
+  ]
+}

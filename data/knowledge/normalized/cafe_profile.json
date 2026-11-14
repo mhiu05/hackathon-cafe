@@ -1,0 +1,223 @@
+{
+  "branch_id": "biblio-79-nguy-nhu-kon-tum",
+  "brand_name": "Biblio",
+  "display_name": "Biblio Café Sách — 79 Ngụy Như Kon Tum",
+  "data_status": "user_provided_unverified",
+  "names_seen": [
+    {
+      "value": "BIBLIO CAFE SÁCH",
+      "source_id": "src-photo-drink-menu"
+    },
+    {
+      "value": "BIBLIO BOOKS COFFEE (logo)",
+      "source_id": "src-photo-drink-menu"
+    },
+    {
+      "value": "Biblio Book Cafe - 79 Ngụy Như Kon Tum",
+      "source_id": "src-gmaps-listing"
+    },
+    {
+      "value": "Biblio - Cafe Sách Ngụy Như Kon Tum",
+      "source_id": "src-facebook-page"
+    }
+  ],
+  "address": {
+    "value": "79 Ngụy Như Kon Tum, Làng sinh viên Hacinco, Thanh Xuân, Hà Nội",
+    "sources": [
+      "src-photo-service-board",
+      "src-gmaps-listing",
+      "src-tiktok-bibliocafesach",
+      "src-web-mia-2026"
+    ],
+    "verification_status": "verified_branch",
+    "conflicts": [
+      {
+        "value": "Cổng 1 - 79 Ngụy Như Kon Tum",
+        "source_id": "src-web-tadiha-2022"
+      },
+      {
+        "value": "99 Ngụy Như Kon Tum ('Cafe sách Đông Tây')",
+        "source_id": "src-web-traveloka"
+      }
+    ]
+  },
+  "location": {
+    "latitude": 21.0013374,
+    "longitude": 105.8029646,
+    "plus_code": "2R23+G5 Thanh Xuân, Hà Nội",
+    "source_id": "src-gmaps-listing"
+  },
+  "phone": {
+    "value": "0976 214 224",
+    "sources": [
+      "src-photo-service-board",
+      "src-tiktok-bibliocafesach"
+    ],
+    "verification_status": "verified_branch",
+    "conflicts": [
+      {
+        "value": "024 2215 7878",
+        "source_id": "src-web-tadiha-2022",
+        "note": "2022, stale"
+      }
+    ]
+  },
+  "opening_hours": {
+    "open": "07:00",
+    "close": "22:30",
+    "days": "hằng ngày",
+    "sources": [
+      "src-photo-drink-menu",
+      "src-tiktok-bibliocafesach",
+      "src-web-mia-2026",
+      "src-web-1000libraries-2026"
+    ],
+    "verification_status": "verified_branch",
+    "conflicts": [
+      {
+        "value": "07:00–23:00",
+        "source_id": "src-web-tadiha-2022",
+        "note": "2022, stale"
+      }
+    ]
+  },
+  "channels": {
+    "google_maps": {
+      "url": "https://www.google.com/maps/place/Biblio+Book+Cafe+-+79+Ng%E1%BB%A5y+Nh%C6%B0+Kon+Tum/@21.0013374,105.8029646,17z",
+      "place_id": "ChIJm-vqyzCtNTER4gfqWLR8DWM",
+      "source_id": "src-gmaps-listing"
+    },
+    "facebook": {
+      "url": "https://www.facebook.com/Khonggianvanhoadongtay/",
+      "name": "Biblio - Cafe Sách Ngụy Như Kon Tum",
+      "verification_status": "verified_branch",
+      "source_id": "src-facebook-page"
+    },
+    "tiktok": {
+      "url": "https://www.tiktok.com/@bibliocafesach",
+      "handle": "@bibliocafesach",
+      "verification_status": "verified_branch",
+      "note": "Self-identifies the branch address/phone in a caption; not confirmed by staff.",
+      "source_id": "src-tiktok-bibliocafesach"
+    },
+    "website": {
+      "url": null,
+      "note": "No official website found (2026-11-14)."
+    },
+    "email": {
+      "value": "cafesachbiblio@gmail.com",
+      "verification_status": "unverified_branch",
+      "source_id": "src-web-tadiha-2022",
+      "note": "Brand email from a 2022 article; not confirmed."
+    }
+  },
+  "wifi": {
+    "available": true,
+    "ssid": "BIBLIO CAFE SACH",
+    "password": null,
+    "note": "Password intentionally not stored; ask staff.",
+    "source_id": "src-photo-drink-menu"
+  },
+  "google_maps_snapshot": {
+    "rating": 4.4,
+    "reviews_count": 178,
+    "distribution": {
+      "oneStar": 8,
+      "twoStar": 5,
+      "threeStar": 13,
+      "fourStar": 32,
+      "fiveStar": 120
+    },
+    "price_bucket": "1-100.000 ₫",
+    "as_of": "2026-11-14",
+    "source_id": "src-gmaps-listing"
+  },
+  "google_maps_attributes": {
+    "Các tùy chọn dịch vụ": [
+      {
+        "Đồ ăn mang đi": true
+      },
+      {
+        "Ăn tại chỗ": true
+      }
+    ],
+    "Điểm nổi bật": [
+      {
+        "Cà phê ngon": true
+      },
+      {
+        "Nhiều trà ngon": true
+      }
+    ],
+    "Nổi tiếng về": [
+      {
+        "Phù hợp để làm việc trên máy tính xách tay": true
+      }
+    ],
+    "Dịch vụ": [
+      {
+        "Cà phê": true
+      },
+      {
+        "Nhà hàng thức ăn nhanh": true
+      }
+    ],
+    "Lựa chọn ăn uống": [
+      {
+        "Bữa sáng": true
+      },
+      {
+        "Dịch vụ ăn uống": true
+      },
+      {
+        "Món tráng miệng": true
+      },
+      {
+        "Phục vụ tại bàn": true
+      }
+    ],
+    "Tiện nghi": [
+      {
+        "Nhà vệ sinh": true
+      }
+    ],
+    "Bầu không khí": [
+      {
+        "Ấm cúng": true
+      },
+      {
+        "Thông thường": true
+      },
+      {
+        "Yên tĩnh": true
+      }
+    ],
+    "Khách hàng": [
+      {
+        "Nhóm": true
+      },
+      {
+        "Sinh viên": true
+      }
+    ],
+    "Lên kế hoạch": [
+      {
+        "Nhận đặt chỗ": true
+      }
+    ],
+    "Trẻ em": [
+      {
+        "Phù hợp cho trẻ em": true
+      }
+    ],
+    "Bãi đỗ xe": [
+      {
+        "Bãi đỗ xe có tính phí": true
+      },
+      {
+        "Nhiều chỗ đỗ xe": true
+      }
+    ]
+  },
+  "service_board_contact": "0976 214 224"
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "availability",
+    "claim": "Tình trạng còn/hết của toàn bộ 51 món (availability=unknown).",
+    "source_id": "src-user-bundle",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "price_current",
+    "claim": "Giá trên ảnh menu/bảng dịch vụ có còn hiện hành.",
+    "source_id": "src-user-bundle",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "hot_cold",
+    "claim": "Lựa chọn nóng/lạnh, đường, đá cho từng món.",
+    "source_id": "src-photo-drink-menu",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "ingredients",
+    "claim": "Thành phần, độ ngọt, caffeine, dị ứng của từng món.",
+    "source_id": "src-user-bundle",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "yakult_cross",
+    "claim": "Ý nghĩa dấu X viết tay cạnh 'Trà xoài Yakult'.",
+    "source_id": "src-photo-drink-menu",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "name_bo_gia_dua_non",
+    "claim": "Tên chính xác của món 'Bơ già dừa non'.",
+    "source_id": "src-photo-drink-menu",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "name_chesse",
+    "claim": "Chính tả 'chesse' trong 'Olong đào kem chesse', 'Matcha kem chesse'.",
+    "source_id": "src-photo-drink-menu",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "tra_xuan_serving",
+    "claim": "Tên và cách phục vụ 'Trà xuân 1/2 người'.",
+    "source_id": "src-photo-drink-menu",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "room_availability",
+    "claim": "Lịch trống phòng hội thảo; chính sách đặt cọc/hủy.",
+    "source_id": "src-photo-service-board",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "cowork_discount",
+    "claim": "Điều kiện giảm 25% hóa đơn đồ uống cho khách co-working (gói nào, cộng dồn?).",
+    "source_id": "src-photo-service-board",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "cowork_decor",
+    "claim": "Phạm vi 'Bố trí, decor theo sở thích'.",
+    "source_id": "src-photo-service-board",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "backdrop_price",
+    "claim": "Giá backdrop/standee.",
+    "source_id": "src-photo-service-board",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "library_card",
+    "claim": "Thẻ mượn sách: còn áp dụng? giá? (nguồn 2022).",
+    "source_id": "src-web-tadiha-2022",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "parking_fee",
+    "claim": "Phí gửi xe (Google Maps chỉ ghi 'có tính phí').",
+    "source_id": "src-gmaps-listing",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "kids_area_current",
+    "claim": "Khu trẻ em/khu tô tượng hiện còn hoạt động? giờ, phí?",
+    "source_id": "src-web-book365",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "upcoming_events",
+    "claim": "Lịch sự kiện sắp tới (fanpage không truy cập được).",
+    "source_id": "src-facebook-page",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "email",
+    "claim": "Email cafesachbiblio@gmail.com còn dùng? (nguồn 2022).",
+    "source_id": "src-web-tadiha-2022",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "area_1000m2",
+    "claim": "Diện tích 'hơn 1000m²' (bài tổng hợp, không ghi ngày).",
+    "source_id": "src-web-book365",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "brand_history_dong_tay",
+    "claim": "Quan hệ với 'Không gian văn hóa Đông Tây' / 'Cafe sách Đông Tây'.",
+    "source_id": "src-web-traveloka",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "address_79a",
+    "claim": "'79a Ngụy Như Kon Tum' trong video Civilis có phải chi nhánh này?",
+    "source_id": "src-tiktok-bibliocafesach",
+    "status": "pending_owner_confirmation"
+  },
+  {
+    "id": "wifi_password",
+    "claim": "Mật khẩu Wi-Fi (có trên ảnh nhưng cố ý không lưu).",
+    "source_id": "src-photo-drink-menu",
+    "status": "pending_owner_confirmation"
+  }
+]

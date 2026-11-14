@@ -1,0 +1,134 @@
+{
+  "cafe_name": "Biblio Café Sách / Biblio Book Cafe",
+  "branch": "79 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội",
+  "as_of": "2026-11-14",
+  "source_image_ids": [
+    5
+  ],
+  "price_verified_current": false,
+  "contact_from_board": "0976 214 224",
+  "opening_hours_from_drink_menu": "07:00–22:30",
+  "coworking": {
+    "packages": [
+      {
+        "label": "1 ngày",
+        "price_vnd": 55000
+      },
+      {
+        "label": "1 tuần",
+        "price_vnd": 280000
+      },
+      {
+        "label": "1 tháng",
+        "price_vnd": 990000
+      }
+    ],
+    "prices_include_10_percent_vat": true,
+    "amenities": [
+      "Nước lọc miễn phí suốt cả ngày",
+      "Chỗ ngồi cố định",
+      "Bố trí, decor theo sở thích (theo bảng)",
+      "Ghế công thái học",
+      "Wi-Fi",
+      "Ổ cắm điện",
+      "Điều hòa",
+      "Tủ để đồ cá nhân",
+      "Giảm 25% hóa đơn đồ uống tại quầy",
+      "Hỗ trợ đăng ký vé gửi xe tháng"
+    ]
+  },
+  "meeting_spaces": {
+    "prices_include_10_percent_vat": true,
+    "rooms": [
+      {
+        "name": "Phòng 1",
+        "area_m2": 55,
+        "capacity_theater_people": 50,
+        "capacity_tables_and_chairs_people": 30,
+        "session_hours": 4,
+        "price_vnd": 1100000
+      },
+      {
+        "name": "Phòng 2",
+        "area_m2": 80,
+        "capacity_theater_people": 80,
+        "capacity_tables_and_chairs_people": 40,
+        "session_hours": 4,
+        "price_vnd": 1320000
+      },
+      {
+        "name": "Phòng 3",
+        "area_m2": 90,
+        "capacity_theater_people": 100,
+        "capacity_tables_and_chairs_people": 60,
+        "session_hours": 4,
+        "price_vnd": 1650000
+      },
+      {
+        "name": "Phòng 4",
+        "area_m2": 35,
+        "capacity_meeting_people": 20,
+        "layout": "Bàn ghế dạng phòng họp",
+        "session_hours": 4,
+        "price_vnd": 770000
+      },
+      {
+        "name": "Không gian cafe",
+        "area_m2": 200,
+        "capacity_people": 200,
+        "layout": "Bàn ghế xen kẽ",
+        "session_hours": 4,
+        "price_vnd": 2750000
+      }
+    ],
+    "included_facilities": [
+      "Máy chiếu",
+      "Loa âm thanh, micro",
+      "Bảng viết",
+      "Wi-Fi",
+      "Ổ cắm điện",
+      "Điều hòa",
+      "Bàn ghế xếp linh động"
+    ],
+    "additional_services": [
+      {
+        "name": "Teabreak",
+        "price_from_vnd": 40000,
+        "unit": "suất"
+      },
+      {
+        "name": "Nước chai",
+        "price_range_vnd": [
+          8000,
+          10000
+        ]
+      },
+      {
+        "name": "Đồ uống",
+        "price_range_vnd": [
+          35000,
+          55000
+        ]
+      },
+      {
+        "name": "Backdrop, standee",
+        "price_vnd": null,
+        "note": "Đề cập trên bảng, giá không đọc rõ/không ghi"
+      }
+    ]
+  },
+  "review_flags": [
+    "Xác nhận giá và khả dụng phòng trước khi nhận booking thật.",
+    "Chưa có dữ liệu phòng trống theo thời gian.",
+    "Một số nơi ghi biểu giá/phụ phí khác; bảng ảnh là nguồn cụ thể theo cơ sở.",
+    "Xác nhận điều kiện giảm 25% (áp dụng cho gói nào, có cộng dồn không)."
+  ],
+  "source_image_legend": {
+    "1": "image(20261114-031251).png — menu đồ uống, ảnh 1",
+    "2": "image(20261114-031255).png — menu đồ ăn, ảnh 2",
+    "3": "image(20261114-031301).png — menu đồ ăn, ảnh 3",
+    "4": "image(20261114-031306).png — menu đồ uống, ảnh 4",
+    "5": "image(20261114-031314).png — bảng giá co-working/phòng hội thảo, ảnh 5",
+    "6": "image(20261114-031318).png — menu đồ uống, ảnh 6"
+  }
+}

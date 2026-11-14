@@ -1,0 +1,753 @@
+{
+  "cafe_name": "Biblio Café Sách / Biblio Book Cafe",
+  "branch": "79 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội",
+  "as_of": "2026-11-14",
+  "source": "User-uploaded menu photos",
+  "price_label_unit": "thousand_VND",
+  "price_normalization": "Every printed 35 means 35,000 VND",
+  "items": [
+    {
+      "id": "menu_001",
+      "category": "Cà phê",
+      "name": "Cà phê nâu / đen",
+      "currency": "VND",
+      "price_vnd": 35000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false,
+      "note": "Một dòng menu ghi 'CAFE NÂU / ĐEN'; nên thiết kế lựa chọn biến thể nâu hoặc đen, cùng giá 35.000đ. Các ký hiệu nóng/lạnh cần đối chiếu khi nhập thực tế."
+    },
+    {
+      "id": "menu_002",
+      "category": "Cà phê",
+      "name": "Bạc xỉu",
+      "currency": "VND",
+      "price_vnd": 45000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_003",
+      "category": "Cà phê",
+      "name": "Cà phê cốt dừa",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_004",
+      "category": "Cà phê",
+      "name": "Cà phê muối",
+      "currency": "VND",
+      "price_vnd": 45000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_005",
+      "category": "Cà phê",
+      "name": "Cold brew chanh vàng",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_006",
+      "category": "Cà phê",
+      "name": "Cold brew vải hoa hồng",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_007",
+      "category": "Sữa chua & cacao",
+      "name": "Sữa chua trân châu",
+      "currency": "VND",
+      "price_vnd": 40000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_008",
+      "category": "Sữa chua & cacao",
+      "name": "Sữa chua xoài chanh leo",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_009",
+      "category": "Sữa chua & cacao",
+      "name": "Sữa chua việt quất",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_010",
+      "category": "Sữa chua & cacao",
+      "name": "Ca cao bơ đậu phộng",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_011",
+      "category": "Sữa chua & cacao",
+      "name": "Cacao cốt dừa",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_012",
+      "category": "Trà lạnh",
+      "name": "Trà vải nha đam",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_013",
+      "category": "Trà lạnh",
+      "name": "Trà quýt rừng",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_014",
+      "category": "Trà lạnh",
+      "name": "Trà thạch đào",
+      "currency": "VND",
+      "price_vnd": 45000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_015",
+      "category": "Trà lạnh",
+      "name": "Trà đào cam sả",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_016",
+      "category": "Trà lạnh",
+      "name": "Trà hoa quả nhiệt đới",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_017",
+      "category": "Trà lạnh",
+      "name": "Trà atiso quả mọng",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_018",
+      "category": "Trà lạnh",
+      "name": "Trà chanh chanh leo",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_019",
+      "category": "Trà lạnh",
+      "name": "Trà xoài Yakult",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false,
+      "handwritten_cross_on_menu": true,
+      "needs_review": [
+        "Kiểm tra ý nghĩa dấu gạch chéo đỏ cạnh tên món; chưa mặc định là hết hàng."
+      ]
+    },
+    {
+      "id": "menu_020",
+      "category": "Trà lạnh",
+      "name": "Trà vải hoa hồng",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_021",
+      "category": "Trà lạnh",
+      "name": "Olong đào kem chesse",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false,
+      "needs_review": [
+        "Menu in 'CHESSE' (có thể là lỗi chính tả của CHEESE); giữ nguyên tên đã in trong dữ liệu gốc."
+      ]
+    },
+    {
+      "id": "menu_022",
+      "category": "Trà lạnh",
+      "name": "Olong sen dừa",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_023",
+      "category": "Trà lạnh",
+      "name": "Trà xuân 1/2 người",
+      "currency": "VND",
+      "price_vnd": null,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false,
+      "variants": [
+        {
+          "label": "1 người",
+          "price_vnd": 40000
+        },
+        {
+          "label": "2 người",
+          "price_vnd": 60000
+        }
+      ],
+      "note": "Menu in 'TRÀ XUÂN 1 / 2 NGƯỜI' và giá 40 / 60 (nghìn đồng); cần xác nhận tên và cách phục vụ chính xác."
+    },
+    {
+      "id": "menu_024",
+      "category": "Trà lạnh",
+      "name": "Trà chanh gừng mật ong",
+      "currency": "VND",
+      "price_vnd": 45000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_025",
+      "category": "Trà lạnh",
+      "name": "Trà hoa thảo mộc",
+      "currency": "VND",
+      "price_vnd": 45000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_026",
+      "category": "Nước ép",
+      "name": "Cam dứa",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_027",
+      "category": "Nước ép",
+      "name": "Chanh leo",
+      "currency": "VND",
+      "price_vnd": 40000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_028",
+      "category": "Nước ép",
+      "name": "Dưa hấu",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_029",
+      "category": "Nước ép",
+      "name": "Dừa tươi (quả)",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_030",
+      "category": "Matcha",
+      "name": "Matcha latte",
+      "currency": "VND",
+      "price_vnd": 45000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_031",
+      "category": "Matcha",
+      "name": "Matcha cookie",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_032",
+      "category": "Matcha",
+      "name": "Matcha kem chesse",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false,
+      "needs_review": [
+        "Menu in 'CHESSE'; xác nhận chính tả hiển thị nếu muốn chuẩn hóa."
+      ]
+    },
+    {
+      "id": "menu_033",
+      "category": "Matcha",
+      "name": "Matcha xoài nhiệt đới",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_034",
+      "category": "Matcha",
+      "name": "Matcha dừa non",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_035",
+      "category": "Sinh tố",
+      "name": "Chanh tuyết",
+      "currency": "VND",
+      "price_vnd": 50000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_036",
+      "category": "Sinh tố",
+      "name": "Bơ già dừa non",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false,
+      "needs_review": [
+        "Tên món đọc từ ảnh là 'BƠ GIÀ DỪA NON'; cần xác nhận tên đúng, vì cụm này dễ bị đọc nhầm."
+      ]
+    },
+    {
+      "id": "menu_037",
+      "category": "Sinh tố",
+      "name": "Sinh tố bơ",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_038",
+      "category": "Sinh tố",
+      "name": "Sinh tố mãng cầu",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_039",
+      "category": "Sinh tố",
+      "name": "Sinh tố xoài",
+      "currency": "VND",
+      "price_vnd": 55000,
+      "availability": "unknown",
+      "source_image_ids": [
+        1,
+        4,
+        6
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_040",
+      "category": "Mì tôm",
+      "name": "Mì tôm trứng",
+      "currency": "VND",
+      "price_vnd": 35000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_041",
+      "category": "Mì tôm",
+      "name": "Mì tôm xúc xích",
+      "currency": "VND",
+      "price_vnd": 35000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_042",
+      "category": "Mì tôm",
+      "name": "Mì tôm trứng xúc xích",
+      "currency": "VND",
+      "price_vnd": 40000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_043",
+      "category": "Bánh bao",
+      "name": "Bánh bao gạo lứt",
+      "currency": "VND",
+      "price_vnd": 30000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_044",
+      "category": "Bánh bao",
+      "name": "Bánh bao gà nấm phô mai",
+      "currency": "VND",
+      "price_vnd": 30000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_045",
+      "category": "Bánh bao",
+      "name": "Bánh bao bò bằm phô mai",
+      "currency": "VND",
+      "price_vnd": 35000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_046",
+      "category": "Bánh bao",
+      "name": "Bánh bao xúc xích phô mai",
+      "currency": "VND",
+      "price_vnd": 30000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_047",
+      "category": "Bánh bao",
+      "name": "Bánh bao xá xíu phô mai",
+      "currency": "VND",
+      "price_vnd": 30000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_048",
+      "category": "Ăn vặt",
+      "name": "Khoai tây chiên",
+      "currency": "VND",
+      "price_vnd": 35000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_049",
+      "category": "Ăn vặt",
+      "name": "Nem chua rán",
+      "currency": "VND",
+      "price_vnd": 35000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_050",
+      "category": "Ăn vặt",
+      "name": "Xúc xích rán",
+      "currency": "VND",
+      "price_vnd": 35000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    },
+    {
+      "id": "menu_051",
+      "category": "Ăn vặt",
+      "name": "Hướng dương",
+      "currency": "VND",
+      "price_vnd": 15000,
+      "availability": "unknown",
+      "source_image_ids": [
+        2,
+        3
+      ],
+      "verified_current_price": false
+    }
+  ],
+  "review_flags": [
+    "Ảnh menu có thể cũ; quán cần xác nhận giá trước khi bật đặt món.",
+    "Không suy ra trạng thái còn hàng từ việc món có tên trên menu.",
+    "Trà xoài Yakult có dấu X viết tay.",
+    "Xác nhận tên món 'Bơ già dừa non'.",
+    "Xác nhận biểu tượng nóng/lạnh và các lựa chọn món.",
+    "Ảnh minh họa trên menu chưa được gán chính xác cho từng SKU."
+  ],
+  "source_image_legend": {
+    "1": "image(20261114-031251).png — menu đồ uống, ảnh 1",
+    "2": "image(20261114-031255).png — menu đồ ăn, ảnh 2",
+    "3": "image(20261114-031301).png — menu đồ ăn, ảnh 3",
+    "4": "image(20261114-031306).png — menu đồ uống, ảnh 4",
+    "5": "image(20261114-031314).png — bảng giá co-working/phòng hội thảo, ảnh 5",
+    "6": "image(20261114-031318).png — menu đồ uống, ảnh 6"
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "_comment": "Candidate public sources for Biblio 79 Ngụy Như Kon Tum. collect.py fetches `web` entries (free) and runs bounded Apify actors. Branch decisions are made in data/knowledge/curated/*.json after reading the raw text.",
+  "web": [
+    {
+      "id": "web-mia-top-cafe-sach",
+      "url": "https://mia.vn/cam-nang-du-lich/top-quan-ca-phe-sach-ha-noi-15088",
+      "source_type": "web_article",
+      "why": "Listed in user bundle; describes the 79 Ngụy Như Kon Tum branch"
+    },
+    {
+      "id": "web-1000libraries-hanoi",
+      "url": "https://magazine.1000libraries.com/9-must-visit-book-cafes-in-hanoi/",
+      "source_type": "web_article",
+      "why": "Listed in user bundle"
+    },
+    {
+      "id": "web-restaurantguru",
+      "url": "https://restaurantguru.com/Biblio-Book-Cafe-79-Nguy-Nhu-Kon-Tum-Hanoi",
+      "source_type": "directory_listing",
+      "why": "Listed in user bundle; branch-specific URL"
+    },
+    {
+      "id": "web-tatinta-4357",
+      "url": "https://tatinta.com/diem-den/biblio-book-coffee/4357",
+      "source_type": "web_article",
+      "why": "User-provided; expected to describe 70 Tam Khương (other branch)"
+    },
+    {
+      "id": "web-findglocal-fbpage",
+      "url": "https://www.findglocal.com/VN/Hanoi/1016781408363513/Biblio---Cafe-Sa%CC%81ch-Ngu%CC%A3y-Nhu%CC%9B-Kon-Tum",
+      "source_type": "directory_listing",
+      "why": "Mirror of the branch Facebook page 'Biblio - Cafe Sách Ngụy Như Kon Tum'"
+    },
+    {
+      "id": "web-facebook-page",
+      "url": "https://www.facebook.com/Khonggianvanhoadongtay/",
+      "source_type": "facebook",
+      "why": "Branch Facebook page (likely login-walled)"
+    },
+    {
+      "id": "web-maptons",
+      "url": "https://ai.maptons.com/p/15192907699",
+      "source_type": "directory_listing",
+      "why": "Map listing titled 'Biblio Book Cafe - 79 Ngụy Như Kon Tum'"
+    },
+    {
+      "id": "web-topcv-company",
+      "url": "https://www.topcv.vn/cong-ty/ca-phe-sach-biblio/56405.html",
+      "source_type": "directory_listing",
+      "why": "Company profile 'Cà phê sách BIBLIO'"
+    },
+    {
+      "id": "web-thesmartlocal-bookcafes",
+      "url": "https://thesmartlocal.com/vietnam/book-cafes-hanoi/",
+      "source_type": "web_article",
+      "why": "Search result mentioning Thanh Xuân branch workshops/rental"
+    },
+    {
+      "id": "web-traveloka-cafe-sach",
+      "url": "https://www.traveloka.com/vi-vn/explore/culinary/15-quan-cafe-sach-ha-noi/161047",
+      "source_type": "web_article",
+      "why": "Search result for 79 Ngụy Như Kon Tum"
+    },
+    {
+      "id": "web-wanderlog",
+      "url": "https://wanderlog.com/place/details/1254145/biblio-book-coffee",
+      "source_type": "directory_listing",
+      "why": "Search result; branch unknown"
+    },
+    {
+      "id": "web-tadiha-kids",
+      "url": "https://tadiha.com/top-3-quan-ca-phe-cho-tre-em-thoa-thich-vui-choi-o-ha-noi-d38420.htm",
+      "source_type": "web_article",
+      "why": "Search result mentioning a kids area"
+    },
+    {
+      "id": "web-toplist-cafe-sach",
+      "url": "https://toplist.vn/top-list/quan-cafe-sach-dep-nhat-danh-cho-mot-sach-o-ha-noi-26552.htm",
+      "source_type": "web_article",
+      "why": "Search result for 79 Ngụy Như Kon Tum"
+    },
+    {
+      "id": "web-book365-cafe-sach",
+      "url": "https://book365.vn/tintuc-sukien/top-10-quan-cafe-sach-ha-noi.html",
+      "source_type": "web_article",
+      "why": "Search result for 79 Ngụy Như Kon Tum"
+    }
+  ],
+  "apify": {
+    "budget_usd_total": 1.0,
+    "google_maps": {
+      "actor_id": "compass/crawler-google-places",
+      "max_total_charge_usd": 0.5,
+      "input": {
+        "startUrls": [
+          {
+            "url": "https://www.google.com/maps/place/Biblio+Book+Cafe+-+79+Ng%E1%BB%A5y+Nh%C6%B0+Kon+Tum/@21.0013374,105.8029646,17z/data=!3m1!4b1!4m6!3m5!1s0x3135ad30cbeaeb9b:0x630d7cb458ea07e2!8m2!3d21.0013374!4d105.8029646!16s%2Fg%2F11rkp7z7v2"
+          }
+        ],
+        "maxCrawledPlacesPerSearch": 1,
+        "language": "vi",
+        "scrapePlaceDetailPage": true,
+        "maxReviews": 30,
+        "reviewsSort": "mostRelevant",
+        "reviewsOrigin": "google",
+        "scrapeReviewsPersonalData": false,
+        "maxImages": 0,
+        "maxQuestions": 0,
+        "includeWebResults": false,
+        "scrapeDirectories": false,
+        "scrapeContacts": false,
+        "scrapeTableReservationProvider": false,
+        "scrapeOrderOnline": false,
+        "enableCompetitorAnalysis": false,
+        "maximumLeadsEnrichmentRecords": 0,
+        "scrapeSocialMediaProfiles": {
+          "facebooks": false,
+          "instagrams": false,
+          "youtubes": false,
+          "tiktoks": false,
+          "twitters": false
+        }
+      }
+    },
+    "tiktok": {
+      "actor_id": "clockworks/tiktok-scraper",
+      "max_total_charge_usd": 0.5,
+      "max_items": 20,
+      "input": {
+        "searchQueries": [
+          "biblio ngụy như kon tum",
+          "biblio cafe sách thanh xuân"
+        ],
+        "searchSection": "/video",
+        "resultsPerPage": 10,
+        "hashtags": [],
+        "profiles": [],
+        "shouldDownloadVideos": false,
+        "shouldDownloadCovers": false,
+        "shouldDownloadSlideshowImages": false,
+        "shouldDownloadAvatars": false,
+        "shouldDownloadMusicCovers": false,
+        "downloadSubtitlesOptions": "NEVER_DOWNLOAD_SUBTITLES",
+        "aiVideoDescription": false,
+        "aiVideoSummary": false,
+        "commentsPerPost": 0,
+        "topLevelCommentsPerPost": 0,
+        "maxRepliesPerComment": 0,
+        "maxFollowersPerProfile": 0,
+        "maxFollowingPerProfile": 0,
+        "scrapeRelatedVideos": false,
+        "scrapeRelatedSearchWords": false,
+        "proxyCountryCode": "None"
+      }
+    },
+    "_cap_note": "Apify enforces a minimum per-run cap of $0.50; the two caps sum to the $1.00 total budget. Expected spend is ~$0.10 because inputs bound reviews (30) and videos (20)."
+  }
+}

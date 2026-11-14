@@ -1,0 +1,1106 @@
+{
+  "as_of": "2026-11-14",
+  "price_basis": "Giá niêm yết trên ảnh menu chụp tại quán ngày 14/11/2026; chưa được quán xác nhận là giá hiện hành.",
+  "categories": [
+    {
+      "id": "ca-phe",
+      "name": "Cà phê",
+      "kind": "drink",
+      "sort_order": 1,
+      "item_count": 6
+    },
+    {
+      "id": "sua-chua-cacao",
+      "name": "Sữa chua & cacao",
+      "kind": "drink",
+      "sort_order": 2,
+      "item_count": 5
+    },
+    {
+      "id": "tra-lanh",
+      "name": "Trà lạnh",
+      "kind": "drink",
+      "sort_order": 3,
+      "item_count": 14
+    },
+    {
+      "id": "nuoc-ep",
+      "name": "Nước ép",
+      "kind": "drink",
+      "sort_order": 4,
+      "item_count": 4
+    },
+    {
+      "id": "matcha",
+      "name": "Matcha",
+      "kind": "drink",
+      "sort_order": 5,
+      "item_count": 5
+    },
+    {
+      "id": "sinh-to",
+      "name": "Sinh tố",
+      "kind": "drink",
+      "sort_order": 6,
+      "item_count": 5
+    },
+    {
+      "id": "mi-tom",
+      "name": "Mì tôm",
+      "kind": "food",
+      "sort_order": 7,
+      "item_count": 3
+    },
+    {
+      "id": "banh-bao",
+      "name": "Bánh bao",
+      "kind": "food",
+      "sort_order": 8,
+      "item_count": 5
+    },
+    {
+      "id": "an-vat",
+      "name": "Ăn vặt",
+      "kind": "food",
+      "sort_order": 9,
+      "item_count": 4
+    }
+  ],
+  "items": [
+    {
+      "id": "menu_001",
+      "category_id": "ca-phe",
+      "name": "Cà phê nâu / đen",
+      "price_vnd": null,
+      "price_min_vnd": 35000,
+      "price_max_vnd": 35000,
+      "variants": [
+        {
+          "id": "menu_001:nau",
+          "label": "Nâu",
+          "price_vnd": 35000
+        },
+        {
+          "id": "menu_001:den",
+          "label": "Đen",
+          "price_vnd": 35000
+        }
+      ],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "ca-phe",
+        "co-caffeine"
+      ]
+    },
+    {
+      "id": "menu_002",
+      "category_id": "ca-phe",
+      "name": "Bạc xỉu",
+      "price_vnd": 45000,
+      "price_min_vnd": 45000,
+      "price_max_vnd": 45000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "ca-phe",
+        "co-caffeine"
+      ]
+    },
+    {
+      "id": "menu_003",
+      "category_id": "ca-phe",
+      "name": "Cà phê cốt dừa",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "ca-phe",
+        "co-caffeine"
+      ]
+    },
+    {
+      "id": "menu_004",
+      "category_id": "ca-phe",
+      "name": "Cà phê muối",
+      "price_vnd": 45000,
+      "price_min_vnd": 45000,
+      "price_max_vnd": 45000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "ca-phe",
+        "co-caffeine"
+      ]
+    },
+    {
+      "id": "menu_005",
+      "category_id": "ca-phe",
+      "name": "Cold brew chanh vàng",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "ca-phe",
+        "co-caffeine",
+        "lanh",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_006",
+      "category_id": "ca-phe",
+      "name": "Cold brew vải hoa hồng",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "ca-phe",
+        "co-caffeine",
+        "hoa-thao-moc",
+        "lanh",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_007",
+      "category_id": "sua-chua-cacao",
+      "name": "Sữa chua trân châu",
+      "price_vnd": 40000,
+      "price_min_vnd": 40000,
+      "price_max_vnd": 40000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "co-topping",
+        "sua-chua",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_008",
+      "category_id": "sua-chua-cacao",
+      "name": "Sữa chua xoài chanh leo",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "sua-chua",
+        "trai-cay",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_009",
+      "category_id": "sua-chua-cacao",
+      "name": "Sữa chua việt quất",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "sua-chua",
+        "trai-cay",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_010",
+      "category_id": "sua-chua-cacao",
+      "name": "Ca cao bơ đậu phộng",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "ca-cao"
+      ]
+    },
+    {
+      "id": "menu_011",
+      "category_id": "sua-chua-cacao",
+      "name": "Cacao cốt dừa",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "ca-cao"
+      ]
+    },
+    {
+      "id": "menu_012",
+      "category_id": "tra-lanh",
+      "name": "Trà vải nha đam",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "co-topping",
+        "lanh",
+        "tra",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_013",
+      "category_id": "tra-lanh",
+      "name": "Trà quýt rừng",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "lanh",
+        "tra",
+        "trai-cay",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_014",
+      "category_id": "tra-lanh",
+      "name": "Trà thạch đào",
+      "price_vnd": 45000,
+      "price_min_vnd": 45000,
+      "price_max_vnd": 45000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "co-topping",
+        "lanh",
+        "tra",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_015",
+      "category_id": "tra-lanh",
+      "name": "Trà đào cam sả",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "hoa-thao-moc",
+        "lanh",
+        "tra",
+        "trai-cay",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_016",
+      "category_id": "tra-lanh",
+      "name": "Trà hoa quả nhiệt đới",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "lanh",
+        "tra",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_017",
+      "category_id": "tra-lanh",
+      "name": "Trà atiso quả mọng",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "hoa-thao-moc",
+        "lanh",
+        "tra",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_018",
+      "category_id": "tra-lanh",
+      "name": "Trà chanh chanh leo",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "lanh",
+        "tra",
+        "trai-cay",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_019",
+      "category_id": "tra-lanh",
+      "name": "Trà xoài Yakult",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": "Ảnh menu có dấu X viết tay cạnh tên món; chưa xác định là hết hàng — cần nhân viên xác nhận.",
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [
+        "Kiểm tra ý nghĩa dấu gạch chéo đỏ cạnh tên món; chưa mặc định là hết hàng."
+      ],
+      "suggested_tags": [
+        "lanh",
+        "tra",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_020",
+      "category_id": "tra-lanh",
+      "name": "Trà vải hoa hồng",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "hoa-thao-moc",
+        "lanh",
+        "tra",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_021",
+      "category_id": "tra-lanh",
+      "name": "Olong đào kem chesse",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [
+        "Menu in 'CHESSE' (có thể là lỗi chính tả của CHEESE); giữ nguyên tên đã in trong dữ liệu gốc."
+      ],
+      "suggested_tags": [
+        "beo-ngay",
+        "co-caffeine",
+        "co-topping",
+        "lanh",
+        "tra",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_022",
+      "category_id": "tra-lanh",
+      "name": "Olong sen dừa",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "co-caffeine",
+        "hoa-thao-moc",
+        "lanh",
+        "tra"
+      ]
+    },
+    {
+      "id": "menu_023",
+      "category_id": "tra-lanh",
+      "name": "Trà xuân 1/2 người",
+      "price_vnd": null,
+      "price_min_vnd": 40000,
+      "price_max_vnd": 60000,
+      "variants": [
+        {
+          "id": "menu_023:1-nguoi",
+          "label": "1 người",
+          "price_vnd": 40000
+        },
+        {
+          "id": "menu_023:2-nguoi",
+          "label": "2 người",
+          "price_vnd": 60000
+        }
+      ],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "lanh",
+        "tra"
+      ]
+    },
+    {
+      "id": "menu_024",
+      "category_id": "tra-lanh",
+      "name": "Trà chanh gừng mật ong",
+      "price_vnd": 45000,
+      "price_min_vnd": 45000,
+      "price_max_vnd": 45000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "hoa-thao-moc",
+        "lanh",
+        "tra",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_025",
+      "category_id": "tra-lanh",
+      "name": "Trà hoa thảo mộc",
+      "price_vnd": 45000,
+      "price_min_vnd": 45000,
+      "price_max_vnd": 45000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "hoa-thao-moc",
+        "lanh",
+        "tra"
+      ]
+    },
+    {
+      "id": "menu_026",
+      "category_id": "nuoc-ep",
+      "name": "Cam dứa",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "nuoc-ep",
+        "trai-cay",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_027",
+      "category_id": "nuoc-ep",
+      "name": "Chanh leo",
+      "price_vnd": 40000,
+      "price_min_vnd": 40000,
+      "price_max_vnd": 40000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "nuoc-ep",
+        "trai-cay",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_028",
+      "category_id": "nuoc-ep",
+      "name": "Dưa hấu",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "nuoc-ep",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_029",
+      "category_id": "nuoc-ep",
+      "name": "Dừa tươi (quả)",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "nuoc-ep",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_030",
+      "category_id": "matcha",
+      "name": "Matcha latte",
+      "price_vnd": 45000,
+      "price_min_vnd": 45000,
+      "price_max_vnd": 45000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "co-caffeine",
+        "matcha"
+      ]
+    },
+    {
+      "id": "menu_031",
+      "category_id": "matcha",
+      "name": "Matcha cookie",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "co-caffeine",
+        "matcha"
+      ]
+    },
+    {
+      "id": "menu_032",
+      "category_id": "matcha",
+      "name": "Matcha kem chesse",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [
+        "Menu in 'CHESSE'; xác nhận chính tả hiển thị nếu muốn chuẩn hóa."
+      ],
+      "suggested_tags": [
+        "beo-ngay",
+        "co-caffeine",
+        "co-topping",
+        "matcha"
+      ]
+    },
+    {
+      "id": "menu_033",
+      "category_id": "matcha",
+      "name": "Matcha xoài nhiệt đới",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "co-caffeine",
+        "matcha",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_034",
+      "category_id": "matcha",
+      "name": "Matcha dừa non",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "co-caffeine",
+        "matcha"
+      ]
+    },
+    {
+      "id": "menu_035",
+      "category_id": "sinh-to",
+      "name": "Chanh tuyết",
+      "price_vnd": 50000,
+      "price_min_vnd": 50000,
+      "price_max_vnd": 50000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "sinh-to",
+        "vi-chua"
+      ]
+    },
+    {
+      "id": "menu_036",
+      "category_id": "sinh-to",
+      "name": "Bơ già dừa non",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [
+        "Tên món đọc từ ảnh là 'BƠ GIÀ DỪA NON'; cần xác nhận tên đúng, vì cụm này dễ bị đọc nhầm."
+      ],
+      "suggested_tags": [
+        "beo-ngay",
+        "sinh-to",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_037",
+      "category_id": "sinh-to",
+      "name": "Sinh tố bơ",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "beo-ngay",
+        "sinh-to",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_038",
+      "category_id": "sinh-to",
+      "name": "Sinh tố mãng cầu",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "sinh-to",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_039",
+      "category_id": "sinh-to",
+      "name": "Sinh tố xoài",
+      "price_vnd": 55000,
+      "price_min_vnd": 55000,
+      "price_max_vnd": 55000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "sinh-to",
+        "trai-cay"
+      ]
+    },
+    {
+      "id": "menu_040",
+      "category_id": "mi-tom",
+      "name": "Mì tôm trứng",
+      "price_vnd": 35000,
+      "price_min_vnd": 35000,
+      "price_max_vnd": 35000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_041",
+      "category_id": "mi-tom",
+      "name": "Mì tôm xúc xích",
+      "price_vnd": 35000,
+      "price_min_vnd": 35000,
+      "price_max_vnd": 35000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_042",
+      "category_id": "mi-tom",
+      "name": "Mì tôm trứng xúc xích",
+      "price_vnd": 40000,
+      "price_min_vnd": 40000,
+      "price_max_vnd": 40000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_043",
+      "category_id": "banh-bao",
+      "name": "Bánh bao gạo lứt",
+      "price_vnd": 30000,
+      "price_min_vnd": 30000,
+      "price_max_vnd": 30000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_044",
+      "category_id": "banh-bao",
+      "name": "Bánh bao gà nấm phô mai",
+      "price_vnd": 30000,
+      "price_min_vnd": 30000,
+      "price_max_vnd": 30000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_045",
+      "category_id": "banh-bao",
+      "name": "Bánh bao bò bằm phô mai",
+      "price_vnd": 35000,
+      "price_min_vnd": 35000,
+      "price_max_vnd": 35000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_046",
+      "category_id": "banh-bao",
+      "name": "Bánh bao xúc xích phô mai",
+      "price_vnd": 30000,
+      "price_min_vnd": 30000,
+      "price_max_vnd": 30000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_047",
+      "category_id": "banh-bao",
+      "name": "Bánh bao xá xíu phô mai",
+      "price_vnd": 30000,
+      "price_min_vnd": 30000,
+      "price_max_vnd": 30000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-no"
+      ]
+    },
+    {
+      "id": "menu_048",
+      "category_id": "an-vat",
+      "name": "Khoai tây chiên",
+      "price_vnd": 35000,
+      "price_min_vnd": 35000,
+      "price_max_vnd": 35000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-vat"
+      ]
+    },
+    {
+      "id": "menu_049",
+      "category_id": "an-vat",
+      "name": "Nem chua rán",
+      "price_vnd": 35000,
+      "price_min_vnd": 35000,
+      "price_max_vnd": 35000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-vat"
+      ]
+    },
+    {
+      "id": "menu_050",
+      "category_id": "an-vat",
+      "name": "Xúc xích rán",
+      "price_vnd": 35000,
+      "price_min_vnd": 35000,
+      "price_max_vnd": 35000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-vat"
+      ]
+    },
+    {
+      "id": "menu_051",
+      "category_id": "an-vat",
+      "name": "Hướng dương",
+      "price_vnd": 15000,
+      "price_min_vnd": 15000,
+      "price_max_vnd": 15000,
+      "variants": [],
+      "availability": "unknown",
+      "availability_note": null,
+      "is_orderable": true,
+      "price_verified": false,
+      "description": null,
+      "needs_review": [],
+      "suggested_tags": [
+        "an-vat"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "branch_id": "biblio-79-nguy-nhu-kon-tum",
+  "as_of": "2026-11-14",
+  "upcoming_verified": 0,
+  "events": [
+    {
+      "id": "evt-2026-08-14-music-night",
+      "title": "Sự kiện âm nhạc buổi tối (theo review khách)",
+      "start_date": "2026-08-14",
+      "time_precision": "inferred_day",
+      "branch_id": "biblio-79-nguy-nhu-kon-tum",
+      "source_type": "google_maps_review",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Biblio%20Book%20Cafe%20-%2079%20Ng%E1%BB%A5y%20Nh%C6%B0%20Kon%20Tum&query_place_id=ChIJm-vqyzCtNTER4gfqWLR8DWM",
+      "event_status": "past",
+      "verification_status": "verified_branch",
+      "description": "Review 5★ đăng 15/08/2026 trên listing Google Maps của chi nhánh nhắc tới 'sự kiện âm nhạc như tối qua' và quy mô phù hợp sự kiện 100 người. Ngày 14/08/2026 được suy ra từ ngày đăng review; tên chương trình không rõ."
+    },
+    {
+      "id": "evt-2026-03-08-fan-meetup",
+      "title": "Buổi off-fan (fan meetup) do khách tổ chức (theo review khách)",
+      "start_date": "2026-03-08",
+      "time_precision": "inferred_year",
+      "branch_id": "biblio-79-nguy-nhu-kon-tum",
+      "source_type": "google_maps_review",
+      "source_url": "https://www.google.com/maps/search/?api=1&query=Biblio%20Book%20Cafe%20-%2079%20Ng%E1%BB%A5y%20Nh%C6%B0%20Kon%20Tum&query_place_id=ChIJm-vqyzCtNTER4gfqWLR8DWM",
+      "event_status": "past",
+      "verification_status": "verified_branch",
+      "description": "Review đăng 07/05/2026 kể về buổi off-fan 'hôm 8/3'; năm 2026 được suy ra từ ngày đăng. Sự kiện do nhóm khách tự tổ chức, không phải chương trình của quán."
+    },
+    {
+      "id": "evt-2026-01-24-civilis-library",
+      "title": "Civilis — mở thư viện/không gian văn hóa cho học sinh, sinh viên tại '79a Ngụy Như Kon Tum'",
+      "start_date": "2026-01-24",
+      "time_precision": "post_date",
+      "branch_id": "biblio-79-nguy-nhu-kon-tum",
+      "source_type": "tiktok",
+      "source_url": "https://www.tiktok.com/@phuongcivilis/video/7598886343044795669",
+      "event_status": "past",
+      "verification_status": "unverified_branch",
+      "description": "Video TikTok đăng 24/01/2026 của tài khoản liên quan Civilis (du học Hàn Quốc) mời học sinh, sinh viên tham quan 'không gian văn hoá tại 79a Nguỵ Như Kon Tum'. Chưa xác minh được đây là Biblio hay đơn vị khác cùng khu."
+    }
+  ]
+}

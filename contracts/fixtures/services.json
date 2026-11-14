@@ -1,0 +1,320 @@
+{
+  "as_of": "2026-11-14",
+  "price_basis": "Bảng giá chụp tại quán ngày 14/11/2026; giá đã gồm 10% VAT theo bảng; chưa được quán xác nhận là hiện hành.",
+  "coworking_packages": [
+    {
+      "id": "cowork-1-day",
+      "label": "1 ngày",
+      "duration_days": 1,
+      "price_vnd": 55000,
+      "includes_vat": true,
+      "price_verified": false
+    },
+    {
+      "id": "cowork-1-week",
+      "label": "1 tuần",
+      "duration_days": 7,
+      "price_vnd": 280000,
+      "includes_vat": true,
+      "price_verified": false
+    },
+    {
+      "id": "cowork-1-month",
+      "label": "1 tháng",
+      "duration_days": 30,
+      "price_vnd": 990000,
+      "includes_vat": true,
+      "price_verified": false
+    }
+  ],
+  "meeting_rooms": [
+    {
+      "id": "room-1",
+      "name": "Phòng 1",
+      "area_m2": 55,
+      "capacity_max": 50,
+      "capacity_theater": 50,
+      "capacity_tables": 30,
+      "layout_note": "Ngồi ghế tối đa 50 người; có cả bàn và ghế tối đa 30 người",
+      "session_hours": 4,
+      "price_vnd": 1100000,
+      "includes_vat": true,
+      "price_verified": false
+    },
+    {
+      "id": "room-2",
+      "name": "Phòng 2",
+      "area_m2": 80,
+      "capacity_max": 80,
+      "capacity_theater": 80,
+      "capacity_tables": 40,
+      "layout_note": "Ngồi ghế tối đa 80 người; có cả bàn và ghế tối đa 40 người",
+      "session_hours": 4,
+      "price_vnd": 1320000,
+      "includes_vat": true,
+      "price_verified": false
+    },
+    {
+      "id": "room-3",
+      "name": "Phòng 3",
+      "area_m2": 90,
+      "capacity_max": 100,
+      "capacity_theater": 100,
+      "capacity_tables": 60,
+      "layout_note": "Ngồi ghế tối đa 100 người; có cả bàn và ghế tối đa 60 người",
+      "session_hours": 4,
+      "price_vnd": 1650000,
+      "includes_vat": true,
+      "price_verified": false
+    },
+    {
+      "id": "room-4",
+      "name": "Phòng 4",
+      "area_m2": 35,
+      "capacity_max": 20,
+      "capacity_theater": null,
+      "capacity_tables": 20,
+      "layout_note": "20 người, bàn ghế dạng phòng họp",
+      "session_hours": 4,
+      "price_vnd": 770000,
+      "includes_vat": true,
+      "price_verified": false
+    },
+    {
+      "id": "cafe-space",
+      "name": "Không gian cafe",
+      "area_m2": 200,
+      "capacity_max": 200,
+      "capacity_theater": null,
+      "capacity_tables": null,
+      "layout_note": "200 người, bàn ghế xen kẽ",
+      "session_hours": 4,
+      "price_vnd": 2750000,
+      "includes_vat": true,
+      "price_verified": false
+    }
+  ],
+  "facts": [
+    {
+      "id": "cowork-amenity-01",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Nước lọc miễn phí suốt cả ngày",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-02",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Chỗ ngồi cố định",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-03",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Bố trí, decor theo sở thích (theo bảng)",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-04",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Ghế công thái học",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-05",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Wi-Fi",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-06",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Ổ cắm điện",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-07",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Điều hòa",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-08",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Tủ để đồ cá nhân",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-09",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Giảm 25% hóa đơn đồ uống tại quầy",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "cowork-amenity-10",
+      "scope": "coworking",
+      "kind": "amenity",
+      "label": "Hỗ trợ đăng ký vé gửi xe tháng",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-facility-01",
+      "scope": "meeting_room",
+      "kind": "amenity",
+      "label": "Máy chiếu",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-facility-02",
+      "scope": "meeting_room",
+      "kind": "amenity",
+      "label": "Loa âm thanh, micro",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-facility-03",
+      "scope": "meeting_room",
+      "kind": "amenity",
+      "label": "Bảng viết",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-facility-04",
+      "scope": "meeting_room",
+      "kind": "amenity",
+      "label": "Wi-Fi",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-facility-05",
+      "scope": "meeting_room",
+      "kind": "amenity",
+      "label": "Ổ cắm điện",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-facility-06",
+      "scope": "meeting_room",
+      "kind": "amenity",
+      "label": "Điều hòa",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-facility-07",
+      "scope": "meeting_room",
+      "kind": "amenity",
+      "label": "Bàn ghế xếp linh động",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-extra-01",
+      "scope": "meeting_room",
+      "kind": "extra_service",
+      "label": "Teabreak",
+      "price_from_vnd": 40000,
+      "price_to_vnd": null,
+      "unit": "suất",
+      "note": null
+    },
+    {
+      "id": "room-extra-02",
+      "scope": "meeting_room",
+      "kind": "extra_service",
+      "label": "Nước chai",
+      "price_from_vnd": 8000,
+      "price_to_vnd": 10000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-extra-03",
+      "scope": "meeting_room",
+      "kind": "extra_service",
+      "label": "Đồ uống",
+      "price_from_vnd": 35000,
+      "price_to_vnd": 55000,
+      "unit": null,
+      "note": null
+    },
+    {
+      "id": "room-extra-04",
+      "scope": "meeting_room",
+      "kind": "extra_service",
+      "label": "Backdrop, standee",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": "Đề cập trên bảng, giá không đọc rõ/không ghi"
+    },
+    {
+      "id": "room-policy-availability",
+      "scope": "meeting_room",
+      "kind": "policy",
+      "label": "Không có dữ liệu phòng trống; trợ lý không nhận đặt phòng — liên hệ quán 0976 214 224.",
+      "price_from_vnd": null,
+      "price_to_vnd": null,
+      "unit": null,
+      "note": null
+    }
+  ],
+  "booking_policy": "Không có dữ liệu phòng trống; trợ lý không nhận đặt phòng — liên hệ quán 0976 214 224."
+}

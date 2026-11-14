@@ -1,0 +1,266 @@
+{
+  "tiktok": {
+    "collected": 20,
+    "accepted": 3,
+    "pending": 6,
+    "rejected": 11,
+    "videos": [
+      {
+        "video_id": "7136036236271127834",
+        "url": "https://www.tiktok.com/@_domino_k/video/7136036236271127834",
+        "author_handle": "_domino_k",
+        "published_at": "2022-08-26",
+        "play_count": 37300,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "pending",
+        "verification_status": "unverified_branch",
+        "reason": "Creator compares branches and prefers Ngụy Như Kon Tum; does not name Biblio explicitly",
+        "caption": "Có nhiều chi nhánh nhưng ở Nguỵ Như Kontum mình thấy ổn nhất. Các bạn có thể tham khảo nhé. #learnontiktok #đọc_sách #sách #sáchhay #cafesach"
+      },
+      {
+        "video_id": "7651993605694917908",
+        "url": "https://www.tiktok.com/@ruabeoo.22/video/7651993605694917908",
+        "author_handle": "ruabeoo.22",
+        "published_at": "2026-06-16",
+        "play_count": 2555,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "pending",
+        "verification_status": "unverified_branch",
+        "reason": "Generic café clip from query 'biblio ngụy như kon tum'; venue not named",
+        "caption": "Đi cafe lựa ngày trong tuần hãng tới đây nha các mom #xuhuong #café"
+      },
+      {
+        "video_id": "7180284619999218970",
+        "url": "https://www.tiktok.com/@tubedinhhieu.tictoc/video/7180284619999218970",
+        "author_handle": "tubedinhhieu.tictoc",
+        "published_at": "2022-12-23",
+        "play_count": 32800,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "pending",
+        "verification_status": "unverified_branch",
+        "reason": "2022 clip tagged Thanh Xuân; venue not named",
+        "caption": "Ngại ngồi cafe làm việc thì qua đây chill hơn #reviewcafe #hanoi #cafesach #LEHOIYOMOST #caphehanoi #tubedinhhieu"
+      },
+      {
+        "video_id": "7638851656779713810",
+        "url": "https://www.tiktok.com/@tieuannreview/video/7638851656779713810",
+        "author_handle": "tieuannreview",
+        "published_at": "2026-05-12",
+        "play_count": 40800,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "pending",
+        "verification_status": "unverified_branch",
+        "reason": "Check-in on Ngụy Như Kon Tum street mentioning cakes; venue not named",
+        "caption": "Ai ở Nguỵ Như Kon Tum nào? Qua checkin liền nèeee #review #cafe #bánhngot"
+      },
+      {
+        "video_id": "7598886343044795669",
+        "url": "https://www.tiktok.com/@phuongcivilis/video/7598886343044795669",
+        "author_handle": "phuongcivilis",
+        "published_at": "2026-01-24",
+        "play_count": 2789,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "pending",
+        "verification_status": "unverified_branch",
+        "reason": "Civilis study-abroad post about a library/cultural space at '79a Ngụy Như Kon Tum' (24/01/2026) — address suffix 'a' and organiser unclear",
+        "caption": "Thư viện đã sẵn sàng mở cửa chào đón các bạn sinh viên học sinh cùng tham quan trải nghiệm không gian văn hoá tại 79a Nguỵ Như Kon Tum ❤️ Đợi chờ gì mà ko đăng kí ngayyy đii #civilis #duhochanquoc🇰🇷 #phuongcii #hanquocbiettuot #CapCut"
+      },
+      {
+        "video_id": "7694492970359442696",
+        "url": "https://www.tiktok.com/@povducbeo/video/7694492970359442696",
+        "author_handle": "povducbeo",
+        "published_at": "2026-10-09",
+        "play_count": 23000,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "Gà Tố Tố, 75 Ngụy Như Kon Tum (other business)",
+        "caption": "P76: Bác nào sành ăn ở khu Ngụy Như Kon Tum, Nguyễn Tuân chắc đều trải nghiệm quán phở gà này rùi. giá sẽ hơi cao so với mặt bằng chung nhưng mình thấy xứng đáng với chất lượng nha #pov #amthuc #phoga"
+      },
+      {
+        "video_id": "7484539388790148360",
+        "url": "https://www.tiktok.com/@giadinhxahoi.pnvn/video/7484539388790148360",
+        "author_handle": "giadinhxahoi.pnvn",
+        "published_at": "2025-03-22",
+        "play_count": 7523,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "Street clip, no venue",
+        "caption": "Ngụy Như Kon Tum - HN #nguyenyeuhanoi90 #viral"
+      },
+      {
+        "video_id": "7669358122464595220",
+        "url": "https://www.tiktok.com/@nhahanghk/video/7669358122464595220",
+        "author_handle": "nhahanghk",
+        "published_at": "2026-08-02",
+        "play_count": 4044,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "HK Beer, 104 Ngụy Như Kon Tum (other business)",
+        "caption": "Tối về vắt tay lên trán vì mất ngủ 🫠 #fyp #xuhuong #hkbeer #hkbeer104nguỵnhưkontum #vuinhon"
+      },
+      {
+        "video_id": "7698370301293301044",
+        "url": "https://www.tiktok.com/@nhachinhchuhanoino1/video/7698370301293301044",
+        "author_handle": "nhachinhchuhanoino1",
+        "published_at": "2026-10-19",
+        "play_count": 2539,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "Real-estate listing",
+        "caption": "Phân lô phố Nguỵ Như Kon Tum, quận Thanh Xuân. Diện tích 39m2, 5 tầng, mặt tiền 3.6m. #bds #bannhahanoi #bannhachinhchuhanoi #building"
+      },
+      {
+        "video_id": "7539184607632117010",
+        "url": "https://www.tiktok.com/@street.billiards/video/7539184607632117010",
+        "author_handle": "street.billiards",
+        "published_at": "2025-08-16",
+        "play_count": 37300,
+        "search_query": "biblio ngụy như kon tum",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "Street billiards, 107 Ngụy Như Kon Tum (other business)",
+        "caption": "Trả lời @Cướp biển Bắc Giang ở đài 🇹🇼 dạ ông sếp đây ạ 🥲 dỗi thật sự 😡😡 @Móc len nhưng flop 🧶 @Yang.Offical #107NguyNhuKonTum #streetbilliards #dance #fyp #billiards"
+      },
+      {
+        "video_id": "7646412336277982485",
+        "url": "https://www.tiktok.com/@bibliocafesach/video/7646412336277982485",
+        "author_handle": "bibliocafesach",
+        "published_at": "2026-06-01",
+        "play_count": 2241,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "accepted",
+        "verification_status": "verified_branch",
+        "reason": "@bibliocafesach caption states address, hours 07:00-22:30 daily and phone 0976 214 224",
+        "caption": "📚 Không gian sách ấm cúng 💻 Nhiều khu vực ngồi riêng tư ☕ Đồ uống đa dạng 🌿 Phù hợp học bài, làm việc, đọc sách hay gặp gỡ bạn bè Biblio không chỉ là quán cafe, mà còn là nơi để bạn dành trọn một ngày thật thư thái. ✨ 📍 79 Ngụy Như Kon Tum, Làng Sinh Viên Hacinco, Thanh Xuân, Hà Nội ⏰ 07:00 - 22:30 "
+      },
+      {
+        "video_id": "7677913635397668117",
+        "url": "https://www.tiktok.com/@bibliocafesach/video/7677913635397668117",
+        "author_handle": "bibliocafesach",
+        "published_at": "2026-08-25",
+        "play_count": 995,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "accepted",
+        "verification_status": "verified_branch",
+        "reason": "@bibliocafesach: Biblio Working Space",
+        "caption": "💻 Biblio Working Space – góc làm việc riêng tư, yên tĩnh, đầy đ�� tiện nghi! ☕📚 #BiblioBookCafe #WorkingSpace #KhongGianLamViec #CafeHocBai #ThanhXuan"
+      },
+      {
+        "video_id": "7600722539354148117",
+        "url": "https://www.tiktok.com/@bibliocafesach/video/7600722539354148117",
+        "author_handle": "bibliocafesach",
+        "published_at": "2026-01-29",
+        "play_count": 1565,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "accepted",
+        "verification_status": "verified_branch",
+        "reason": "@bibliocafesach: meeting room promotion",
+        "caption": "Tìm đâu phòng hội thảo giá hợp lý, rộng rãi còn đẹp như ở Biblio nữa cả nhà #bibliocafe #BIBLIO #cafesach #fyp #xuhuonh"
+      },
+      {
+        "video_id": "7575878758956092690",
+        "url": "https://www.tiktok.com/@huythichdimotminh/video/7575878758956092690",
+        "author_handle": "huythichdimotminh",
+        "published_at": "2025-11-23",
+        "play_count": 27800,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "Tiny Cafe, 348 Giải Phóng (other café)",
+        "caption": "quán cafe có kệ sách to hệt Pinterest. luỵ quáaaaa🥹🪴📚 📍Tiny Cafe, 348 Đ. Giải Phóng, Phương Đình, Thanh Xuân, Hà Nội #book #bookstore #cafesach #hanoi #alohiday"
+      },
+      {
+        "video_id": "7646396679586925844",
+        "url": "https://www.tiktok.com/@3chidichoi/video/7646396679586925844",
+        "author_handle": "3chidichoi",
+        "published_at": "2026-06-01",
+        "play_count": 50100,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "pending",
+        "verification_status": "unverified_branch",
+        "reason": "'toạ độ trốn nóng' Thanh Xuân; venue not named",
+        "caption": "Xin hãy viral cái \"toạ độ\" trốn nóng này cho tuiiii🌿✨💨 #bachidichoi #cafehanoi #trouvaille #cafethanhxuan #cafehocbai"
+      },
+      {
+        "video_id": "7697856648274431252",
+        "url": "https://www.tiktok.com/@bibliocafesach/video/7697856648274431252",
+        "author_handle": "bibliocafesach",
+        "published_at": "2026-10-18",
+        "play_count": 712,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "@bibliocafesach hashtag-only caption, no information",
+        "caption": "Các bạn chờ biblio chút nhe…#CafeSach #HocTap #NhatKyDiLam #DiLamMoiNgay #BiblioBooksCafe"
+      },
+      {
+        "video_id": "7706487377535110406",
+        "url": "https://www.tiktok.com/@bibliocafesach/video/7706487377535110406",
+        "author_handle": "bibliocafesach",
+        "published_at": "2026-11-10",
+        "play_count": 104,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "@bibliocafesach hashtag-only caption, no information",
+        "caption": "#CafeSach #NhatKyDiLam #DiLamMoiNgay #BiblioBooksCafe #nănglượngtíchcực"
+      },
+      {
+        "video_id": "7692718495527619846",
+        "url": "https://www.tiktok.com/@bibliocafesach/video/7692718495527619846",
+        "author_handle": "bibliocafesach",
+        "published_at": "2026-10-04",
+        "play_count": 540,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "@bibliocafesach motivational caption, no café information",
+        "caption": "Tôi làm được. Tôi chắc chắn làm được. Chắc vậy… 🥹#BiblioBooksCafe #Biblio #CafeSach #HocTap #CafeHaNoi"
+      },
+      {
+        "video_id": "7703484782331579668",
+        "url": "https://www.tiktok.com/@hanghere194/video/7703484782331579668",
+        "author_handle": "hanghere194",
+        "published_at": "2026-11-02",
+        "play_count": 4849,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "Nghiêng Cafe (other café)",
+        "caption": "🍃Ngả nghiêng ở @Nghiêng Cafe, chill đéttt luon hehee #nghiengcafe #hiddencafe #thanhxuan #hanoicoffee #hanghere"
+      },
+      {
+        "video_id": "7510582531021147399",
+        "url": "https://www.tiktok.com/@absynthesin/video/7510582531021147399",
+        "author_handle": "absynthesin",
+        "published_at": "2025-05-31",
+        "play_count": 67400,
+        "search_query": "biblio cafe sách thanh xuân",
+        "bucket": "rejected",
+        "verification_status": "rejected",
+        "reason": "Catail The Library (other café)",
+        "caption": "📍Catail The Library - 127/2/41 Đ. Nguyễn Trãi, Thượng Đình, Thanh Xuân, Hà Nội (khuyên mọi người tìm quán qua clip hướng dẫn của quán) 📌 Có quay lại 🗣️ - Đường vào Catail the library hơi rối nhưng coi clip chỉ đường của quán thì cũng dễ tìm. Gửi xe ở nhà 104B. - Quán nhỏ, yên tĩnh, tầng 2 ngồi thảm "
+      }
+    ]
+  },
+  "google_maps_reviews": {
+    "collected": 30,
+    "excluded_off_topic": 1,
+    "stars": {
+      "1": 0,
+      "2": 0,
+      "3": 3,
+      "4": 7,
+      "5": 20
+    },
+    "date_range": [
+      "2022-06-15",
+      "2026-09-23"
+    ],
+    "personal_data": "not collected (scrapeReviewsPersonalData=false) and stripped on save"
+  }
+}

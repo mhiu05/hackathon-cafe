@@ -1,0 +1,117 @@
+{
+  "_comment": "Cross-source synthesis documents (source_id = src-kb-curation). Each statement is traceable to `citations`. Written 2026-11-14 from normalized sources; update when owner confirms facts.",
+  "documents": [
+    {
+      "id": "doc-faq-study-work",
+      "title": "Học tập và làm việc tại Biblio 79 Ngụy Như Kon Tum",
+      "category": "faq",
+      "content_kind": "fact",
+      "citations": [
+        "src-gmaps-listing",
+        "src-photo-service-board",
+        "src-gmaps-reviews",
+        "src-tiktok-bibliocafesach",
+        "src-web-mia-2026"
+      ],
+      "content": "Quán phù hợp học bài và làm việc: Google Maps gắn nhãn 'Phù hợp để làm việc trên máy tính xách tay', không khí 'Yên tĩnh', khách hàng 'Sinh viên', 'Nhóm'. Tài khoản TikTok @bibliocafesach giới thiệu 'Biblio Working Space – góc làm việc riêng tư, yên tĩnh'. Có gói co-working theo ngày/tuần/tháng (giá tra bằng công cụ dịch vụ, lấy từ bảng giá tại quán) kèm Wi-Fi, ổ cắm điện, điều hòa, ghế công thái học, tủ đồ. Nhận xét của khách (Google Maps) đa số khen yên tĩnh, rộng, nhiều sách; một số review lưu ý: quán nằm ở tầng hầm khu làng sinh viên nên có lúc bí; có thể ồn khi có hội thảo/sự kiện vì không gian thông nhau; một review 05/2026 phàn nàn điều hòa cũ không bật được. Không khẳng định tốc độ Wi-Fi; mật khẩu Wi-Fi hỏi nhân viên."
+    },
+    {
+      "id": "doc-faq-parking-access",
+      "title": "Đường vào, gửi xe và vị trí trong Làng sinh viên Hacinco",
+      "category": "faq",
+      "content_kind": "fact",
+      "citations": [
+        "src-gmaps-listing",
+        "src-gmaps-reviews",
+        "src-photo-service-board",
+        "src-web-tadiha-2022"
+      ],
+      "content": "Quán nằm tại 79 Ngụy Như Kon Tum, trong khuôn viên Làng sinh viên Hacinco, Thanh Xuân (Plus code 2R23+G5). Một nguồn năm 2022 ghi 'Cổng 1 - 79 Ngụy Như Kon Tum'. Google Maps ghi thuộc tính 'Bãi đỗ xe có tính phí' và 'Nhiều chỗ đỗ xe'; mức phí gửi xe chưa có nguồn xác minh. Bảng co-working ghi 'hỗ trợ đăng ký vé gửi xe tháng' cho khách co-working. Review Google Maps (09/2026) nhận xét khách bên ngoài đậu xe, ra vào hơi bất tiện vì nằm trong khuôn viên làng sinh viên; nhiều review mô tả quán ở tầng hầm của khu."
+    },
+    {
+      "id": "doc-faq-kids-family",
+      "title": "Đi cùng trẻ em: khu thiếu nhi, sách thiếu nhi",
+      "category": "faq",
+      "content_kind": "fact",
+      "citations": [
+        "src-gmaps-listing",
+        "src-web-book365",
+        "src-web-tadiha-2022",
+        "src-gmaps-reviews"
+      ],
+      "content": "Google Maps gắn nhãn 'Phù hợp cho trẻ em'. Book365 và Tadiha (2022) mô tả quán có khu dành riêng cho trẻ em, trang trí màu sắc. Review Google Maps (04/2025) nhắc tới khu tô tượng cho trẻ và sách thiếu nhi; review 07/2025 nói sách 'từ người lớn đến trẻ em'. Một review 2022 lưu ý ban ngày có trẻ con nên có lúc ồn. Giờ hoạt động, giá và quy định của khu trẻ em chưa có nguồn xác minh hiện hành."
+    },
+    {
+      "id": "doc-faq-events-rental",
+      "title": "Tổ chức sự kiện, workshop, thuê phòng hội thảo",
+      "category": "faq",
+      "content_kind": "fact",
+      "citations": [
+        "src-photo-service-board",
+        "src-web-1000libraries-2026",
+        "src-web-book365",
+        "src-gmaps-reviews",
+        "src-tiktok-bibliocafesach"
+      ],
+      "content": "Quán cho thuê phòng hội thảo và không gian tổ chức sự kiện theo ca 4 tiếng (bảng giá tại quán: 4 phòng 35–90 m² và không gian cafe 200 m²; giá tra bằng công cụ dịch vụ). Phòng có máy chiếu, loa, micro, bảng viết, Wi-Fi, điều hòa, bàn ghế xếp linh động; dịch vụ thêm: teabreak, nước chai, đồ uống, backdrop/standee. 1000 Libraries (06/2026) cho biết quán được dùng làm nơi tổ chức workshop và cho thuê sự kiện riêng. Nhiều review Google Maps kể đã tổ chức họp 30–40 người, workshop, sinh nhật, sự kiện âm nhạc; một review nói sân khấu hơi nhỏ, phù hợp sự kiện dưới 100 người. Trợ lý KHÔNG có dữ liệu phòng trống và KHÔNG nhận đặt phòng; khách cần liên hệ quán (0976 214 224) để xác nhận lịch."
+    },
+    {
+      "id": "doc-faq-room-booking",
+      "title": "Đặt phòng hội thảo: kiểm tra phòng trống và giữ chỗ",
+      "category": "faq",
+      "content_kind": "fact",
+      "citations": [
+        "src-photo-service-board",
+        "src-gmaps-listing"
+      ],
+      "content": "Hệ thống chưa có lịch phòng trống của các phòng hội thảo (Phòng 1–4, Không gian cafe), nên trợ lý không thể biết phòng còn trống vào một ngày/giờ cụ thể và không nhận đặt hay giữ phòng. Google Maps ghi quán 'Nhận đặt chỗ', nhưng cách đặt, đặt cọc và chính sách hủy chưa được xác minh. Muốn đặt phòng: gọi quán 0976 214 224 hoặc hỏi nhân viên tại quầy; trợ lý có thể báo giá theo bảng giá chụp tại quán và gợi ý phòng theo sức chứa."
+    },
+    {
+      "id": "doc-faq-unverified-info",
+      "title": "Những thông tin chưa được xác minh — trợ lý phải nói rõ và hướng dẫn hỏi nhân viên",
+      "category": "faq",
+      "content_kind": "fact",
+      "citations": [
+        "src-photo-drink-menu",
+        "src-photo-food-menu",
+        "src-photo-service-board",
+        "src-web-tadiha-2022"
+      ],
+      "content": "Chưa có dữ liệu xác minh (tính đến 14/11/2026) về: tình trạng còn/hết từng món (mọi món đang ở trạng thái 'chưa xác nhận' cho tới khi nhân viên cập nhật); giá hiện hành (giá lấy từ ảnh menu chụp 14/11/2026, quán chưa xác nhận); lựa chọn nóng/lạnh, mức đường, đá; thành phần, lượng caffeine, chất gây dị ứng; ý nghĩa dấu X viết tay cạnh món Trà xoài Yakult; tên chính xác món 'Bơ già dừa non'; phòng hội thảo còn trống hay không; giá và điều kiện thẻ mượn sách (chỉ có nguồn 2022); phí gửi xe; điều kiện giảm 25% hóa đơn đồ uống cho khách co-working; phạm vi 'tự decor theo sở thích'; giá backdrop/standee; lịch sự kiện sắp tới; mật khẩu Wi-Fi. Với các câu hỏi này, trợ lý trả lời 'chưa có thông tin xác minh' và gợi ý hỏi nhân viên tại quầy hoặc gọi 0976 214 224."
+    },
+    {
+      "id": "doc-location-conflicts",
+      "title": "Thông tin mâu thuẫn giữa các nguồn: địa chỉ, giờ mở cửa, điện thoại, điểm đánh giá",
+      "category": "location",
+      "content_kind": "fact",
+      "verification_status": "conflicting",
+      "citations": [
+        "src-photo-service-board",
+        "src-photo-drink-menu",
+        "src-tiktok-bibliocafesach",
+        "src-web-tadiha-2022",
+        "src-web-traveloka",
+        "src-gmaps-listing",
+        "src-web-book365"
+      ],
+      "content": "Ưu tiên nguồn mới và nguồn tại quán. Điện thoại: 0976 214 224 (bảng dịch vụ chụp tại quán 14/11/2026 và TikTok @bibliocafesach 06/2026) — nguồn Tadiha 2022 ghi hotline 024 2215 7878 (cũ, không dùng). Giờ mở cửa: 07:00–22:30 hằng ngày (menu chụp tại quán, TikTok @bibliocafesach, MIA 08/2026, Book365, 1000 Libraries) — Tadiha 2022 ghi 7:00–23:00 (cũ). Địa chỉ: 79 Ngụy Như Kon Tum, Làng sinh viên Hacinco (đa số nguồn); Tadiha 2022 ghi 'Cổng 1 - 79'; Traveloka ghi 'Cafe sách Đông Tây, 99 Ngụy Như Kon Tum' kèm ảnh của fanpage Biblio Ngụy Như Kon Tum; một video TikTok ghi '79a'. Điểm Google Maps: 4,4/5 với 178 đánh giá (lấy ngày 14/11/2026); Book365 ghi 4,0/5 (số liệu cũ)."
+    },
+    {
+      "id": "doc-branches-disambiguation",
+      "title": "Biblio có nhiều cơ sở — trợ lý chỉ phục vụ cơ sở 79 Ngụy Như Kon Tum",
+      "category": "branches",
+      "content_kind": "fact",
+      "verification_status": "brand_general",
+      "citations": [
+        "src-web-tadiha-2022",
+        "src-web-tatinta-4357",
+        "src-web-thesmartlocal",
+        "src-web-wanderlog",
+        "src-gmaps-listing",
+        "src-facebook-page",
+        "src-gmaps-reviews"
+      ],
+      "content": "Thương hiệu Biblio có/đã có nhiều cơ sở tại Hà Nội. Nguồn Tadiha 2022 liệt kê: Cổng 1 - 79 Ngụy Như Kon Tum (Thanh Xuân); 70 Tam Khương, ngõ 10 Tôn Thất Tùng (Đống Đa); BT41 LK13 khu đô thị Xa La (Hà Đông); Lô 27 ngõ 195 Quang Trung (Hà Đông). Wanderlog hiển thị cơ sở Ngõ 95 Chùa Bộc là 'đã đóng cửa vĩnh viễn'. Các bài Tatinta và TheSmartLocal nói về cơ sở 70 Tam Khương (giờ, điện thoại khác) — không áp dụng cho cơ sở này. Trợ lý này chỉ trả lời cho cơ sở 79 Ngụy Như Kon Tum; nếu khách hỏi cơ sở khác, nói rõ không có dữ liệu đã xác minh. Ghi chú lịch sử (chưa xác minh): fanpage của cơ sở có địa chỉ facebook.com/Khonggianvanhoadongtay ('Không gian văn hóa Đông Tây'); một review 2022 gọi là 'Hệ thống Không gian Văn hóa Đông Tây'; Google Maps gợi ý 'Đông tây Cafe Sách Xala'."
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "branch_id": "biblio-79-nguy-nhu-kon-tum",
+  "brand_name": "Biblio",
+  "display_name": "Biblio Café Sách — 79 Ngụy Như Kon Tum",
+  "address": "79 Ngụy Như Kon Tum, Làng sinh viên Hacinco, Thanh Xuân, Hà Nội",
+  "latitude": 21.0013374,
+  "longitude": 105.8029646,
+  "plus_code": "2R23+G5 Thanh Xuân, Hà Nội",
+  "phone": "0976 214 224",
+  "opening_hours": {
+    "open": "07:00",
+    "close": "22:30",
+    "days_label": "Hằng ngày"
+  },
+  "is_open_now": false,
+  "channels": {
+    "google_maps_url": "https://www.google.com/maps/place/Biblio+Book+Cafe+-+79+Ng%E1%BB%A5y+Nh%C6%B0+Kon+Tum/@21.0013374,105.8029646,17z",
+    "facebook_url": "https://www.facebook.com/Khonggianvanhoadongtay/",
+    "tiktok_url": "https://www.tiktok.com/@bibliocafesach",
+    "website_url": null
+  },
+  "wifi": {
+    "available": true,
+    "ssid": "BIBLIO CAFE SACH",
+    "password_policy": "ask_staff"
+  },
+  "rating_snapshot": {
+    "rating": 4.4,
+    "reviews_count": 178,
+    "as_of": "2026-11-14",
+    "source_id": "src-gmaps-listing"
+  },
+  "highlights": [
+    {
+      "label": "Phù hợp để làm việc trên máy tính xách tay",
+      "source_id": "src-gmaps-listing"
+    },
+    {
+      "label": "Yên tĩnh",
+      "source_id": "src-gmaps-listing"
+    },
+    {
+      "label": "Phù hợp cho trẻ em",
+      "source_id": "src-gmaps-listing"
+    },
+    {
+      "label": "Nhận đặt chỗ",
+      "source_id": "src-gmaps-listing"
+    },
+    {
+      "label": "Bãi đỗ xe có tính phí",
+      "source_id": "src-gmaps-listing"
+    },
+    {
+      "label": "Co-working theo ngày, tuần, tháng",
+      "source_id": "src-photo-service-board"
+    },
+    {
+      "label": "Phòng hội thảo 20–200 người",
+      "source_id": "src-photo-service-board"
+    }
+  ],
+  "data_status": "user_provided_unverified",
+  "data_notice": "Thông tin và giá theo ảnh chụp tại quán ngày 14/11/2026 và nguồn công khai; quán chưa xác nhận.",
+  "sources": [
+    {
+      "source_id": "src-photo-service-board",
+      "title": "Ảnh bảng giá co-working và phòng hội thảo tại quán (ảnh 5)",
+      "url": null,
+      "retrieved_at": "2026-11-14T03:13:14.000Z",
+      "verification_status": "verified_branch"
+    },
+    {
+      "source_id": "src-photo-drink-menu",
+      "title": "Ảnh menu đồ uống chụp tại quán (ảnh 1, 4, 6)",
+      "url": null,
+      "retrieved_at": "2026-11-14T03:13:18.000Z",
+      "verification_status": "verified_branch"
+    },
+    {
+      "source_id": "src-gmaps-listing",
+      "title": "Google Maps — Biblio Book Cafe - 79 Ngụy Như Kon Tum (listing)",
+      "url": "https://www.google.com/maps/place/Biblio+Book+Cafe+-+79+Ng%E1%BB%A5y+Nh%C6%B0+Kon+Tum/@21.0013374,105.8029646,17z",
+      "retrieved_at": "2026-11-14T04:17:54.858000Z",
+      "verification_status": "verified_branch"
+    },
+    {
+      "source_id": "src-tiktok-bibliocafesach",
+      "title": "TikTok — @bibliocafesach (tài khoản tự giới thiệu là Biblio 79 Ngụy Như Kon Tum)",
+      "url": "https://www.tiktok.com/@bibliocafesach",
+      "retrieved_at": "2026-11-14T04:18:40.665000Z",
+      "verification_status": "verified_branch"
+    },
+    {
+      "source_id": "src-web-mia-2026",
+      "title": "MIA.vn — 16 quán cà phê sách Hà Nội vibe xinh (20/08/2026)",
+      "url": "https://mia.vn/cam-nang-du-lich/top-quan-ca-phe-sach-ha-noi-15088",
+      "retrieved_at": "2026-11-14T04:05:00.000Z",
+      "verification_status": "verified_branch"
+    }
+  ]
+}
