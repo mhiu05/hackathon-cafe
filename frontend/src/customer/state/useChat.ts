@@ -5,7 +5,8 @@ import { resetConversation } from '../../api/conversation';
 import { chatReducer, initialChatState } from './chatReducer';
 import { runDraftAction } from './draftActions';
 export function useChat(api: ApiClient = defaultApi) {
-  const [state, dispatch] = useReducer(chatReducer, initialChatState); const latest = useRef(state); latest.current = state;
+  const [state, dispatch] = useReducer(chatReducer, initialChatState); const latest = useRef(state);
+  useEffect(() => { latest.current = state; }, [state]);
   const active = useRef<AbortController | null>(null), generation = useRef(0), draftLocks = useRef(new Set<string>());
   useEffect(() => () => { generation.current++; active.current?.abort(); }, []);
   function send(raw: string) {

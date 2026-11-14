@@ -19,4 +19,4 @@ a { color: var(--teal); text-underline-offset: .2em; }
 h1, h2, h3, p { margin: 0 0 var(--space-md); } h1 { font: 600 var(--text-display)/1.05 var(--font-display); } h2, h3 { font: 600 var(--text-heading)/1.2 var(--font-display); }
 ::selection { color: var(--cream-page); background: var(--teal); }
 small { font-size: var(--text-caption); } .price { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

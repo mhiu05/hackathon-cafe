@@ -1,32 +1,46 @@
-# React + TypeScript + Vite
+# Biblio - frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+React 19 + Vite 8 multi-page, TypeScript, plain CSS, GSAP and Thinking Orbs.
 
-Currently, two official plugins are available:
+Node 24 / pnpm 11. On Windows use pnpm.cmd if PowerShell blocks pnpm.ps1.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Run
 
-## React Compiler
+From frontend/:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```powershell
+pnpm.cmd install --frozen-lockfile
+pnpm.cmd dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+Customer: http://localhost:5173/ | Staff: http://localhost:5173/admin.html. The Vite proxy sends /api to localhost:8000. Start Dev A's single-worker backend from the repo root.
+
+Live is the default. For fixture-only development set VITE_API_MODE=mock in the process environment or a local frontend/.env. Mock mode is visibly labelled and excluded from production's live import graph. Never put keys or ADMIN_PIN in VITE_* variables.
+
+## Verify
+
+```powershell
+pnpm.cmd test --run
+pnpm.cmd build
+pnpm.cmd lint
+pnpm.cmd exec playwright test
+```
+
+The default Playwright suite intercepts fixture API responses for deterministic tests; live tests skip unless credentials/explicit opt-in are supplied. Playwright starts Vite automatically. E2E_BASE_URL can point to an already running frontend. Screenshots go to ignored test-results/.
+
+Live checks from the repo root, using configured PIN in memory without printing it:
+
+```powershell
+.venv\Scripts\python.exe frontend/scripts/run_live_smoke.py
+.venv\Scripts\python.exe frontend/scripts/run_live_smoke.py --agent
+```
+
+The first command uses real local order/admin APIs without model calls. The second explicitly opts into at most three real agent turns (no automatic retries) and may use OpenAI/Voyage.
+
+For parallel backend validation, export a committed Dev A backend/ snapshot into frontend/node_modules/.cache/ and run scripts/serve_backend_snapshot.py --snapshot PATH. It reads the existing root configuration, backs up the source catalogue to its own database, disables test tracing and leaves backend source, root .env and the source database unchanged. Never use this helper to infer combined-main acceptance.
+
+## Contracts and integration
+
+All requests go through src/api; types.ts is copied verbatim from docs/api-contracts.md section 9. Prices and allowed admin transitions are server-authoritative. Order confirmation requires a customer click; retries retain their key; price drift asks again. Chat context is scoped by the persisted 32-hex conversation id.
+
+See [INTEGRATION_NOTES.md](INTEGRATION_NOTES.md) for live results and the admin SSE field mismatch. [IMPLEMENTATION_LOG.md](IMPLEMENTATION_LOG.md) records task gates and execution rulings. Main integration waits for Dev A's handoff.

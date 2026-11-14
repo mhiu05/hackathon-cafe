@@ -36,3 +36,12 @@ test('model unavailable leaves Menu and cart usable', async ({ page }) => {
   await expect(page.getByRole('button', { name: 'Giỏ · 1', exact: true })).toBeVisible();
   await page.screenshot({ path: 'test-results/chat-degraded-1280.png', fullPage: true });
 });
+test('mobile assistant keeps focus inside the sheet and Escape restores navigation', async ({ page }) => {
+  await page.route('**/api/cafe', r => r.fulfill({ json: cafe })); await page.route('**/api/menu', r => r.fulfill({ json: menu }));
+  await page.setViewportSize({ width: 390, height: 844 }); await page.goto('/');
+  const trigger = page.getByRole('button', { name: 'Trợ lý', exact: true }); await trigger.click();
+  const dialog = page.getByRole('dialog', { name: 'Trợ lý Biblio' }); await expect(dialog).toBeVisible();
+  const close = dialog.getByRole('button', { name: 'Đóng', exact: true }); await expect(close).toBeFocused();
+  await page.keyboard.press('Shift+Tab'); expect(await dialog.evaluate(el => el.contains(document.activeElement))).toBe(true);
+  await page.keyboard.press('Escape'); await expect(dialog).toHaveCount(0); await expect(trigger).toBeFocused();
+});

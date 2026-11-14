@@ -4,10 +4,20 @@ Append newest entries at the top of each section. Times in local time (UTC+7). O
 
 ## Current status
 
+**Dev B:** B1–B4 frontend implemented; B5 states, availability, insights, GSAP/reduced motion and Playwright implemented. Independent final review underway. Live C1–C4 verified against Dev A snapshot 81648a3; backend 9e0a3b1 regression 87 passed / 6 live deselected. Shared main/checkpoint rows remain pending serialized integration; owner confirmed Dev A has not merged main.
+
 **Phase:** pre-implementation complete; implementation not started. **Ready state:** see `docs/IMPLEMENTATION_HANDOFF.md` §A.
 **Next:** both devs read `docs/IMPLEMENTATION_HANDOFF.md`, then start A1 / B1 (`docs/superpowers/plans/`).
 
 ## Log
+
+### 2026-11-14 13:57 (UTC+7) — Dev B · B5 hardening/P1
+- Error/retry, empty/loading/degraded states; accessible mobile chat dialog with focus trap/Escape/inert background; live order cards; admin Menu availability and Tổng quan; GSAP via useGSAP/matchMedia with static reduced-motion state; removed scaffold assets and replaced favicon.
+- `pnpm.cmd test --run` → 18 files / 33 passed; `pnpm.cmd build` passed. `pnpm.cmd exec playwright test` → 6 fixture tests passed / 2 live tests deliberately skipped by default. Explicit live cart smoke passed (64ms customer update); explicit live AI test passed on snapshot81648a3 (BB-0003, three real turns).
+- Found live admin SSE without allowed_next; regression RED→GREEN; frontend refetches authenticated actions instead of guessing permissions. Exact Dev A handoff in frontend/INTEGRATION_NOTES.md. First live AI attempt reached real confirmed BB-0002 but stopped on missing actions; corrected run passed.
+- Latest Dev A9e0a3b1 exported to ignored snapshot; `python -m pytest .../backend/tests -q -m 'not live'` → 87 passed, 6 deselected. No backend source modifications or main merge.
+- ApiClient §10 omits insights despite §7 endpoint / §9 type. Isolated typed api/insights.ts adapter uses existing auth/error/request layer; frozen interface unchanged. Mock analytics show live-required, not invented values.
+- Impeccable context loaded using existing DESIGN.md/PRD/UI spec; no PRODUCT.md or design-system rewrite. Final independent design/code review and detector pending. Lint exits successfully with advisory React warnings; final report will retain their disposition.
 
 ### 2026-11-14 13:37 (UTC+7) — Dev B · B4 streaming assistant
 - Chat reducer/hook, true SSE-driven orb (64px + 20px tools), messages/sources, composer, draft REST confirmation/discard, price refresh/expiry and order card → tracking. Abort/new conversation prevents stale emissions; a truncated stream reports interruption.

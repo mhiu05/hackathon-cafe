@@ -52,14 +52,14 @@ Each owner updates only their rows. Detailed steps: `docs/superpowers/plans/` (m
 | ID | Task | Pri | Owner | Status |
 |---|---|---|---|---|
 | A5 | Guards (409/429), error mapping, cancellation, retries, live smoke (`-m live`), `reset_demo.py` | P0 | Dev A | [ ] |
-| B5a | Loading/empty/error/degraded states | P0 | Dev B | [~] |
-| B5b | Admin Menu availability screen | P1 | Dev B | [ ] |
+| B5a | Loading/empty/error/degraded states | P0 | Dev B | [x] |
+| B5b | Admin Menu availability screen | P1 | Dev B | [x] |
 | A6a | `/api/admin/insights` | P1 | Dev A | [ ] |
-| B5c | Admin Tổng quan screen | P1 | Dev B | [ ] |
+| B5c | Admin Tổng quan screen | P1 | Dev B | [x] |
 | A6b | Draft-confirm note into agent memory; `/api/agent/history` | P1 | Dev A | [ ] |
-| B5d | GSAP motion + reduced motion | P1 | Dev B | [ ] |
-| B5e | Impeccable critique/audit/polish pass | P1 | Dev B | [ ] |
-| B5f | Playwright demo smoke | P1 | Dev B | [ ] |
+| B5d | GSAP motion + reduced motion | P1 | Dev B | [x] |
+| B5e | Impeccable critique/audit/polish pass | P1 | Dev B | [~] |
+| B5f | Playwright demo smoke | P1 | Dev B | [x] |
 | C5 | Reset + rehearsal ×2 (`docs/demo-runbook.md`) | P0 | both | [ ] |
 
 ## Backlog (P2 — do not start before P0 + P1 are green)
