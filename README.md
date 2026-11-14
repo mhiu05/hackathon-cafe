@@ -1,3 +1,5 @@
+<p align="center"><img src="qr.png" alt="QR code" width="220"></p>
+
 Link demo người dùng: https://kangaroo-donator-exclaim.ngrok-free.dev/
 Link demo admin: https://kangaroo-donator-exclaim.ngrok-free.dev/admin.html
 
