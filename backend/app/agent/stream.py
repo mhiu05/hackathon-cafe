@@ -62,6 +62,18 @@ def _truncate(value: object) -> object:
     return value
 
 
+def _logged_arguments(raw: str) -> str:
+    # Invalid model JSON is already handled by the SDK's tool failure callback.
+    # Observability must not turn that recoverable failure into a failed run.
+    try:
+        parsed = json.loads(raw)
+    except (ValueError, TypeError):
+        parsed = {"invalid_json": True}
+    if not isinstance(parsed, dict):
+        parsed = {"invalid_json": True}
+    return json.dumps(_truncate(parsed), ensure_ascii=False)
+
+
 async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *, session: Session | None = None) -> AsyncIterator[str]:
     run_id = uuid4().hex
     context = AgentContext(conversation_id, run_id, deps.settings.database_path, deps.index, deps.embedder)
@@ -109,7 +121,7 @@ async def run_chat_stream(deps: AgentDeps, conversation_id: str, message: str, *
                             data = {"ok": False, "error": {"code": "TOOL_FAILED", "message": "Công cụ tạm lỗi."}}
                         ok = data.get("ok") is not False
                         conn.execute("INSERT INTO agent_tool_calls(run_id,call_id,tool,ok,error_code,latency_ms,args_json,created_at) VALUES (?,?,?,?,?,?,?,?)",
-                            (run_id, cid, tool, int(ok), data.get("error", {}).get("code"), int((time.monotonic()-started)*1000), json.dumps(_truncate(json.loads(args)), ensure_ascii=False), utc_now()))
+                            (run_id, cid, tool, int(ok), data.get("error", {}).get("code"), int((time.monotonic()-started)*1000), _logged_arguments(args), utc_now()))
                         yield format_sse("tool_finished", {"call_id": cid, "tool": tool, "ok": ok, "summary": summarize_tool_output(tool, data)})
                         if ok and "draft" in data:
                             yield format_sse("order_draft", {"draft": data["draft"]})

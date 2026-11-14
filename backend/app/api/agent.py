@@ -62,6 +62,15 @@ async def chat(body: ChatRequest, request: Request, conversation_id: str = Depen
         guard.release(conversation_id)
         raise ApiError(429, "RATE_LIMITED", "Bạn gửi quá nhiều tin nhắn, vui lòng đợi một phút.")
     deps = AgentDeps(state.settings, state.agent, state.index, state.embedder)
+    released = False
+
+    async def release_once() -> None:
+        # Both cleanup paths run on the request event loop. An old response must
+        # never release the lock acquired by a subsequent request.
+        nonlocal released
+        if not released:
+            released = True
+            guard.release(conversation_id)
 
     async def guarded():
         stream = run_chat_stream(deps, conversation_id, body.message)
@@ -69,11 +78,13 @@ async def chat(body: ChatRequest, request: Request, conversation_id: str = Depen
             async for chunk in stream:
                 yield chunk
         finally:
-            await stream.aclose()
-            guard.release(conversation_id)
+            try:
+                await stream.aclose()
+            finally:
+                await release_once()
 
     response = sse_response(with_heartbeat(guarded()))
-    response.background = BackgroundTask(guard.release, conversation_id)
+    response.background = BackgroundTask(release_once)
     return response
 
 
